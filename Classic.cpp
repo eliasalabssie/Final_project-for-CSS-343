@@ -1,262 +1,92 @@
-/*
-//--------------------------------------------------------------------------------
-Assignment: Lab 4
-Group Members: Lloyd Deng, Antong Cheng, Elias Alabssie
-Date: March 20, 2019
-//---------------------------------------------------------------------------------------
+#include <string>
+#include "Classic.h"
 
-//------------------------ Classic.cpp -------------------------------------------------
-//Parent: Movie
-//Chil: None
-
-//description: implementation for the Classic class. 
-
-//-------------------------------------------------------------------------------------
-*/
-
-#include"Classic.h"
-
-//---------------------------------------- Classic --------------------------------------
-//constr
-//-----------------------------------------------------------------------------------------
-Classic::Classic()
-{
-	this->setStock(0);
-	dirctorFirstName = "";
-	dirctorLastName = "";
-	this->setTitle("");
-	majorActorFirstName = "";
-	majorActorLastName = "";
-	date = "";
-	year = "";
-
+Classic::Classic(){
+	genre = 'c';
+	actor = "";
+	releaseMonth = -1;
 }
 
-//---------------------------------------- Classic --------------------------------------
-//constr
-//-----------------------------------------------------------------------------------------
-Classic::Classic(int stock, string directorFirstName, string directorLastName, string title, 
-					string majorAfirstName, string majorAlastName, string date, string year)  
-{
-
-	this->setStock(stock);
-	this->dirctorFirstName = directorFirstName;
-	this->dirctorLastName = directorLastName;
-	this->setTitle(title);
-	this->majorActorFirstName = majorActorFirstName;
-	this->majorActorLastName = majorActorLastName;
-	this->date = date;
-	this->year = year;
+Classic::~Classic(){
 }
 
-//---------------------------------------- Classic --------------------------------------
-//copy constr
-//-----------------------------------------------------------------------------------------
-Classic::Classic(Classic &classics)
-{
-
-	*this  = classics;
-
+Classic::Classic(int stock, std::string director, std::string title, std::string actor, int releaseMonth, int releaseYear){
+	this->genre = genre;
+	setStock(stock);
+	setDirector(director);
+	setTitle(title);
+	setActor(actor);
+	setReleaseMonth(releaseMonth);
+	setReleaseYear(releaseYear);
 }
 
-
-//---------------------------------------- ~Classic --------------------------------------
-//destructor
-//-----------------------------------------------------------------------------------------
-Classic::~Classic()
-{
-
-
-}
-	
-
-//---------------------------------------- getDirectorFirstName ----------------------------
-//returns directorsFirstName
-//-----------------------------------------------------------------------------------------
-string Classic::getDirectorFirstName() const
-{
-
-
-	return dirctorFirstName;
+bool Classic::operator==(const Classic& other) const {
+	return (getDirector() == other.getDirector()) && 
+		(getTitle() == other.getTitle()) &&
+		(getActor() == other.getActor()) && 
+		(getReleaseMonth() == other.getReleaseMonth()) &&
+		(getReleaseYear() == other.getReleaseYear());
 }
 
-
-//---------------------------------------- getDirectorLastName ----------------------------
-//returns directorsFirstName
-//-----------------------------------------------------------------------------------------
-string Classic::getDirectorLastName() const
-{
-
-	return dirctorLastName;
+bool Classic::operator!=(const Classic& other) const {
+	return !((*this) == other);
 }
 
-
-//---------------------------------------- getMajorActorFirstName --------------------------
-//returns directorsFirstName
-//-----------------------------------------------------------------------------------------
-string Classic::getMajorActorFirstName()const
-{
-
-	return majorActorFirstName;
+bool Classic::operator>(const Classic& other) const {
+	if(getReleaseYear() > other.getReleaseYear()){
+		return true;
+	}
+	if(getReleaseMonth() > other.getReleaseMonth()){
+		return true;
+	}
+	if((getActor()).compare(other.getActor()) > 0){
+		return true;
+	}
+	return false;
+}
+bool Classic::operator<(const Classic& other) const {
+	if(getReleaseYear() < other.getReleaseYear()){
+		return true;
+	}
+	if(getReleaseMonth() < other.getReleaseMonth()){
+		return true;
+	}
+	if(getActor().compare(other.getActor()) < 0){
+		return true;
+	}
+	return false;
 }
 
-
-//---------------------------------------- getMajorActorLastName --------------------------
-//returns directorLastName
-//----------------------------------------------------------------------------------------
-string Classic::getMajorActorLastName()const
-{
-
-	return majorActorLastName;
+std::string Classic::getActor() const{
+	return actor;
 }
 
-
-//---------------------------------------- getDtate --------- --------------------------
-//returns the date the calssic movie published
-//----------------------------------------------------------------------------------------
-string Classic::getDate()const
-{
-	return date;
+char Classic::getGenre() const{
+	return genre;
 }
 
-
-//---------------------------------------- getYear ---------------------------------------
-//returns returns the year the calssic movie published
-//----------------------------------------------------------------------------------------
-string Classic::getYear()const
-{
-
-	return year;
+int Classic::getReleaseMonth() const{
+	return releaseMonth;
+}
+		
+void Classic::setActor(std::string actor){
+	this->actor = actor;
 }
 
-
-//---------------------------------------- setDirectorFirstName  --------------------------
-//sets the directorsFirstName
-//----------------------------------------------------------------------------------------
-void Classic::setDirectorFirstName(string firstName)
-{
-	this->dirctorFirstName = firstName;
-
+void Classic::setReleaseMonth(int releaseMonth){
+	this->releaseMonth = releaseMonth;
 }
 
-
-
-//---------------------------------------- setDirectorLastName --------------------------
-//sets the  directorLastName 
-//----------------------------------------------------------------------------------------
-void Classic::setDirectorLastName(string lastName)
-{
-
-	this->dirctorLastName = lastName;
+bool Classic::isIncomplete() const{
+	return (getGenre() != 'c') || (getStock() < 0) || (getDirector().compare("") == 0) || 
+		(getTitle().compare("") == 0) || (getActor().compare("") == 0) ||
+		(getReleaseMonth() < 0) || (getReleaseYear() < 0);
 }
 
-
-//---------------------------------------- getMajorActorFirstName --------------------------
-//sets majorActorLastName 
-//----------------------------------------------------------------------------------------
-void Classic::setMajorActorFirstName(string firstName)
-{
-
-	this->majorActorFirstName = firstName;
-}
-
-
-//---------------------------------------- getMajorActorFirstName --------------------------
-//sets the setMajorActorLastName
-//----------------------------------------------------------------------------------------
-void Classic::setMajorActorLastName(string lastName)
-{
-	this->majorActorLastName = lastName;
-}
-
-
-//---------------------------------------- getMajorActorFirstName --------------------------
-//sets the date that Classic movie published
-//----------------------------------------------------------------------------------------
-void Classic::setDtate(string date)
-{
-	this->date = date;
-}
-
-
-//---------------------------------------- getMajorActorFirstName --------------------------
-//sets the year that Classic movie published
-//----------------------------------------------------------------------------------------
-void Classic::setYear(string year)
-{
-
-	this->year = year;
-}
-
-
-
-//---------------------------------------- getMajorActorFirstName --------------------------
-//compares the Classic movie by date published and actor
-//----------------------------------------------------------------------------------------
- bool Classic::operator==(const Classic& movie) const
- {
-
- 	if(majorActorFirstName == movie.majorActorFirstName && majorActorLastName == movie.majorActorLastName
- 			 && date == movie.date && year == movie.year)  
- 		{
- 			return true;
-
- 		}
-
- 	return false;		
-
- }
-
-
-//---------------------------------------- getMajorActorFirstName --------------------------
-//compares the Classic movie by date published and actor
-//----------------------------------------------------------------------------------------
- bool Classic::operator!=(const Classic& movie) const
- {
- 		bool notEqual = (*this == movie);
- 		return !notEqual;
-
- }
-
-
- //---------------------------------------- getMajorActorFirstName --------------------------
-//compares the Classic movie by date published and actor
-//----------------------------------------------------------------------------------------
- bool Classic:: operator>(const Classic &classics)const
- {
-
- 	//compare by year
- 	if(this->year > classics.year)
- 	{
- 		return true;
- 	}
- 	//compare by date
- 	else if(this->date > classics.date)
- 	{
- 		return true;
- 	}
-
- 	//compare by majorActorFirstName
- 	else if(majorActorFirstName > classics.majorActorFirstName)
- 	{
- 		return true;
- 	}
-
- 	//compare by majorActorLastName 
- 	return majorActorLastName > classics.majorActorLastName;
-
- }
-
-
-
-//---------------------------------------- getMajorActorFirstName --------------------------
-//compares the Classic movie by date published and actor
-//----------------------------------------------------------------------------------------
-bool Classic:: operator<(const Classic &classics)const
-{
-
-	bool lessThan = (*this > classics);
-	return !lessThan;
-}
-
- //end of Classic.cpp
+/*std::string Classic::toString() const{
+	if(isIncomplete()){
+		return "";
+	}
+	std::string genreString(1, getGenre());
+	return  genreString + "" + getStock() + "" + getDirector() + "" + getTitle() + "" + getActor() + "" + getReleaseMonth() + "" + getReleaseYear();
+}*/
