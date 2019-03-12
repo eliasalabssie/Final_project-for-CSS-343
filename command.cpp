@@ -9,10 +9,10 @@
 using namespace std;
 
 Command::Command(){
-    char action = '';
+    char action = '\0';
     int ID = -1;
-    char format = '';
-    char genre = '';
+    char format = '\0';
+    char genre = '\0';
     int month = -1;
     int year = -1;
     string actor = "";

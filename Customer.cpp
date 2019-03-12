@@ -17,161 +17,90 @@ Date: March 20, 2019
 
 #include "Customer.h"
 
-//empty contructor
-Customer::Customer()
-{
+//default contructor
+Customer::Customer(){
 	ID = 0;
-	firstName = "";
-	lastName  = "";
+	name = "";
+}
 
-}//end of Custormer()
-
-
-//constructs Customer object from customer ID, first and last name 
-Customer::Customer(int id, string firstName, string lastName)
-{
+//constructs Customer given customer ID and name
+Customer::Customer(int id, string name){
 	this->ID = id;
-	this->firstName = firstName;
-	this->lastName = lastName;
-
-}//end of Custormer
-
+	this->name = name;
+}
 
 //copy constructor
-Customer::Customer(Customer &custom)
-{
-	*this = custom;
-
-}//end of copy constructor
-
-
-
-//destructor
-Customer:: ~Customer()
-{
-
-}//end of destructor
- 
-
- //return customer ID
-int Customer::getId() const
-{
-	return ID;
-
-}//end of getId
-
-
-//returns first name of the customer 
-string Customer::getFisrtName()const
-{
-	return firstName;
-
-}//end of getFisrtName
-
-
-//returns the last name of the customer
-string Customer::getLastName()const
-{
-
-	return lastName;
-
-}//end of getLastName
- 
-
-
- //set the customer ID
-void Customer::setId(int id)
-{
-	this->ID = id;
-
-}//end of setId
-
-
-//set the first name of the customer
-void Customer::setFirstName(string firstName)
-{
-
-	this->firstName = firstName;
-
-}//end of setFirstName
-
-
-
-//set the last name of the customer
-void Customer::setLastName(string lastName)
-{
-	this->lastName = lastName;
-
-
-}//end of setLastName
-
-
-//overloading equality operator
-bool Customer::operator==(Customer &custom)const
-{
-	if(ID == custom.ID && firstName == custom.firstName && lastName == custom.lastName)
-	{
-		return true;
-	}
-	return false;
-
-}//end of ==overload
-
-
-////overloading not equal operator
-bool Customer::operator !=(Customer &custom)const
-{
-	bool notEqual = *this == custom;
-	return !notEqual;
-
-}//end of != overloading
-
-
-//overloading < operator
-bool Customer::operator >(Customer &custom)const
-{
-	if(this->ID > custom.ID)
-	{
-		return true;
-	}
-
-	else if(this->lastName > custom.lastName)
-	{
-		return true;
-	}
-
-	else 
-	{
-		return firstName > custom.firstName;
-	}
+Customer::Customer(Customer &c){
+	*this = c;
 
 }
 
+//destructor
+Customer:: ~Customer(){
+	ID = 0;
+	name = "";
+}
 
-//overloading > operator
-bool Customer::operator<(Customer &custom)const
-{
+ //return customer ID
+int Customer::getId() const{
+	return ID;
+}
 
-	 bool  lessThan =  *this > custom;
-	 return !lessThan;
+//returns customer name
+string Customer::getName()const{
+	return name;
 
-}//end of > overloading
+}
+
+ //set customer ID
+void Customer::setId(int ID){
+	this->ID = ID;
+
+}
+
+ //set the customer name
+void Customer::setName(string name){
+	this->name = name;
 
 
-// insertion operator (<<) overloading
-ostream& operator<<(ostream &outStream, Customer &custom)
-{
-	outStream << custom.ID << " " << custom.lastName << " " << custom.firstName;
-	return outStream;
+}
 
-}//last name, first name
+//overloaded equality operator
+bool Customer::operator==(Customer &c)const{
+    return ID == c.ID && name == c.name;
+}
 
+//overloaded inequality operator
+bool Customer::operator!=(Customer &c)const{
+	return !(*this == c);
+}
 
+//overloaded comparison operator
+bool Customer::operator >(Customer &c)const{
+	if(this->ID > c.ID){
+		return true;
+	}
 
-// extraction operator (>>) overloading
-istream& operator>>(istream &iStream, Customer &custom)
-{
+	else if(this->ID == c.ID && this->name > c.name){
+	    cerr << "DANGER: ID collision.";
+		return true;
+	}
+	return false;
+}
 
-	iStream >> custom.ID >> custom.lastName >> custom.firstName;
-	return iStream;
-}//end of operator >>
+//overloaded comparison operator
+bool Customer::operator<(Customer &c)const{
+    return !(*this > c);
+}
+
+// overloaded extraction operator
+ostream& operator<<(ostream &out, Customer &c){
+	out << c.ID << " " << c.name;
+	return out;
+}
+
+// overloaded insertion operator
+istream& operator>>(istream &in, Customer &c){
+	in >> c.ID >> c.name;
+	return in;
+}
