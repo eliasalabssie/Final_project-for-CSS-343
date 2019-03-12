@@ -61,8 +61,6 @@ void Customer::setId(int ID){
  //set the customer name
 void Customer::setName(string name){
 	this->name = name;
-
-
 }
 
 //overloaded equality operator
