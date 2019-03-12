@@ -5,16 +5,28 @@
 #include "Blockbuster.h"
 
 Blockbuster::Blockbuster(){
-    set<Movie> movie = {};
-    movies.push_back(movie);
-    customers = {};
-    commands = {};
+    movies;
+    customers;
+    commands;
 }
 
 void Blockbuster::printInventory(){
-    for (int genre = 0; genre < movies.size(); genre++){ //iterating over three genres in Blockbuster
-        for (int movie = 0; movie < movies[genre].size(); movie++){
-            cout << movies[genre][movie];
+    set<int> x;
+    x.insert(9);
+    x.insert(8);
+    for (int p : x){
+        cout << p;
+    }
+
+    //cout << x[0];
+
+    for (int g = 0; g < movies.size(); g++){ //iterating over three genres in Blockbuster
+        for (Movie elem : movies[g]){
+            cout << elem;
+        }
+
+        for (int m = 0; m < movies[g].size(); m++){
+            cout << movies[g][m];
         }
     }
 }

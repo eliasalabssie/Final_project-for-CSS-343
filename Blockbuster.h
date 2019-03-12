@@ -24,7 +24,7 @@ public:
     bool moviereturn(string title);
 
 private:
-    vector<set<Movie>> movies;
+    vector< set<Movie> > movies;
     map<int, Customer> customers;
     vector<Command> commands;
 };

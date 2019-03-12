@@ -21,40 +21,38 @@ Date: March 20, 2019
 #include<iostream>
 #include<string>
 #include<iomanip>
+
 using namespace std;
 
-class Customer
-{
+class Customer {
 
-	friend ostream& operator<<(ostream &outStream, Customer &custom);
-	friend istream& operator>>(istream &iStream, Customer &custom);
+	friend ostream& operator<<(ostream &, Customer &);
+	friend istream& operator>>(istream &, Customer &);
 	
 	public:
+		//constructors
 		Customer();
-    	Customer(int, string, string);
-    	Customer(Customer &custom);
+    	Customer(int, string);
+    	Customer(Customer &);
     	~Customer();
 
     	//getters
     	int getId()const;
-    	string getFisrtName()const;
-    	string getLastName()const;
+    	string getName()const;
 
     	//setters
-    	void setId(int id);
-    	void setFirstName(string);
-    	void setLastName(string);
+    	void setId(int);
+    	void setName(string);
     	
     	//operator overloads
-    	bool operator ==(Customer &custom)const;
-    	bool operator !=(Customer &custom)const;
-    	bool operator<(Customer &custom)const;
-    	bool operator>(Customer &custom)const;
+    	bool operator==(Customer &)const;
+    	bool operator!=(Customer &)const;
+    	bool operator<(Customer &)const;
+    	bool operator>(Customer &)const;
     
 
 	private:
 		int ID;
-        string firstName;
-        string lastName;	
+        string name;
 };
 #endif
