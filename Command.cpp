@@ -21,10 +21,21 @@ Command::Command(){
 
 //inventory command
 Command::Command(char action) : action(action) {
+    int ID = -1;
+    format = '\0';
+    genre =  '\0';
+    month = -1;
+    year = -1;
+    actor = "";
 }
 
 //history command
 Command::Command(char action, int ID) : action(action), ID(ID) {
+    format = '\0';
+    genre =  '\0';
+    month = -1;
+    year = -1;
+    actor = "";
 }
 
 //borrow/return command for classic movie
