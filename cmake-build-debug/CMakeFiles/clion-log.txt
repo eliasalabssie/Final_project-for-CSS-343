@@ -1,0 +1,4 @@
+C:\Users\lloyd\.CLion2018.3\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug

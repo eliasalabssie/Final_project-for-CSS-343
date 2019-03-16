@@ -26,7 +26,8 @@ void Blockbuster::printInventory(){
         }
 
         for (int m = 0; m < movies[g].size(); m++){
-            cout << movies[g][m];
+            //cout << movies[g][m];
+            int x = *std::next(movies.begin(), m);
         }
     }
 }

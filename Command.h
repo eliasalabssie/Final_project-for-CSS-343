@@ -11,6 +11,8 @@ class Command {
 
 public:
     Command();
+    Command(char);
+    Command(char, int);
     Command(char, int, char, char, string, int);
     Command(char, int, char, char, int, int, string);
     ~Command();
