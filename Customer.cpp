@@ -32,7 +32,6 @@ Customer::Customer(int id, string name){
 //copy constructor
 Customer::Customer(Customer &c){
 	*this = c;
-
 }
 
 //destructor
