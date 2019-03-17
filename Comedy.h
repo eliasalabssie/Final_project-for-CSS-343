@@ -31,7 +31,7 @@ class Comedy:public Movie
 		//constr/destr
 		Comedy();
 		Comedy(int, string, string, string);
-		Comedy(Comedy&);
+		Comedy(Comedy& const);
 		~Comedy();
 		
 
