@@ -42,11 +42,11 @@ Comedy::Comedy(int amount, string director, string title, string year)
 //---------------------------------------- Comedy(int, string, string, string)-------------
 //copy constr
 //-----------------------------------------------------------------------------------------
-Comedy::Comedy(Comedy &comedy)
-{
-
-	*this  = comedy;
-
+Comedy::Comedy(Comedy& other const){
+	setStock(other.getStock());
+	setDirector(other.getDirector());
+	setTitle(other.getTitle());
+	seReleaseYear(other.getReleaseYear());
 }
 
 
