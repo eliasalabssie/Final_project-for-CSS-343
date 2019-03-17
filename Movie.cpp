@@ -19,8 +19,7 @@ Movie:: Movie(){
 	this->genre = '\0';
 	this->stock = 0;
 	this->title = "";
-}//end of movie
-
+}
 
 //--------------- Movie-------------------------------------------------------------
 // Description: construct the movie class form genre, stock, and title
@@ -29,89 +28,84 @@ Movie::Movie(char genre, int stock, string title){
 	this->genre = genre;
 	this->stock = stock;
 	this->title = title;
-}//end of Movie(char, int, string) 
-
-
+}
 
 // ------------------------- Movie(Movie&) --------------------------------------------
 // Description: copy construcotor
 // ----------------------------------------------------------------------------------------
 Movie::Movie(const Movie &movie){
 	*this = movie;
-}//end of Movie(const Movie&)
-
+}
 
 // destructor -------------- ~Movie -------------------------------------------------------
 // Description: destructor
 // ----------------------------------------------------------------------------------------
 Movie::~Movie(){
-
-}//end 
+	this->genre = '\0';
+	this->stock = 0;
+	this->title = "";
+}
 
 //---------------------------------- getStock ------------------------------------------
 //returns stock
 //---------------------------------------------------------------------------------------  
- int Movie::getStock() const{
- 	return stock;
- }//end
-
+int Movie::getStock() const{
+	return stock;
+}
 
 //----------------------------------------- getGenre ------------------------------------
- //returns genre(the char symball of the movie)
- //--------------------------------------------------------------------------------------
- char Movie:: getGenre() const{
- 	return genre;
- }//end
+//returns genre(the char symball of the movie)
+//--------------------------------------------------------------------------------------
+char Movie:: getGenre() const{
+	return genre;
+}
 
-
- //----------------------------------------- getTittle ----------------------------------
- //return tittle of the movie
- //--------------------------------------------------------------------------------------
+//----------------------------------------- getTittle ----------------------------------
+//return tittle of the movie
+//--------------------------------------------------------------------------------------
 string Movie::getTitle() const{
 	return title;
-}//end
-		
-		
+}
+
 //----------------------------------------- setStock ----------------------------------
- //updates the amount of movie in teh store to indicated value
- //--------------------------------------------------------------------------------------		
- void Movie::setStock(int stock){
- 	this->stock = stock;
- }//end
+//updates the amount of movie in teh store to indicated value
+//--------------------------------------------------------------------------------------
+void Movie::setStock(int stock){
+	this->stock = stock;
+}
 
+//----------------------------------------- setGenre ----------------------------------
+//changes the movie genre to the indicated symbol
+//--------------------------------------------------------------------------------------
+void Movie::setGenre(char genre){
+	this->genre = genre;
+}
 
- //----------------------------------------- setGenre ----------------------------------
- //changes the movie genre to the indicated symbol
- //--------------------------------------------------------------------------------------		
- void Movie::setGenre(char genre){
- 	this->genre = genre;
- }//end
+//----------------------------------------- setTitle -----------------------------------
+//Changes the title
+//--------------------------------------------------------------------------------------
+void Movie:: setTitle(string title){
+	this->title = title;
+}
 
-
- //----------------------------------------- setTitle -----------------------------------
- //Changes the title
- //--------------------------------------------------------------------------------------		
- void Movie:: setTitle(string title){
- 	this->title = title;
- }//end
-
-
+//----------------------------------------- == -----------------------------------
 // equality operator
- bool Movie::operator ==(const Movie &movie) const{
- 		// check for equality. but doesn't compare by stock data memeber
- 		if(genre == movie.genre && title == movie.title){
- 			return true;
- 		}
- 		return false;
- }
+// --------------------------------------------------------------------------------------
+bool Movie::operator ==(const Movie &movie) const{
+		// check for equality. but doesn't compare by stock data memeber
+		if(genre == movie.genre && title == movie.title){
+			return true;
+		}
+		return false;
+}
 
- // inequality operator
- bool Movie::operator !=(const Movie& movie) const{
+//----------------------------------------- != -----------------------------------
+// inequality operator
+// --------------------------------------------------------------------------------------
+bool Movie::operator !=(const Movie& movie) const{
 	bool notEqual = *this == movie;
 	return !notEqual;
 }
-
-
 
 //------------------------------------ operator<<  --------------------------------------------
 ostream& operator<<(ostream &o, Movie &movie){

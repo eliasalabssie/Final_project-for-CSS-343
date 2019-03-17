@@ -9,51 +9,50 @@ Date: March 20, 2019
 //Parent: Movie.h
 //Chil: None
 
-//description: interface for the Comedy class. 
+//description: interface for the Comedy class.
 
 //---------------------------------------------------------------------
 */
 #ifndef Comedy_H
 #define Comedy_H
 
-#include<iostream>
 #include<string>
+#include<iostream>
 #include"Movie.h"
+
 using namespace std;
 
-
-class Comedy:public Movie
-{
-	
-	
+class Comedy:public Movie{
 	public:
-	
-		//constr/destr
+		//constructors
 		Comedy();
-		Comedy(int, string, string, string);
+		Comedy(int, string, string, int);
 		Comedy(const Comedy&);
+
+		//destructor
 		~Comedy();
-		
 
-		// Getters
+		// getters
 		string getDirector() const;
-		string getYear() const;
-		
+		int getYear() const;
 
-		// Setters
-		void setDirector(string director);
-		void setYear(string year) ;
-		
-		
+		// setters
+		void setDirector(string);
+		void setYear(int) ;
+
 		// operator overloads
-		bool operator==(const Comedy& movie) const;
-		bool operator!=(const Comedy& movie) const;
-		bool operator>(Comedy &comedy)const;
-		bool operator<(Comedy&comedy)const;
+		bool operator==(const Comedy&) const;
+		bool operator!=(const Comedy&) const;
+		bool operator>(const Comedy&) const;
+		bool operator<(const Comedy&) const;
+
+		//miscellaneous
+		bool isIncomplete() const;
+		string toString() const;
 
 	private:
 		const char genre = 'f';
 		string director;
 		int year;
 };
-#endif 
+#endif

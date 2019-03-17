@@ -6,53 +6,53 @@ Date: March 20, 2019
 //--------------------------------------------------------------------------------
 
 //------------------------ Drama.h -----------------------------------
-//Parent: Movie
+//Parent: Movie.h
 //Chil: None
 
-//description: interface for the Drama class. 
+//description: interface for the Drama class.
 
 //---------------------------------------------------------------------
 */
-
 #ifndef DRAMA_H
 #define DRAMA_H
 
-#include"Movie.h"
-#include<iostream>
 #include<string>
+#include<iostream>
+#include"Movie.h"
+
 using namespace std;
 
-
-class Drama:public Movie
-{
-
+class Drama:public Movie{
 	public:
-	
-		//constructors/destructor
+		//constructors
 		Drama();
-		Drama(int stock, string director, string title, string year);
+		Drama(int, string, string, int);
 		Drama(const Drama&);
+
+		//destructor
 		~Drama();
 
-		// Getters
-		string getDirector() const ;
-		string getYear() const;
+		// getters
+		string getDirector() const;
+		int getYear() const;
 
-		// Setters
-		void setDirector(string director);
-		void setYear(string year) ;
-		
-		
+		// setters
+		void setDirector(string);
+		void setYear(int);
+
 		// operator overloads
-		bool operator==(const Drama& ) const;
-		bool operator!=(const Drama& ) const;
-		bool operator>(const Drama &)const;
-		bool operator<(const Drama &)const;
+		bool operator==(const Drama&) const;
+		bool operator!=(const Drama&) const;
+		bool operator>(const Drama&) const;
+		bool operator<(const Drama&) const;
+
+		//miscellaneous
+		bool isIncomplete() const;
+		string toString() const;
 
 	private:
+		const char genre = 'd';
 		string director;
-		string year;
-	
+		int year;
 };
 #endif
-

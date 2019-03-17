@@ -18,7 +18,7 @@ Date: March 20, 2019
 #include <sstream>
 
 //---------------------------------------- Classic --------------------------------------
-//constr
+// default constructor
 //-----------------------------------------------------------------------------------------
 Classic::Classic(){
 	this->setGenre('c');
@@ -31,7 +31,7 @@ Classic::Classic(){
 }
 
 //---------------------------------------- Classic --------------------------------------
-//constr
+// constructor with fields
 //-----------------------------------------------------------------------------------------
 Classic::Classic(int stock, string director, string title, string actor, int month, int year){
 	this->setGenre('c');
@@ -44,7 +44,7 @@ Classic::Classic(int stock, string director, string title, string actor, int mon
 }
 
 //---------------------------------------- Classic --------------------------------------
-//copy constr
+// copy constructor
 //-----------------------------------------------------------------------------------------
 Classic::Classic(const Classic& other) {
 	this->setGenre(other.getGenre());

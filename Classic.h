@@ -15,13 +15,14 @@ Date: March 20, 2019
 */
 #ifndef CLASSIC_H
 #define CLASSIC_H
+
 #include<string>
 #include<iostream>
 #include"Movie.h"
 
 using namespace std;
 
-class Classic: public Movie	{
+class Classic:public Movie{
 	public:
 		// constructors
 		Classic();
@@ -37,7 +38,7 @@ class Classic: public Movie	{
 		int getMonth() const;
 		int getYear() const;
 
-		// Setters
+		// setters
 		void setDirector(string);
 		void setActor(string);
 		void setMonth(int);

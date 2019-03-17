@@ -9,7 +9,7 @@ Date: March 20, 2019
 //Parent: Movie
 //Child: None
 
-//description: implementation for the Comedy class. 
+//description: implementation for the Comedy class.
 
 //-------------------------------------------------------------------------------------
 */
@@ -17,8 +17,8 @@ Date: March 20, 2019
 #include"Comedy.h"
 #include <sstream>
 
-//---------------------------------------- Comedy ------------------------------------------
-//constr
+//---------------------------------------- Comedy() ------------------------------------------
+// default constructor
 //-----------------------------------------------------------------------------------------
 Comedy::Comedy(){
 	this->setGenre('c');
@@ -29,141 +29,125 @@ Comedy::Comedy(){
 }
 
 //---------------------------------------- Comedy(int, string, string, string)-------------
-//constr
+// constructor with fields
 //-----------------------------------------------------------------------------------------
-Comedy::Comedy(int amount, string director, string title, string year)  
-{
-	this->setStock(amount);
-	this->director = director;
+Comedy::Comedy(int stock, string director, string title, int year){
+	this->setGenre('c');
+	this->setStock(stock);
+	this->setDirector(director);
 	this->setTitle(title);
-	this->year = year;
+	this->setYear(year);
 }
 
-//---------------------------------------- Comedy(int, string, string, string)-------------
-//copy constr
+//---------------------------------------- Comedy(Comedy)-------------
+// copy constructor
 //-----------------------------------------------------------------------------------------
 Comedy::Comedy(const Comedy& other){
-	setStock(other.getStock());
-	setDirector(other.getDirector());
-	setTitle(other.getTitle());
-	seReleaseYear(other.getReleaseYear());
+	this->setGenre(other.getGenre());
+	this->setStock(other.getStock());
+	this->setDirector(other.getDirector());
+	this->setTitle(other.getTitle());
+	this->setYear(other.getYear());
 }
-
 
 //---------------------------------------- ~Comedy ----------------------------------------
 //destructor 
 //-----------------------------------------------------------------------------------------
-Comedy::~Comedy()
-{
-
-
+Comedy::~Comedy(){
+	this->setGenre('c');
+	this->setStock(0);
+	this->setDirector("");
+	this->setTitle("");
+	this->setYear(-1);
 }
-	
 
 //---------------------------------------- getDirector ------------------------------------
 //returns the Comedy movie director
 //-----------------------------------------------------------------------------------------
-string Comedy::getDirector() const 
-{
+string Comedy::getDirector() const{
 	return director;
-
 }
-
 
 //---------------------------------------- getYear ------------------------------------
 //returns the Comedy movie release year
 //-----------------------------------------------------------------------------------------
-string Comedy::getYear() const
-{
+int Comedy::getYear() const{
 	return year;
-
 }
-
 
 //---------------------------------------- setDirector ------------------------------------
-//sets the Comedy movie director 
+//sets the Comedy movie director
 //-----------------------------------------------------------------------------------------
-void Comedy::setDirector(string director)
-{
-
+void Comedy::setDirector(string director){
 	this->director = director;
-	
 }
-
 
 //---------------------------------------- setYear --- ------------------------------------
 //sets the Comedy movie year
 //-----------------------------------------------------------------------------------------
-void Comedy::setYear(string year) 
-{
-
+void Comedy::setYear(int year){
 	this->year = year;
-	
 }
 
+//---------------------------------------- == --------------------------
+//compares the Comedy movie by date published and actor
+//----------------------------------------------------------------------------------------
+bool Comedy::operator==(const Comedy& other) const{
+	return (getDirector() == other.getDirector()) &&
+		   (getTitle() == other.getTitle()) &&
+		   (getYear() == other.getYear());
+}
 
-//---------------------------------------- operator ==  -----------------------------------
-//comepares Comedy movies
-//-----------------------------------------------------------------------------------------
- bool Comedy:: operator==(const Comedy& movie) const
- {
+//---------------------------------------- != --------------------------
+//compares the Comedy movie by date published and actor
+//----------------------------------------------------------------------------------------
+bool Comedy::operator!=(const Comedy& other) const{
+	return !(*this == other);
+}
 
- 	if(director == movie.director && this->getTitle() == movie.getTitle() && year == movie.year)  
- 		{
- 			return true;
-
- 		}
-
- 		return false;		
-
- }
-
-
-//---------------------------------------- operator!=  -----------------------------------
-//comepares Comedy movies by their title and year released
-//-----------------------------------------------------------------------------------------
- bool Comedy::operator!=(const Comedy& movie) const
- {
- 		bool notEqual = (*this == movie);
- 		return !notEqual;
-
- }
-
-
-//---------------------------------------- operator > -----------------------------------
-//comepares Comedy movies by their title and year released
-//-----------------------------------------------------------------------------------------
-bool Comedy::operator>(Comedy &comedy)const
-{
-	if(this->getTitle() > comedy.getTitle())
-	{
+//---------------------------------------- > --------------------------
+//compares the Comedy movie by date published and actor
+//----------------------------------------------------------------------------------------
+bool Comedy::operator>(const Comedy& other) const{
+	//compare by title
+	if(getTitle().compare(other.getTitle()) > 0){
 		return true;
 	}
-	
-	return this->year > comedy.year;
 
+	//compare by year
+	else if(this->getYear() > other.getYear()){
+		return true;
+	}
+	return false;
 }
 
-
-//---------------------------------------- operator <  -----------------------------------
-//comepares Comedy movies by their title and year released
-//-----------------------------------------------------------------------------------------
-bool Comedy::operator<(Comedy&comedy)const
-{
-
-	bool lessThan = (*this > comedy);
-	return !lessThan;
-
+//---------------------------------------- < --------------------------
+//compares the Comedy movie by date published and actor
+//----------------------------------------------------------------------------------------
+bool Comedy::operator<(const Comedy &other)const{
+	return !(*this > other | *this == other);
 }
 
+//---------------------------------------- isIncomplete --------------------------
+//Helper method to ensure that a Comedy Movie is proper
+//----------------------------------------------------------------------------------------
+bool Comedy::isIncomplete() const{
+	return (getGenre() != 'f') || (getStock() < 0) || (getDirector().compare("") == 0) ||
+		   (getTitle().compare("") == 0);
+}
 
+//---------------------------------------- toString --------------------------
+//outputs string format of a Comedy Movie object
+//----------------------------------------------------------------------------------------
+string Comedy::toString() const{
+	if(isIncomplete()){
+		return "";
+	}
 
+	string genreString(1, getGenre());
+	string stockString = static_cast<ostringstream*>( &(ostringstream() << getStock()) )->str();
+	string yearString = static_cast<ostringstream*>( &(ostringstream() << getYear()) )->str();
 
-
-
-
-
-
-
-	
-
+	return  genreString + "" + stockString + "" + getDirector() + "" + getTitle() + ""  + yearString;
+}
+//end of Comedy.cpp

@@ -14,6 +14,13 @@ CMakeFiles/assignment4.dir/Classic.cpp.o
  /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Classic.cpp
  /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Classic.h
  /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.h
+CMakeFiles/assignment4.dir/Comedy.cpp.o
+ /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Comedy.cpp
+ /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Comedy.h
+ /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.h
+CMakeFiles/assignment4.dir/Command.cpp.o
+ /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Command.cpp
+ /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/command.h
 CMakeFiles/assignment4.dir/Customer.cpp.o
  /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Customer.cpp
  /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Customer.h
@@ -26,9 +33,6 @@ CMakeFiles/assignment4.dir/Movie.cpp.o
  /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.h
 CMakeFiles/assignment4.dir/MovieDriver.cpp.o
  /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/MovieDriver.cpp
-CMakeFiles/assignment4.dir/command.cpp.o
- /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/command.cpp
- /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/command.h
 CMakeFiles/assignment4.dir/driver.cpp.o
  /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Blockbuster.h
  /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Customer.h
