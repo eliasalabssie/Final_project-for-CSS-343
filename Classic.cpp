@@ -52,12 +52,15 @@ Classic::Classic(int stock, string directorFirstName, string directorLastName, s
 //---------------------------------------- Classic --------------------------------------
 //copy constr
 //-----------------------------------------------------------------------------------------
-Classic::Classic(Classic &classics)
-{
-
-	*this  = classics;
-
+Classic::Classic(Classic& other const){
+	this->genre = other.getGenre();
+	setStock(other.getStock());
+	setDirector(other.getDirector());
+	setTitle(other.getTitle());
+	setReleaseMonth(other.getReleaseMonth());
+	seReleaseYear(other.getReleaseYear());
 }
+
 
 
 //---------------------------------------- ~Classic --------------------------------------
