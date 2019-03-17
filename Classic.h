@@ -21,53 +21,42 @@ Date: March 20, 2019
 
 using namespace std;
 
-
-class Classic: public Movie
-{
-
-
+class Classic: public Movie	{
 	public:
-		
+		// constructors
 		Classic();
-		
-		Classic(int stock, string directorFirstName, string directorLastName, string title, 
-						string majorAfirstName, string majorAlastName, string date, string year);
-		
+		Classic(int, string, string, string, int, int);
 		Classic(Classic&);
 		~Classic();
 
-		
-		// Getters
-		string getDirectorFirstName() const;
-		string getDirectorLastName() const;
-		string getMajorActorFirstName()const;
-		string getMajorActorLastName()const;
-		string getDate()const;
-		string getYear()const;
+		// getters
+		string getDirector() const;
+		string getActor() const;
+		int getMonth() const;
+		int getYear() const;
 		
 
 		// Setters
-		void setDirectorFirstName(string);
-		void setDirectorLastName(string);
-		void setMajorActorFirstName(string);
-		void setMajorActorLastName(string);
-		void setDtate(string);
-		void setYear(string);
+		void setDirector(string);
+		void setActor(string);
+		void setMonth(int);
+		void setYear(int);
 		
 		// operator overloads
 		bool operator==(const Classic&) const;
 		bool operator!=(const Classic&) const;
-		bool operator>(const Classic &)const;
-		bool operator<(const Classic &)const;
+		bool operator>(const Classic&) const;
+		bool operator<(const Classic&) const;
+
+		//miscellaneous
+		bool isIncomplete() const;
+		string toString() const;
 
 	private:
-
-		string dirctorFirstName;
-		string dirctorLastName;
-		string majorActorFirstName;
-		string majorActorLastName;
-		string date;
-		string year;
-		
+		const char genre = 'c';
+		string director;
+		string actor;
+		int month;
+		int year;
 };
 #endif

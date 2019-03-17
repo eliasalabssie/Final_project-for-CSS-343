@@ -10,6 +10,7 @@ using namespace std;
 
 int main(){
     Blockbuster b();  // TODO(me): add this thing into the data
+
     ifstream commands ("data4commands.txt");
     string line;
     if (commands.is_open()){

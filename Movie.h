@@ -22,16 +22,12 @@ Date: March 20, 2019
 #include<iostream>
 using namespace std;
 
-
-class Movie
-{
-
+class Movie{
 	//friend classes
 	friend ostream& operator<<(ostream &outStream, Movie &movie);
 	friend istream& operator>>(istream &iStream, Movie &movie);
 
 	public:
-
 		Movie();
 		Movie(char, int, string);
 		Movie(const Movie &movie);
@@ -41,26 +37,17 @@ class Movie
 		virtual int getStock() const; 
 		virtual char getGenre() const; 
 		virtual string getTitle() const; 
-		
-		
+
 		// Setters
-		virtual void setStock(int stock);
-		virtual void setGenre(char genr);
-		virtual void setTitle(string title);
+		virtual void setStock(int);
+		virtual void setGenre(char);
+		virtual void setTitle(string);
 		virtual bool operator ==(const Movie& ) const;
 		virtual bool operator !=(const Movie& ) const;
-		
-
-		
-		
 
 	private:
-	
 		char genre;
 		int stock;
 		string title;
-		
-
 };
 #endif
-

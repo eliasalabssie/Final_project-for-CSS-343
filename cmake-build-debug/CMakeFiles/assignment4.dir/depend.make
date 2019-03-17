@@ -24,14 +24,6 @@ CMakeFiles/assignment4.dir/Drama.cpp.o: ../Movie.h
 CMakeFiles/assignment4.dir/Movie.cpp.o: ../Movie.cpp
 CMakeFiles/assignment4.dir/Movie.cpp.o: ../Movie.h
 
-CMakeFiles/assignment4.dir/MovieDriver.cpp.o: ../Classic.cpp
-CMakeFiles/assignment4.dir/MovieDriver.cpp.o: ../Classic.h
-CMakeFiles/assignment4.dir/MovieDriver.cpp.o: ../Comedy.cpp
-CMakeFiles/assignment4.dir/MovieDriver.cpp.o: ../Comedy.h
-CMakeFiles/assignment4.dir/MovieDriver.cpp.o: ../Drama.cpp
-CMakeFiles/assignment4.dir/MovieDriver.cpp.o: ../Drama.h
-CMakeFiles/assignment4.dir/MovieDriver.cpp.o: ../Movie.cpp
-CMakeFiles/assignment4.dir/MovieDriver.cpp.o: ../Movie.h
 CMakeFiles/assignment4.dir/MovieDriver.cpp.o: ../MovieDriver.cpp
 
 CMakeFiles/assignment4.dir/command.cpp.o: ../command.cpp
