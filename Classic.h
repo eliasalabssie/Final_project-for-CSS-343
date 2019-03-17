@@ -33,7 +33,7 @@ class Classic: public Movie
 		Classic(int stock, string directorFirstName, string directorLastName, string title, 
 						string majorAfirstName, string majorAlastName, string date, string year);
 		
-		Classic(Classic&);
+		Classic(Classic& const);
 		~Classic();
 
 		
