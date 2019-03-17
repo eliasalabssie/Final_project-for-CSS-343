@@ -27,6 +27,8 @@ class Classic: public Movie	{
 		Classic();
 		Classic(int, string, string, string, int, int);
 		Classic(const Classic&);
+
+		// destructor
 		~Classic();
 
 		// getters
@@ -34,7 +36,6 @@ class Classic: public Movie	{
 		string getActor() const;
 		int getMonth() const;
 		int getYear() const;
-
 
 		// Setters
 		void setDirector(string);

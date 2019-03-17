@@ -60,7 +60,13 @@ Classic::Classic(const Classic& other) {
 //destructor
 //-----------------------------------------------------------------------------------------
 Classic::~Classic(){
-
+	this->setGenre('c');
+	this->setStock(0);
+	this->setDirector("");
+	this->setTitle("");
+	this->setActor("");
+	this->setMonth(-1);
+	this->setYear(-1);
 }
 
 //---------------------------------------- getDirector ----------------------------
@@ -167,12 +173,18 @@ bool Classic:: operator<(const Classic &other)const{
 	return !(*this > other | *this == other);
 }
 
+//---------------------------------------- isIncomplete --------------------------
+//Helper method to ensure that a Classic Movie is proper
+//----------------------------------------------------------------------------------------
 bool Classic::isIncomplete() const{
 	return (getGenre() != 'c') || (getStock() < 0) || (getDirector().compare("") == 0) ||
 		   (getTitle().compare("") == 0) || (getActor().compare("") == 0) ||
 		   (getMonth() < 0) || (getYear() < 0);
 }
 
+//---------------------------------------- toString --------------------------
+//outputs string format of a Classic Movie object
+//----------------------------------------------------------------------------------------
 string Classic::toString() const{
 	if(isIncomplete()){
 		return "";
