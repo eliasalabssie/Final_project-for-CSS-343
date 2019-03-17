@@ -46,11 +46,11 @@ Drama::Drama(int amount, string director, string title, string year)
 //---------------------------------------- Drama(Drama&)------------------------------
 // Description: construct Drama class from onother Drama object
 //-------------------------------------------------------------------------------------
-Drama::Drama(const Drama &drama)
-{
-
-	*this  = drama;
-
+Drama::Drama(Drama& other const){
+	setStock(other.getStock());
+	setDirector(other.getDirector());
+	setTitle(other.getTitle());
+	seReleaseYear(other.getReleaseYear());
 }
 
 
