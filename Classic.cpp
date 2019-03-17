@@ -46,9 +46,15 @@ Classic::Classic(int stock, string director, string title, string actor, int mon
 //---------------------------------------- Classic --------------------------------------
 //copy constr
 //-----------------------------------------------------------------------------------------
-//Classic::Classic(const Classic& c)const{ //TODO: Change this to Antong's copy constructor when he uploads
-//	*this  = classics;
-//}
+Classic::Classic(const Classic& other) {
+	this->setGenre(other.getGenre());
+	this->setStock(other.getStock());
+	this->setDirector(other.getDirector());
+	this->setTitle(other.getTitle());
+	this->setActor(other.getActor());
+	this->setMonth(other.getMonth());
+	this->setYear(other.getYear());
+}
 
 //---------------------------------------- ~Classic --------------------------------------
 //destructor

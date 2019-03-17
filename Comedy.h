@@ -31,7 +31,7 @@ class Comedy:public Movie
 		//constr/destr
 		Comedy();
 		Comedy(int, string, string, string);
-		Comedy(Comedy&);
+		Comedy(const Comedy&);
 		~Comedy();
 		
 
@@ -52,9 +52,8 @@ class Comedy:public Movie
 		bool operator<(Comedy&comedy)const;
 
 	private:
+		const char genre = 'f';
 		string director;
-		string year;
-
-	
+		int year;
 };
 #endif 

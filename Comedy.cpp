@@ -7,7 +7,7 @@ Date: March 20, 2019
 
 //------------------------ Comedy.cpp -------------------------------------------------
 //Parent: Movie
-//Chil: None
+//Child: None
 
 //description: implementation for the Comedy class. 
 
@@ -15,17 +15,17 @@ Date: March 20, 2019
 */
 
 #include"Comedy.h"
+#include <sstream>
 
 //---------------------------------------- Comedy ------------------------------------------
 //constr
 //-----------------------------------------------------------------------------------------
-Comedy::Comedy()
-{
+Comedy::Comedy(){
+	this->setGenre('c');
 	this->setStock(0);
-	this->director = "";
+	this->setDirector("");
 	this->setTitle("");
-	this->year = "";
-	 
+	this->setYear(-1);
 }
 
 //---------------------------------------- Comedy(int, string, string, string)-------------
@@ -42,11 +42,11 @@ Comedy::Comedy(int amount, string director, string title, string year)
 //---------------------------------------- Comedy(int, string, string, string)-------------
 //copy constr
 //-----------------------------------------------------------------------------------------
-Comedy::Comedy(Comedy &comedy)
-{
-
-	*this  = comedy;
-
+Comedy::Comedy(const Comedy& other){
+	setStock(other.getStock());
+	setDirector(other.getDirector());
+	setTitle(other.getTitle());
+	seReleaseYear(other.getReleaseYear());
 }
 
 

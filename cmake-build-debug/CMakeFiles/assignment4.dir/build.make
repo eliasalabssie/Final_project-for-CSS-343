@@ -96,22 +96,35 @@ CMakeFiles/assignment4.dir/Classic.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/assignment4.dir/Classic.cpp.s"
 	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Classic.cpp -o CMakeFiles/assignment4.dir/Classic.cpp.s
 
-CMakeFiles/assignment4.dir/command.cpp.o: CMakeFiles/assignment4.dir/flags.make
-CMakeFiles/assignment4.dir/command.cpp.o: ../command.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/assignment4.dir/command.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/assignment4.dir/command.cpp.o -c /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/command.cpp
+CMakeFiles/assignment4.dir/Comedy.cpp.o: CMakeFiles/assignment4.dir/flags.make
+CMakeFiles/assignment4.dir/Comedy.cpp.o: ../Comedy.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/assignment4.dir/Comedy.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/assignment4.dir/Comedy.cpp.o -c /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Comedy.cpp
 
-CMakeFiles/assignment4.dir/command.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/assignment4.dir/command.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/command.cpp > CMakeFiles/assignment4.dir/command.cpp.i
+CMakeFiles/assignment4.dir/Comedy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/assignment4.dir/Comedy.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Comedy.cpp > CMakeFiles/assignment4.dir/Comedy.cpp.i
 
-CMakeFiles/assignment4.dir/command.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/assignment4.dir/command.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/command.cpp -o CMakeFiles/assignment4.dir/command.cpp.s
+CMakeFiles/assignment4.dir/Comedy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/assignment4.dir/Comedy.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Comedy.cpp -o CMakeFiles/assignment4.dir/Comedy.cpp.s
+
+CMakeFiles/assignment4.dir/Command.cpp.o: CMakeFiles/assignment4.dir/flags.make
+CMakeFiles/assignment4.dir/Command.cpp.o: ../Command.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/assignment4.dir/Command.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/assignment4.dir/Command.cpp.o -c /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Command.cpp
+
+CMakeFiles/assignment4.dir/Command.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/assignment4.dir/Command.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Command.cpp > CMakeFiles/assignment4.dir/Command.cpp.i
+
+CMakeFiles/assignment4.dir/Command.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/assignment4.dir/Command.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Command.cpp -o CMakeFiles/assignment4.dir/Command.cpp.s
 
 CMakeFiles/assignment4.dir/Customer.cpp.o: CMakeFiles/assignment4.dir/flags.make
 CMakeFiles/assignment4.dir/Customer.cpp.o: ../Customer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/assignment4.dir/Customer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/assignment4.dir/Customer.cpp.o"
 	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/assignment4.dir/Customer.cpp.o -c /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Customer.cpp
 
 CMakeFiles/assignment4.dir/Customer.cpp.i: cmake_force
@@ -124,7 +137,7 @@ CMakeFiles/assignment4.dir/Customer.cpp.s: cmake_force
 
 CMakeFiles/assignment4.dir/Drama.cpp.o: CMakeFiles/assignment4.dir/flags.make
 CMakeFiles/assignment4.dir/Drama.cpp.o: ../Drama.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/assignment4.dir/Drama.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/assignment4.dir/Drama.cpp.o"
 	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/assignment4.dir/Drama.cpp.o -c /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Drama.cpp
 
 CMakeFiles/assignment4.dir/Drama.cpp.i: cmake_force
@@ -137,7 +150,7 @@ CMakeFiles/assignment4.dir/Drama.cpp.s: cmake_force
 
 CMakeFiles/assignment4.dir/Movie.cpp.o: CMakeFiles/assignment4.dir/flags.make
 CMakeFiles/assignment4.dir/Movie.cpp.o: ../Movie.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/assignment4.dir/Movie.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/assignment4.dir/Movie.cpp.o"
 	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/assignment4.dir/Movie.cpp.o -c /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.cpp
 
 CMakeFiles/assignment4.dir/Movie.cpp.i: cmake_force
@@ -150,7 +163,7 @@ CMakeFiles/assignment4.dir/Movie.cpp.s: cmake_force
 
 CMakeFiles/assignment4.dir/MovieDriver.cpp.o: CMakeFiles/assignment4.dir/flags.make
 CMakeFiles/assignment4.dir/MovieDriver.cpp.o: ../MovieDriver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/assignment4.dir/MovieDriver.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/assignment4.dir/MovieDriver.cpp.o"
 	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/assignment4.dir/MovieDriver.cpp.o -c /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/MovieDriver.cpp
 
 CMakeFiles/assignment4.dir/MovieDriver.cpp.i: cmake_force
@@ -166,7 +179,8 @@ assignment4_OBJECTS = \
 "CMakeFiles/assignment4.dir/driver.cpp.o" \
 "CMakeFiles/assignment4.dir/Blockbuster.cpp.o" \
 "CMakeFiles/assignment4.dir/Classic.cpp.o" \
-"CMakeFiles/assignment4.dir/command.cpp.o" \
+"CMakeFiles/assignment4.dir/Comedy.cpp.o" \
+"CMakeFiles/assignment4.dir/Command.cpp.o" \
 "CMakeFiles/assignment4.dir/Customer.cpp.o" \
 "CMakeFiles/assignment4.dir/Drama.cpp.o" \
 "CMakeFiles/assignment4.dir/Movie.cpp.o" \
@@ -178,14 +192,15 @@ assignment4_EXTERNAL_OBJECTS =
 assignment4.exe: CMakeFiles/assignment4.dir/driver.cpp.o
 assignment4.exe: CMakeFiles/assignment4.dir/Blockbuster.cpp.o
 assignment4.exe: CMakeFiles/assignment4.dir/Classic.cpp.o
-assignment4.exe: CMakeFiles/assignment4.dir/command.cpp.o
+assignment4.exe: CMakeFiles/assignment4.dir/Comedy.cpp.o
+assignment4.exe: CMakeFiles/assignment4.dir/Command.cpp.o
 assignment4.exe: CMakeFiles/assignment4.dir/Customer.cpp.o
 assignment4.exe: CMakeFiles/assignment4.dir/Drama.cpp.o
 assignment4.exe: CMakeFiles/assignment4.dir/Movie.cpp.o
 assignment4.exe: CMakeFiles/assignment4.dir/MovieDriver.cpp.o
 assignment4.exe: CMakeFiles/assignment4.dir/build.make
 assignment4.exe: CMakeFiles/assignment4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable assignment4.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable assignment4.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/assignment4.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

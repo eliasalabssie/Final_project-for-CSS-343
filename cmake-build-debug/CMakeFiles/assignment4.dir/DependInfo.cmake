@@ -6,11 +6,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Blockbuster.cpp" "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles/assignment4.dir/Blockbuster.cpp.o"
   "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Classic.cpp" "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles/assignment4.dir/Classic.cpp.o"
+  "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Comedy.cpp" "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles/assignment4.dir/Comedy.cpp.o"
+  "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Command.cpp" "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles/assignment4.dir/Command.cpp.o"
   "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Customer.cpp" "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles/assignment4.dir/Customer.cpp.o"
   "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Drama.cpp" "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles/assignment4.dir/Drama.cpp.o"
   "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.cpp" "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles/assignment4.dir/Movie.cpp.o"
   "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/MovieDriver.cpp" "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles/assignment4.dir/MovieDriver.cpp.o"
-  "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/command.cpp" "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles/assignment4.dir/command.cpp.o"
   "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/driver.cpp" "/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/cmake-build-debug/CMakeFiles/assignment4.dir/driver.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

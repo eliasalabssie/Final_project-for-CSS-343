@@ -9,8 +9,10 @@ add_executable(assignment4
         Blockbuster.h
         Classic.cpp
         Classic.h
-        command.cpp
-        command.h
+        Comedy.cpp
+        Comedy.h
+        Command.cpp
+        Command.h
         Customer.cpp
         Customer.h
         Drama.cpp

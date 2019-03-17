@@ -26,7 +26,7 @@ class Classic: public Movie	{
 		// constructors
 		Classic();
 		Classic(int, string, string, string, int, int);
-		Classic(Classic&);
+		Classic(const Classic&);
 		~Classic();
 
 		// getters
@@ -34,14 +34,14 @@ class Classic: public Movie	{
 		string getActor() const;
 		int getMonth() const;
 		int getYear() const;
-		
+
 
 		// Setters
 		void setDirector(string);
 		void setActor(string);
 		void setMonth(int);
 		void setYear(int);
-		
+
 		// operator overloads
 		bool operator==(const Classic&) const;
 		bool operator!=(const Classic&) const;

@@ -92,6 +92,18 @@
 		<Unit filename="/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Classic.h">
 			<Option target="assignment4"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Comedy.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Comedy.h">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Command.cpp">
+			<Option target="assignment4"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Command.h">
+			<Option target="assignment4"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Customer.cpp">
 			<Option target="assignment4"/>
 		</Unit>
@@ -111,12 +123,6 @@
 			<Option target="assignment4"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/MovieDriver.cpp">
-			<Option target="assignment4"/>
-		</Unit>
-		<Unit filename="/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/command.cpp">
-			<Option target="assignment4"/>
-		</Unit>
-		<Unit filename="/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/command.h">
 			<Option target="assignment4"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/driver.cpp">

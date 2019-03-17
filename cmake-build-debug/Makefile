@@ -177,6 +177,60 @@ Classic.cpp.s:
 	$(MAKE) -f CMakeFiles/assignment4.dir/build.make CMakeFiles/assignment4.dir/Classic.cpp.s
 .PHONY : Classic.cpp.s
 
+Comedy.o: Comedy.cpp.o
+
+.PHONY : Comedy.o
+
+# target to build an object file
+Comedy.cpp.o:
+	$(MAKE) -f CMakeFiles/assignment4.dir/build.make CMakeFiles/assignment4.dir/Comedy.cpp.o
+.PHONY : Comedy.cpp.o
+
+Comedy.i: Comedy.cpp.i
+
+.PHONY : Comedy.i
+
+# target to preprocess a source file
+Comedy.cpp.i:
+	$(MAKE) -f CMakeFiles/assignment4.dir/build.make CMakeFiles/assignment4.dir/Comedy.cpp.i
+.PHONY : Comedy.cpp.i
+
+Comedy.s: Comedy.cpp.s
+
+.PHONY : Comedy.s
+
+# target to generate assembly for a file
+Comedy.cpp.s:
+	$(MAKE) -f CMakeFiles/assignment4.dir/build.make CMakeFiles/assignment4.dir/Comedy.cpp.s
+.PHONY : Comedy.cpp.s
+
+Command.o: Command.cpp.o
+
+.PHONY : Command.o
+
+# target to build an object file
+Command.cpp.o:
+	$(MAKE) -f CMakeFiles/assignment4.dir/build.make CMakeFiles/assignment4.dir/Command.cpp.o
+.PHONY : Command.cpp.o
+
+Command.i: Command.cpp.i
+
+.PHONY : Command.i
+
+# target to preprocess a source file
+Command.cpp.i:
+	$(MAKE) -f CMakeFiles/assignment4.dir/build.make CMakeFiles/assignment4.dir/Command.cpp.i
+.PHONY : Command.cpp.i
+
+Command.s: Command.cpp.s
+
+.PHONY : Command.s
+
+# target to generate assembly for a file
+Command.cpp.s:
+	$(MAKE) -f CMakeFiles/assignment4.dir/build.make CMakeFiles/assignment4.dir/Command.cpp.s
+.PHONY : Command.cpp.s
+
 Customer.o: Customer.cpp.o
 
 .PHONY : Customer.o
@@ -285,33 +339,6 @@ MovieDriver.cpp.s:
 	$(MAKE) -f CMakeFiles/assignment4.dir/build.make CMakeFiles/assignment4.dir/MovieDriver.cpp.s
 .PHONY : MovieDriver.cpp.s
 
-command.o: command.cpp.o
-
-.PHONY : command.o
-
-# target to build an object file
-command.cpp.o:
-	$(MAKE) -f CMakeFiles/assignment4.dir/build.make CMakeFiles/assignment4.dir/command.cpp.o
-.PHONY : command.cpp.o
-
-command.i: command.cpp.i
-
-.PHONY : command.i
-
-# target to preprocess a source file
-command.cpp.i:
-	$(MAKE) -f CMakeFiles/assignment4.dir/build.make CMakeFiles/assignment4.dir/command.cpp.i
-.PHONY : command.cpp.i
-
-command.s: command.cpp.s
-
-.PHONY : command.s
-
-# target to generate assembly for a file
-command.cpp.s:
-	$(MAKE) -f CMakeFiles/assignment4.dir/build.make CMakeFiles/assignment4.dir/command.cpp.s
-.PHONY : command.cpp.s
-
 driver.o: driver.cpp.o
 
 .PHONY : driver.o
@@ -354,6 +381,12 @@ help:
 	@echo "... Classic.o"
 	@echo "... Classic.i"
 	@echo "... Classic.s"
+	@echo "... Comedy.o"
+	@echo "... Comedy.i"
+	@echo "... Comedy.s"
+	@echo "... Command.o"
+	@echo "... Command.i"
+	@echo "... Command.s"
 	@echo "... Customer.o"
 	@echo "... Customer.i"
 	@echo "... Customer.s"
@@ -366,9 +399,6 @@ help:
 	@echo "... MovieDriver.o"
 	@echo "... MovieDriver.i"
 	@echo "... MovieDriver.s"
-	@echo "... command.o"
-	@echo "... command.i"
-	@echo "... command.s"
 	@echo "... driver.o"
 	@echo "... driver.i"
 	@echo "... driver.s"
