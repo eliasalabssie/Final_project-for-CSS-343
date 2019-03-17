@@ -31,7 +31,7 @@ class Drama:public Movie
 		//constructors/destructor
 		Drama();
 		Drama(int stock, string director, string title, string year);
-		Drama(const Drama &drama);
+		Drama(const Drama&);
 		~Drama();
 
 		// Getters
