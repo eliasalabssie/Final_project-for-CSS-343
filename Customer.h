@@ -18,9 +18,8 @@ Date: March 20, 2019
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 
-#include<iostream>
-#include<string>
-#include<iomanip>
+#include <iostream>
+#include <string>
 
 using namespace std;
 

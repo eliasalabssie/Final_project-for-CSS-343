@@ -3,12 +3,13 @@
 
 CMakeFiles/assignment4.dir/Blockbuster.cpp.o: ../Blockbuster.cpp
 CMakeFiles/assignment4.dir/Blockbuster.cpp.o: ../Blockbuster.h
-CMakeFiles/assignment4.dir/Blockbuster.cpp.o: ../Customer.h
+CMakeFiles/assignment4.dir/Blockbuster.cpp.o: ../Classic.h
+CMakeFiles/assignment4.dir/Blockbuster.cpp.o: ../Comedy.h
+CMakeFiles/assignment4.dir/Blockbuster.cpp.o: ../Drama.h
 CMakeFiles/assignment4.dir/Blockbuster.cpp.o: ../Movie.h
-CMakeFiles/assignment4.dir/Blockbuster.cpp.o: ../command.cpp
 CMakeFiles/assignment4.dir/Blockbuster.cpp.o: ../command.h
-CMakeFiles/assignment4.dir/Blockbuster.cpp.o: ../customer.cpp
-CMakeFiles/assignment4.dir/Blockbuster.cpp.o: ../movie.cpp
+CMakeFiles/assignment4.dir/Blockbuster.cpp.o: ../customer.h
+CMakeFiles/assignment4.dir/Blockbuster.cpp.o: ../movie.h
 
 CMakeFiles/assignment4.dir/Classic.cpp.o: ../Classic.cpp
 CMakeFiles/assignment4.dir/Classic.cpp.o: ../Classic.h
@@ -19,7 +20,7 @@ CMakeFiles/assignment4.dir/Comedy.cpp.o: ../Comedy.h
 CMakeFiles/assignment4.dir/Comedy.cpp.o: ../Movie.h
 
 CMakeFiles/assignment4.dir/Command.cpp.o: ../Command.cpp
-CMakeFiles/assignment4.dir/Command.cpp.o: ../command.h
+CMakeFiles/assignment4.dir/Command.cpp.o: ../Command.h
 
 CMakeFiles/assignment4.dir/Customer.cpp.o: ../Customer.cpp
 CMakeFiles/assignment4.dir/Customer.cpp.o: ../Customer.h
@@ -31,14 +32,15 @@ CMakeFiles/assignment4.dir/Drama.cpp.o: ../Movie.h
 CMakeFiles/assignment4.dir/Movie.cpp.o: ../Movie.cpp
 CMakeFiles/assignment4.dir/Movie.cpp.o: ../Movie.h
 
+CMakeFiles/assignment4.dir/MovieDriver.cpp.o: ../Classic.h
+CMakeFiles/assignment4.dir/MovieDriver.cpp.o: ../Comedy.h
+CMakeFiles/assignment4.dir/MovieDriver.cpp.o: ../Drama.h
+CMakeFiles/assignment4.dir/MovieDriver.cpp.o: ../Movie.h
 CMakeFiles/assignment4.dir/MovieDriver.cpp.o: ../MovieDriver.cpp
 
 CMakeFiles/assignment4.dir/driver.cpp.o: ../Blockbuster.h
-CMakeFiles/assignment4.dir/driver.cpp.o: ../Customer.h
-CMakeFiles/assignment4.dir/driver.cpp.o: ../Movie.h
-CMakeFiles/assignment4.dir/driver.cpp.o: ../command.cpp
 CMakeFiles/assignment4.dir/driver.cpp.o: ../command.h
-CMakeFiles/assignment4.dir/driver.cpp.o: ../customer.cpp
+CMakeFiles/assignment4.dir/driver.cpp.o: ../customer.h
 CMakeFiles/assignment4.dir/driver.cpp.o: ../driver.cpp
-CMakeFiles/assignment4.dir/driver.cpp.o: ../movie.cpp
+CMakeFiles/assignment4.dir/driver.cpp.o: ../movie.h
 

@@ -4,7 +4,9 @@
 
 #ifndef ASSIGNMENT4_COMMAND_H
 #define ASSIGNMENT4_COMMAND_H
+
 #include <string>
+
 using namespace std;
 
 class Command {

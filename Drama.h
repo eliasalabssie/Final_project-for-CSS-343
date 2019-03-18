@@ -16,9 +16,9 @@ Date: March 20, 2019
 #ifndef DRAMA_H
 #define DRAMA_H
 
-#include<string>
-#include<iostream>
-#include"Movie.h"
+#include <string>
+#include <iostream>
+#include "Movie.h"
 
 using namespace std;
 

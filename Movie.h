@@ -18,8 +18,9 @@ Date: March 20, 2019
 #ifndef MOVIE_H
 #define MOVIE_H
 
-#include<string>
-#include<iostream>
+#include <string>
+#include <iostream>
+
 using namespace std;
 
 class Movie{

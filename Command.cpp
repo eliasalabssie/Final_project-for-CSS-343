@@ -2,9 +2,8 @@
 // Created by lloyd on 2019.03.06.
 //
 
-#include <string>
 #include <sstream>
-#include "command.h"
+#include "Command.h"
 
 using namespace std;
 
