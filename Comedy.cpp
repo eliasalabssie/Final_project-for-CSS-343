@@ -115,8 +115,10 @@ bool Comedy::operator>(const Comedy& other) const{
 	}
 
 	//compare by year
-	else if(this->getYear() > other.getYear()){
-		return true;
+	else if(getTitle().compare(other.getTitle()) == 0){
+		if(this->getYear() > other.getYear()){
+			return true;
+		}
 	}
 
 	return false;
