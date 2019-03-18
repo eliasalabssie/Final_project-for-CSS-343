@@ -153,17 +153,20 @@ bool Classic:: operator>(const Classic &other)const{
 	}
 
 	//compare by date
-	else if(this->getMonth() > other.getMonth()){
-		return true;
+	else if (this->getYear() == other.getYear()){
+		if(this->getMonth() > other.getMonth()){
+			return true;
+		}
+		//compare by actor
+		else if(this->getMonth() == other.getMonth()){
+			if (this->getActor() > other.getActor()){
+				return true;
+			}
+		}	
 	}
-
-	//compare by actor
-	else if (this->getActor() > other.getActor()){
-		return true;
-	}
-
 	return false;
 }
+
 
 //---------------------------------------- < --------------------------
 //compares the Classic movie by date published and actor
