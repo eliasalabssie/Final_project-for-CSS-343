@@ -17,9 +17,9 @@ Date: March 20, 2019
 #include"Drama.h"
 #include <sstream>
 
-//---------------------------------------- Drama() ------------------------------------------
-// default constructor
-//-----------------------------------------------------------------------------------------
+//------------------------------------ Drama -----------------------------------------
+// Description: empty construct of Drama class
+//-----------------------------------------------------------------------------------
 Drama::Drama(){
 	this->setGenre('c');
 	this->setStock(0);
@@ -29,8 +29,8 @@ Drama::Drama(){
 }
 
 //---------------------------------------- Drama(int, string, string, string)-------------
-// constructor with fields
-//-----------------------------------------------------------------------------------------
+// Description: construct Drama class from director and year published
+// -----------------------------------------------------------------------------------------
 Drama::Drama(int stock, string director, string title, int year){
 	this->setGenre('c');
 	this->setStock(stock);
@@ -39,9 +39,9 @@ Drama::Drama(int stock, string director, string title, int year){
 	this->setYear(year);
 }
 
-//---------------------------------------- Drama(Drama)-------------
-// copy constructor
-//-----------------------------------------------------------------------------------------
+//---------------------------------------- Drama(Drama&)------------------------------
+// Description: construct Drama class from another Drama object
+//-------------------------------------------------------------------------------------
 Drama::Drama(const Drama& other){
 	this->setGenre(other.getGenre());
 	this->setStock(other.getStock());
@@ -50,9 +50,9 @@ Drama::Drama(const Drama& other){
 	this->setYear(other.getYear());
 }
 
-//---------------------------------------- ~Drama ----------------------------------------
-//destructor
-//-----------------------------------------------------------------------------------------
+//---------------------------------------- ~Drama ------------------------------------
+// Description: destructs the Drama object
+//-------------------------------------------------------------------------------------
 Drama::~Drama(){
 	this->setGenre('c');
 	this->setStock(0);
@@ -61,69 +61,78 @@ Drama::~Drama(){
 	this->setYear(-1);
 }
 
-//---------------------------------------- getDirector ------------------------------------
-//returns the Drama movie director
-//-----------------------------------------------------------------------------------------
+//---------------------------------------- getDirector -----------------------------
+// Description: returns the director of the Movie
+//-------------------------------------------------------------------------------------
 string Drama::getDirector() const{
 	return director;
 }
 
-//---------------------------------------- getYear ------------------------------------
-//returns the Drama movie release year
-//-----------------------------------------------------------------------------------------
+//---------------------------------------- getYear -----------------------------
+// Description: returns the year that the Movie published
+//-------------------------------------------------------------------------------------
 int Drama::getYear() const{
 	return year;
 }
 
-//---------------------------------------- setDirector ------------------------------------
-//sets the Drama movie director
-//-----------------------------------------------------------------------------------------
+//---------------------------------------- setDirector -----------------------------
+// Description: sets the director data member
+//-------------------------------------------------------------------------------------
 void Drama::setDirector(string director){
 	this->director = director;
 }
 
-//---------------------------------------- setYear ---------------------------------------
-//sets the Drama movie year
-//-----------------------------------------------------------------------------------------
+//---------------------------------------- setYear ----------------------------------
+// Description: sets the year to the argument year
+//-------------------------------------------------------------------------------------
 void Drama::setYear(int year){
 	this->year = year;
 }
 
-//---------------------------------------- == --------------------------
-//compares the Drama movie by date published and actor
-//----------------------------------------------------------------------------------------
+//--------------------------------- operator== ----------------------------------------------
+//description: compare two Drama objects
+//Pre: Drama movies with the same director and title but different year of release. are
+//considered to be different(for inventory purpuse).
+//--------------------------------------------------------------------------------------------
 bool Drama::operator==(const Drama& other) const{
 	return (getDirector() == other.getDirector()) &&
 		   (getTitle() == other.getTitle()) &&
 		   (getYear() == other.getYear());
 }
 
-//---------------------------------------- != --------------------------
-//compares the Drama movie by date published and actor
-//----------------------------------------------------------------------------------------
+//------------------------------------- operator != -----------------------------------------
+//description: compare two Drama objects
+//Pre: Drama movies with the same director and title but different year of release. are
+//considered to be different(for inventory purpuse).
+//--------------------------------------------------------------------------------------------
 bool Drama::operator!=(const Drama& other) const{
 	return !(*this == other);
 }
 
-//---------------------------------------- > --------------------------
-//compares the Drama movie by date published and actor
-//----------------------------------------------------------------------------------------
+//------------------------------------- operator > -----------------------------------------
+//description: compare two Drama objects
+//Pre: Drama movies with the same director and title but different year of release. are
+//considered to be different(for inventory purpuse).
+//--------------------------------------------------------------------------------------------
 bool Drama::operator>(const Drama& other) const{
-	//compare by title
-	if(getTitle().compare(other.getTitle()) > 0){
+	//compare by director
+	if (this->getDirector() > (other.getDirector())){
 		return true;
 	}
 
-		//compare by year
-	else if(this->getYear() > other.getYear()){
+	//compare by title
+	else if(this->getTitle() > other.getTitle()){
 		return true;
 	}
+
 	return false;
 }
 
-//---------------------------------------- < --------------------------
-//compares the Drama movie by date published and actor
-//----------------------------------------------------------------------------------------
+//------------------------------------- operator < -----------------------------------------
+//description: compare two Drama objects
+//Pre: Drama movies with the same director and title but different year of release. are
+//considered to be different(for inventory purpuse).
+//--------------------------------------------------------------------------------------------
 bool Drama::operator<(const Drama &other)const{
 	return !(*this > other | *this == other);
 }
@@ -150,4 +159,3 @@ string Drama::toString() const{
 
 	return  genreString + "" + stockString + "" + getDirector() + "" + getTitle() + ""  + yearString;
 }
-//end of Drama.cpp

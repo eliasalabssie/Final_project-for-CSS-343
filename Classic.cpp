@@ -104,7 +104,6 @@ void Classic::setDirector(string director){
 	 this->director = director;
 }
 
-
 //---------------------------------------- setActor --------------------------
 //sets majorActorLastName 
 //----------------------------------------------------------------------------------------
@@ -129,7 +128,7 @@ void Classic::setYear(int year){
 //---------------------------------------- == --------------------------
 //compares the Classic movie by date published and actor
 //----------------------------------------------------------------------------------------
- bool Classic::operator==(const Classic& other) const{
+bool Classic::operator==(const Classic& other) const{
 	return (getDirector() == other.getDirector()) &&
 		   (getTitle() == other.getTitle()) &&
 		   (getActor() == other.getActor()) &&
@@ -140,31 +139,31 @@ void Classic::setYear(int year){
 //---------------------------------------- != --------------------------
 //compares the Classic movie by date published and actor
 //----------------------------------------------------------------------------------------
- bool Classic::operator!=(const Classic& other) const{
+bool Classic::operator!=(const Classic& other) const{
 	 return !(*this == other);
- }
+}
 
- //---------------------------------------- > --------------------------
+//---------------------------------------- > --------------------------
 //compares the Classic movie by date published and actor
 //----------------------------------------------------------------------------------------
- bool Classic:: operator>(const Classic &other)const{
- 	//compare by year
- 	if(this->getYear() > other.getYear()){
- 		return true;
- 	}
+bool Classic:: operator>(const Classic &other)const{
+	//compare by year
+	if(this->getYear() > other.getYear()){
+		return true;
+	}
 
- 	//compare by date
- 	else if(this->getMonth() > other.getMonth()){
- 		return true;
- 	}
+	//compare by date
+	else if(this->getMonth() > other.getMonth()){
+		return true;
+	}
 
- 	//compare by actor
- 	else if (this->getActor() > other.getActor()){
- 		return true;
- 	}
+	//compare by actor
+	else if (this->getActor() > other.getActor()){
+		return true;
+	}
 
- 	return false;
- }
+	return false;
+}
 
 //---------------------------------------- < --------------------------
 //compares the Classic movie by date published and actor
@@ -197,4 +196,3 @@ string Classic::toString() const{
 
 	return  genreString + "" + stockString + "" + getDirector() + "" + getTitle() + "" + getActor() + "" + monthString + "" + yearString;
 }
- //end of Classic.cpp

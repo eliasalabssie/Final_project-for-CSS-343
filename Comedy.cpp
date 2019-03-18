@@ -118,6 +118,7 @@ bool Comedy::operator>(const Comedy& other) const{
 	else if(this->getYear() > other.getYear()){
 		return true;
 	}
+
 	return false;
 }
 
@@ -150,4 +151,3 @@ string Comedy::toString() const{
 
 	return  genreString + "" + stockString + "" + getDirector() + "" + getTitle() + ""  + yearString;
 }
-//end of Comedy.cpp
