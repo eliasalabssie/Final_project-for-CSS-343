@@ -116,17 +116,20 @@ bool Drama::operator!=(const Drama& other) const{
 //--------------------------------------------------------------------------------------------
 bool Drama::operator>(const Drama& other) const{
 	//compare by director
-	if (this->getDirector() > (other.getDirector())){
+	if (this->getDirector() > other.getDirector()){
 		return true;
 	}
 
 	//compare by title
-	else if(this->getTitle() > other.getTitle()){
-		return true;
+	else if(this->getDirector() == other.getDirector()){
+		if(this->getTitle() > other.getTitle()){
+			return true;
+		}
 	}
 
 	return false;
 }
+
 
 //------------------------------------- operator < -----------------------------------------
 //description: compare two Drama objects
