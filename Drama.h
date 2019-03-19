@@ -27,7 +27,7 @@ class Drama:public Movie{
 		//constructors
 		Drama();
 		Drama(int, string, string, int);
-		Drama(const Drama&);
+		Drama(const Drama &);
 
 		//destructor
 		~Drama();

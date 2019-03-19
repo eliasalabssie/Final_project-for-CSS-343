@@ -34,8 +34,10 @@ Movie::Movie(char genre, int stock, string title){
 // ------------------------- Movie(Movie&) --------------------------------------------
 // Description: copy construcotor
 // ----------------------------------------------------------------------------------------
-Movie::Movie(const Movie &movie){
-	*this = movie;
+Movie::Movie(const Movie &other){
+	this->genre = other.genre;
+	this->stock = other.stock;
+	this->title = other.title;
 }
 
 // destructor -------------- ~Movie -------------------------------------------------------

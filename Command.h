@@ -5,7 +5,7 @@
 #ifndef ASSIGNMENT4_COMMAND_H
 #define ASSIGNMENT4_COMMAND_H
 
-#include <string>
+//#include <string>
 
 using namespace std;
 
@@ -17,6 +17,7 @@ public:
     Command(char, int);
     Command(char, int, char, char, string, int);
     Command(char, int, char, char, int, int, string);
+    Command(const Command &);
     ~Command();
     string toString();
     int getID();

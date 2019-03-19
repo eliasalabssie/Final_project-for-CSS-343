@@ -19,7 +19,7 @@ Date: March 20, 2019
 #define CUSTOMER_H
 
 #include <iostream>
-#include <string>
+//#include <string>
 
 using namespace std;
 
@@ -32,7 +32,7 @@ class Customer {
 		//constructors
 		Customer();
     	Customer(int, string);
-    	Customer(Customer &);
+    	Customer(const Customer &);
     	~Customer();
 
     	//getters

@@ -27,7 +27,7 @@ class Classic:public Movie{
 		// constructors
 		Classic();
 		Classic(int, string, string, string, int, int);
-		Classic(const Classic&);
+		Classic(const Classic &);
 
 		// destructor
 		~Classic();

@@ -27,7 +27,7 @@ class Comedy:public Movie{
 		//constructors
 		Comedy();
 		Comedy(int, string, string, int);
-		Comedy(const Comedy&);
+		Comedy(const Comedy &);
 
 		//destructor
 		~Comedy();

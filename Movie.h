@@ -18,7 +18,7 @@ Date: March 20, 2019
 #ifndef MOVIE_H
 #define MOVIE_H
 
-#include <string>
+//#include <string>
 #include <iostream>
 
 using namespace std;
@@ -31,7 +31,7 @@ class Movie{
 	public:
 		Movie();
 		Movie(char, int, string);
-		Movie(const Movie &movie);
+		Movie(const Movie &);
 		virtual ~Movie();
 
 		// Getters

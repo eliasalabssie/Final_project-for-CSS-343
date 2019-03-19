@@ -18,12 +18,15 @@ Date: March 20, 2019
 #ifndef ASSIGNMENT4_BLOCKBUSTER_H
 #define ASSIGNMENT4_BLOCKBUSTER_H
 
-#include "movie.h"
-#include "customer.h"
-#include "command.h"
+#include "Customer.h"
+#include "Command.h"
+#include "Movie.h"
+//#include "Classic.h"
+//#include "Comedy.h"
+//#include "Drama.h"
 
-#include <set>
 #include <vector>
+#include <set>
 #include <map>
 
 using namespace std;
@@ -31,7 +34,7 @@ using namespace std;
 class Blockbuster {
 public:
     Blockbuster();
-    Blockbuster(Blockbuster &);
+    //Blockbuster(const Blockbuster &);
     ~Blockbuster();
     void printInventory();
     void printHistory(int);

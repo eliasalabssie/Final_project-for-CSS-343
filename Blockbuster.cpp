@@ -14,22 +14,18 @@ Date: March 20, 2019
 //-------------------------------------------------------------------------------------
 */
 
-#include <iostream>
-#include <string>
+//#include <iostream>
+//#include <string>
 
 #include "Blockbuster.h"
-#include "Movie.h"
-#include "Classic.h"
-#include "Comedy.h"
-#include "Drama.h"
 
-//Blockbuster::Blockbuster(){
+Blockbuster::Blockbuster(){
 //    movies;
 //    customers;
 //    commands;
-//}
+}
 //
-//Blockbuster::Blockbuster(Blockbuster &other){
+//Blockbuster::Blockbuster(const Blockbuster &other){
 //    this->movies = other.movies;
 //    this->customers = other.customers;
 //    this->commands = other.commands;
@@ -89,98 +85,98 @@ Date: March 20, 2019
 //        }
 //    }
 //}
-
-void Blockbuster::BuildCommands(istream& inFile){
-    char action;
-    int ID;
-    char media;
-    char genre;
-
-}
-
-void Blockbuster::BuildCustomers(istream& inFile){
-    int ID;
-    string lastName, firstName, name;
-    for(;;){
-        inFile >> ID >> lastName >> firstName;
-        name = firstName + " " + lastName;
-        //Customer* temp = new Customer(ID, name);
-        /*
-            Now, insert temp into data structure
-        */
-        //temp = nullptr;
-        if(inFile.eof()){
-            break;
-        }
-    }
-}
-
-void Blockbuster::BuildMovies(istream& inFile){
-    char genre;
-    int stock, releaseMonth, releaseYear;
-    string director, title, actor;
-    string temp;
-    for(;;){
-        genre = inFile.get();
-        if(genre == 'C'){
-            getline(inFile, temp, ',');
-            stock = atoi(temp.c_str());
-            getline(inFile, temp, ',');
-            director = temp;
-            getline(inFile, temp, ',');
-            title = temp;
-            for(;;){
-                getline(inFile, temp, ' ');
-                string::const_iterator findInt = temp.begin();
-                while(findInt != temp.end() && isdigit(*findInt)){
-                    findInt++;
-                }
-                if(!temp.empty() && findInt == temp.end()){
-                    releaseMonth = atoi(temp.c_str());
-                    break;
-                }
-                else{
-                    actor += temp;
-                    continue;
-                }
-            }
-            getline(inFile, temp, '\n');
-            releaseYear = atoi(temp.c_str());
-            Classic input(stock, director, title, actor, releaseMonth, releaseYear);
-            /*
-                put the object in the data structure
-            */
-        }
-        else if (genre == 'D'){
-            getline(inFile, temp, ',');
-            stock = atoi(temp.c_str());
-            getline(inFile, temp, ',');
-            director = temp;
-            getline(inFile, temp, ',');
-            title = temp;
-            temp = inFile.get();
-            releaseYear = atoi(temp.c_str());
-            Drama input(stock, director, title, releaseYear);
-            getline(inFile, temp, '\n');
-        }
-        else if (genre == 'F'){
-            getline(inFile, temp, ',');
-            stock = atoi(temp.c_str());
-            getline(inFile, temp, ',');
-            director = temp;
-            getline(inFile, temp, ',');
-            title = temp;
-            temp = inFile.get();
-            releaseYear = atoi(temp.c_str());
-            Drama input(stock, director, title, releaseYear);
-            getline(inFile, temp, '\n');
-        }
-        else{
-            getline(inFile, temp, '\n');
-            continue;
-        }
-        if(inFile.eof()){
-            break;
-        }
-    }
-}
+//
+//void Blockbuster::BuildCommands(istream& inFile){
+//    char action;
+//    int ID;
+//    char media;
+//    char genre;
+//
+//}
+//
+//void Blockbuster::BuildCustomers(istream& inFile){
+//    int ID;
+//    string lastName, firstName, name;
+//    for(;;){
+//        inFile >> ID >> lastName >> firstName;
+//        name = firstName + " " + lastName;
+//        //Customer* temp = new Customer(ID, name);
+//        /*
+//            Now, insert temp into data structure
+//        */
+//        //temp = nullptr;
+//        if(inFile.eof()){
+//            break;
+//        }
+//    }
+//}
+//
+//void Blockbuster::BuildMovies(istream& inFile){
+//    char genre;
+//    int stock, releaseMonth, releaseYear;
+//    string director, title, actor;
+//    string temp;
+//    for(;;){
+//        genre = inFile.get();
+//        if(genre == 'C'){
+//            getline(inFile, temp, ',');
+//            stock = atoi(temp.c_str());
+//            getline(inFile, temp, ',');
+//            director = temp;
+//            getline(inFile, temp, ',');
+//            title = temp;
+//            for(;;){
+//                getline(inFile, temp, ' ');
+//                string::const_iterator findInt = temp.begin();
+//                while(findInt != temp.end() && isdigit(*findInt)){
+//                    findInt++;
+//                }
+//                if(!temp.empty() && findInt == temp.end()){
+//                    releaseMonth = atoi(temp.c_str());
+//                    break;
+//                }
+//                else{
+//                    actor += temp;
+//                    continue;
+//                }
+//            }
+//            getline(inFile, temp, '\n');
+//            releaseYear = atoi(temp.c_str());
+//            Classic input(stock, director, title, actor, releaseMonth, releaseYear);
+//            /*
+//                put the object in the data structure
+//            */
+//        }
+//        else if (genre == 'D'){
+//            getline(inFile, temp, ',');
+//            stock = atoi(temp.c_str());
+//            getline(inFile, temp, ',');
+//            director = temp;
+//            getline(inFile, temp, ',');
+//            title = temp;
+//            temp = inFile.get();
+//            releaseYear = atoi(temp.c_str());
+//            Drama input(stock, director, title, releaseYear);
+//            getline(inFile, temp, '\n');
+//        }
+//        else if (genre == 'F'){
+//            getline(inFile, temp, ',');
+//            stock = atoi(temp.c_str());
+//            getline(inFile, temp, ',');
+//            director = temp;
+//            getline(inFile, temp, ',');
+//            title = temp;
+//            temp = inFile.get();
+//            releaseYear = atoi(temp.c_str());
+//            Drama input(stock, director, title, releaseYear);
+//            getline(inFile, temp, '\n');
+//        }
+//        else{
+//            getline(inFile, temp, '\n');
+//            continue;
+//        }
+//        if(inFile.eof()){
+//            break;
+//        }
+//    }
+//}

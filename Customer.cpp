@@ -30,7 +30,7 @@ Customer::Customer(int id, string name){
 }
 
 //copy constructor
-Customer::Customer(Customer &c){
+Customer::Customer(const Customer &c){
 	*this = c;
 }
 

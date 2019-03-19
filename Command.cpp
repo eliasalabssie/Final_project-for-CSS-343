@@ -48,6 +48,22 @@ Command::Command(char action, int ID, char format, char genre, int month, int ye
         action(action), ID(ID), format(format), genre(genre), month(month), year(year), actor(actor){
 }
 
+//copy constructor
+Command::Command(const Command &other){
+    this->action = other.action;
+    this->ID = other.ID;
+    this->format = other.format;
+    this->genre = other.genre;
+    this->month = other.month;
+    this->year = other.year;
+    this-> actor = other.actor;
+}
+
+//destructor
+Command::~Command(){
+
+}
+
 //toString command
 string Command::toString(){
     stringstream stream;
