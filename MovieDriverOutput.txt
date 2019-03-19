@@ -7,7 +7,7 @@ is f1 incomplete? : 1
 is f2 equal to f3? : 0
 is f2 not equal to f3? : 1
 is f2 bigger? : 1
-is f3 smaller? : 0
+is f3 smaller? : 1
 is d1 incomplete? : 1
 is d2 equal to d3? : 0
 is d2 not equal to d3? : 1

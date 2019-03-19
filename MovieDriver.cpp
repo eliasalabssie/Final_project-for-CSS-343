@@ -35,5 +35,4 @@ int main(){
 	std::cout << "is d2 bigger? : " << (d2 > d3) << std::endl;
 	std::cout << "is d3 smaller? : " << (d3 < d2) << std::endl;
 	return 0;
-};
-**/
+};**/

@@ -23,21 +23,21 @@ Date: March 20, 2019
 #include "Comedy.h"
 #include "Drama.h"
 
-Blockbuster::Blockbuster(){
-    movies;
-    customers;
-    commands;
-}
-
-Blockbuster::Blockbuster(Blockbuster &other){
-    this->movies = other.movies;
-    this->customers = other.customers;
-    this->commands = other.commands;
-}
-
-Blockbuster::~Blockbuster(){
-}
-
+//Blockbuster::Blockbuster(){
+//    movies;
+//    customers;
+//    commands;
+//}
+//
+//Blockbuster::Blockbuster(Blockbuster &other){
+//    this->movies = other.movies;
+//    this->customers = other.customers;
+//    this->commands = other.commands;
+//}
+//
+//Blockbuster::~Blockbuster(){
+//}
+//
 //void Blockbuster::printInventory(){
 //    for (int g = 0; g < movies.size(); g++){ //iterating over three genres in Blockbuster
 //        for (Movie elem : movies[g]){
