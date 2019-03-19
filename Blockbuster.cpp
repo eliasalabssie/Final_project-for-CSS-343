@@ -129,16 +129,27 @@ void Blockbuster::BuildMovies(istream& inFile){
             director = temp;
             getline(inFile, temp, ',');
             title = temp;
-            getline(inFile, temp, ',');
-            /*
-                now, what's left are the actor's name and month & year of the movie
-                but we have to isolate them into 3 variables before proceeding
-            */
+            for(;;){
+                getline(inFile, temp, ' ');
+                string::const_iterator findInt = temp.begin();
+                while(findInt != temp.end() && isdigit(*findInt)){
+                    findInt++;
+                }
+                if(!temp.empty() && findInt == temp.end()){
+                    releaseMonth = atoi(temp.c_str());
+                    break;
+                }
+                else{
+                    actor += temp;
+                    continue;
+                }
+            }
+            getline(inFile, temp, '\n');
+            releaseYear = atoi(temp.c_str());
             Classic input(stock, director, title, actor, releaseMonth, releaseYear);
             /*
                 put the object in the data structure
             */
-            getline(inFile, temp, '\n');
         }
         else if (genre == 'D'){
             getline(inFile, temp, ',');
