@@ -100,28 +100,37 @@ void Blockbuster::printHistory(int ID){
 //}
 
 bool Blockbuster::movieBorrow(const Command& borrow){
-	if (borrow.getGenre() == 'C'){
-		for(Classic c: classics){
-			if(c.getMonth() == borrow.getMonth() && c.getYear() == borrow.getYear() 
-               && c.getActor() == borrow.getActor()){
-                c.setStock(c.getStock() - 1);
-                return true;
+    if (borrow.getGenre() == 'C'){
+	for(Classic c: classics){
+	    if(c.getMonth() == borrow.getMonth() && c.getYear() == borrow.getYear() 
+               && c.getActor().compare(borrow.getActor()) == 0){
+	        if(c.getStock() > 0){
+                    c.setStock(c.getStock() - 1);
+                    return true;
+		}
+		break;
             }
         }
     }
     else if (borrow.getGenre() == 'F'){
         for(Comedy f: comedies){
-            if(f.getTitle() == borrow.getTitle() && f.getYear() == borrow.getYear()){
-                f.setStock(f.getStock() - 1);
-                return true;
+            if(f.getTitle().compare(borrow.getTitle()) == 0 && f.getYear() == borrow.getYear()){
+		if(f.getStock() > 0){
+                    f.setStock(f.getStock() - 1);
+                    return true;
+		}
+		break;
             }
         }
     }
     else if (borrow.getGenre() == 'D'){
         for(Drama d: dramas){
-            if(d.getDirector() == borrow.getDirector() && d.getTitle() == borrow.getTitle()){
-                d.setStock(d.getStock() - 1);
-                return true;
+            if(d.getDirector().compare(borrow.getDirector()) == 0 && d.getTitle().compare(borrow.getTitle()) == 0){
+		if(d.getStock() > 0){
+		    d.setStock(d.getStock() - 1);
+               	    return true;
+		}
+		break;
             }
         }
     }
@@ -130,18 +139,18 @@ bool Blockbuster::movieBorrow(const Command& borrow){
 }
 
 bool Blockbuster::movieBorrow(const Command& back){
-	if (back.getGenre() == 'C'){
-		for(Classic c: classics){
-			if(c.getMonth() == back.getMonth() && c.getYear() == back.getYear() 
-               && c.getActor() == back.getActor()){
-                c.setStock(c.getStock() + 1);
+    if (back.getGenre() == 'C'){
+        for(Classic c: classics){
+	    if(c.getMonth() == back.getMonth() && c.getYear() == back.getYear() 
+               && c.getActor().compare(back.getActor()) == 0){
+               	c.setStock(c.getStock() + 1);
                 return true;
             }
         }
     }
     else if (back.getGenre() == 'F'){
         for(Comedy f: comedies){
-            if(f.getTitle() == back.getTitle() && f.getYear() == back.getYear()){
+            if(f.getTitle().compare(back.getTitle()) == 0 && f.getYear() == back.getYear()){
                 f.setStock(f.getStock() + 1);
                 return true;
             }
@@ -149,7 +158,7 @@ bool Blockbuster::movieBorrow(const Command& back){
     }
     else if (back.getGenre() == 'D'){
         for(Drama d: dramas){
-            if(d.getDirector() == back.getDirector() && d.getTitle() == back.getTitle()){
+            if(d.getDirector().compare(back.getDirector()) == 0 && d.getTitle().compare(back.getTitle()) == 0){
                 d.setStock(d.getStock() + 1);
                 return true;
             }
@@ -352,3 +361,9 @@ void Blockbuster::PrintMovies() {
     }
     cout << endl;
 }
+
+ℴℴ𝓀𝒾𝒸Today at 3:53 PM
+iirc c++ does it differently than java
+NEW MESSAGES
+ℴℴ𝓀𝒾𝒸Today at 3:53 PM
+the string == is supposd to work
