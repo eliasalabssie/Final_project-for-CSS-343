@@ -97,6 +97,36 @@ void Blockbuster::printInventory() {
 //    }
 //}
 
+bool Blockbuster::movieBorrow(const Command& borrow){
+	if (borrow.getGenre() == 'C'){
+		for(Classic c: classics){
+			if(c.getMonth() == borrow.getMonth() && c.getYear() == borrow.getYear() 
+               && c.getActor() == borrow.getActor()){
+                c.setStock(c.getStock() - 1);
+                return true;
+            }
+        }
+    }
+    else if (borrow.getGenre() == 'F'){
+        for(Comedy f: comedies){
+            if(f.getTitle() == borrow.getTitle() && f.getYear() == borrow.getYear()){
+                f.setStock(f.getStock() - 1);
+                return true;
+            }
+        }
+    }
+    else if (borrow.getGenre() == 'D'){
+        for(Drama d: dramas){
+            if(d.getDirector() == borrow.getDirector() && d.getTitle() == borrow.getTitle()){
+                d.setStock(d.getStock() - 1);
+                return true;
+            }
+        }
+    }
+    cout << "Failed to execute the following command: " << borrow.toString() << endl;
+    return false;
+}
+
 void Blockbuster::BuildCommands(istream& inFile){
     char action;
     int ID;
