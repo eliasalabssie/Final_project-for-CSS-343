@@ -36,7 +36,7 @@ class Command {
         int getYear() const;
         string getActor() const;
         string getDirector() const;
-        string title() const;
+        string getTitle() const;
     
         //miscellaneous
         string toString();
