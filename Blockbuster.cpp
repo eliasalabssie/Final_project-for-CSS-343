@@ -23,8 +23,8 @@ Blockbuster::Blockbuster(){
     vector<set<Movie>> movies;
     //set<Movie> x;
     //movies.insert(x);
-
-    map<int, Customer> customers;
+    map<int, string> customers;
+    //map<int, Customer> customers;
     vector<Command> commands;
 }
 
@@ -97,7 +97,76 @@ void Blockbuster::BuildCommands(istream& inFile){
     int ID;
     char media;
     char genre;
+    string title;
+    string director;
+    string actor;
+    int month;
+    int year;
+    string flush;
+    string temp;
 
+    for(;;){
+        inFile >> action;
+
+        if (action == 'I') {
+            Command insert(action);
+            commands.push_back(insert);
+        }
+        else if (action == 'H') {
+            getline(inFile, temp);
+            ID = stoi(temp);
+            Command insert(action, ID);
+            commands.push_back(insert);
+
+        }
+        else if (action == 'B' | action == 'R') {
+            inFile >> ID >> media >> genre;
+
+            if (genre == 'C'){
+                inFile >> month >> year;
+                getline(inFile, temp);
+                actor = temp;
+
+                Command insert(action, ID, media, genre, month, year, actor);
+                commands.push_back(insert);
+            }
+            else if (genre == 'D'){
+                getline(inFile, temp, ',');
+                director = temp;
+                getline(inFile, temp, ',');
+                title = temp;
+
+                Command insert(action, ID, media, genre, director, title);
+                commands.push_back(insert);
+            }
+            else if (genre == 'F'){
+                getline(inFile, temp, ',');
+                title = temp;
+                inFile >> year;
+
+                Command insert(action, ID, media, genre, title, year);
+                commands.push_back(insert);
+            }
+            else{
+                cout << "Invalid video code." << endl;
+                getline(inFile, flush, '\n');//no nonsense
+            }
+        }
+        else {
+            cout << "Invalid action code." << endl;
+            getline(inFile, flush, '\n');//no nonsense
+        }
+
+        if(inFile.eof()){
+            break;
+        }
+    }
+}
+
+void Blockbuster::PrintCommands() {
+    for (Command c : commands){
+        cout << c << endl;
+    }
 }
 
 void Blockbuster::BuildCustomers(istream& inFile){
@@ -107,13 +176,21 @@ void Blockbuster::BuildCustomers(istream& inFile){
         inFile >> ID >> lastName >> firstName;
         name = firstName + " " + lastName;
         //Customer* temp = new Customer(ID, name);
-        /*
-            Now, insert temp into data structure
-        */
+        //customers.insert(pair<int, Customer>(ID, temp);
+        Customer insert(ID, name);
+        //customers.insert(pair<int, Customer>(ID, insert));
+        //customers[ID] = insert;
+        customers[ID] = name;
         //temp = nullptr;
         if(inFile.eof()){
             break;
         }
+    }
+}
+
+void Blockbuster::PrintCustomers(){
+    for(auto it = customers.cbegin(); it != customers.cend(); ++it) {
+        cout << it->first << " " << it->second << endl;
     }
 }
 

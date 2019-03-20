@@ -10,26 +10,39 @@
 using namespace std;
 
 class Command {
+    //friend classes
+    friend ostream& operator<<(ostream &, Command &);
+    friend istream& operator>>(istream &, Command &);
 
-public:
-    Command();
-    Command(char);
-    Command(char, int);
-    Command(char, int, char, char, string, int);
-    Command(char, int, char, char, int, int, string);
-    Command(const Command &);
-    ~Command();
-    string toString();
-    int getID();
+    public:
+        //constructors
+        Command();
+        Command(char);
+        Command(char, int);
+        Command(char, int, char, char, string, int);
+        Command(char, int, char, char, string, string);
+        Command(char, int, char, char, int, int, string);
+        Command(const Command &);
 
-private:
-    char action;
-    int ID;
-    char format;
-    char genre;
-    int month;
-    int year;
-    string actor;
+        //destructor
+        ~Command();
+
+        //getters
+        int getID();
+
+        //miscellaneous
+        string toString();
+
+    private:
+        char action;
+        int ID;
+        char format;
+        char genre;
+        int month;
+        int year;
+        string actor;
+        string director;
+        string title;
 };
 
 #endif //ASSIGNMENT4_COMMAND_H

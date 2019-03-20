@@ -16,16 +16,20 @@ Command::Command(){
     int month = -1;
     int year = -1;
     string actor = "";
+    string director = "";
+    string title = "";
 }
 
 //inventory command
-Command::Command(char action) : action(action) {
-    int ID = -1;
+Command::Command(char action) : action(action), ID(-1) {
+    //int ID = -1;
     format = '\0';
     genre =  '\0';
     month = -1;
     year = -1;
     actor = "";
+    string director = "";
+    string title = "";
 }
 
 //history command
@@ -35,17 +39,31 @@ Command::Command(char action, int ID) : action(action), ID(ID) {
     month = -1;
     year = -1;
     actor = "";
+    string director = "";
+    string title = "";
 }
 
-//borrow/return command for classic movie
-Command::Command(char action, int ID, char format, char genre, string actor, int year) :
-        action(action), ID(ID), format(format), genre(genre), actor(actor), year(year){
+//borrow/return command for comedy movie
+Command::Command(char action, int ID, char format, char genre, string title, int year) :
+        action(action), ID(ID), format(format), genre(genre), title(title), year(year){
+    director = "";
+    actor = "";
     month = -1;
 }
 
-//borrow/return command for comedy, drama
+//borrow/return command for drama
+Command::Command(char action, int ID, char format, char genre, string director, string title) :
+        action(action), ID(ID), format(format), genre(genre), director(director), title(title){
+    actor = "";
+    month = -1;
+    year = -1;
+}
+
+//borrow/return command for classic
 Command::Command(char action, int ID, char format, char genre, int month, int year, string actor) :
         action(action), ID(ID), format(format), genre(genre), month(month), year(year), actor(actor){
+    director = "";
+    title = "";
 }
 
 //copy constructor
@@ -57,11 +75,33 @@ Command::Command(const Command &other){
     this->month = other.month;
     this->year = other.year;
     this-> actor = other.actor;
+    this->director = other.director;
+    this->title = other.title;
 }
 
 //destructor
 Command::~Command(){
+    char action = '\0';
+    int ID = -1;
+    char format = '\0';
+    char genre = '\0';
+    int month = -1;
+    int year = -1;
+    string actor = "";
+    string director = "";
+    string title = "";
+}
 
+//------------------------------------ operator<<  --------------------------------------------
+ostream& operator<<(ostream &o, Command &other){
+    o << other.toString();
+    return o;
+}
+
+// -------------------------- operator>> ---------------------------------------
+istream& operator>>(istream &i, Command &movie){
+    //i >> movie.genre >> movie.stock >> movie.title; //TODO
+    return i;
 }
 
 //toString command
@@ -75,7 +115,17 @@ string Command::toString(){
     stream.str(""); //Clear buffer
     stream << year;
     string syear = stream.str();
-    return action + sID + format + genre + smonth + syear + actor;
+    string saction(1, action);
+    if (sID == "-1"){
+        sID = "";
+    }
+    if (smonth == "-1"){
+        smonth = "";
+    }
+    if (syear == "-1"){
+        syear = "";
+    }
+    return saction + " " + sID + " " + format + " " + genre + " " + director + " " + title + " " + smonth + " " + syear + " " + actor ;
 }
 
 //ID getter

@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Blockbuster.cpp
-Blockbuster.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Blockbuster.h
-
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Blockbuster.h
 Customer.h
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Customer.h
@@ -63,4 +59,12 @@ Movie.h
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.h
 iostream
 -
+
+/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/driver.cpp
+iostream
+-
+fstream
+-
+Blockbuster.h
+/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Blockbuster.h
 

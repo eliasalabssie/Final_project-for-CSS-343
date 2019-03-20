@@ -41,12 +41,15 @@ public:
     bool movieborrow(string);
     bool moviereturn(string);
     void BuildCommands(istream&);//puts the commands in the data structure
+    void PrintCommands();
     void BuildCustomers(istream&);//puts the customers in the data structure
+    void PrintCustomers();
     void BuildMovies(istream&);//puts the movies in the data structure
 
 private:
     vector<set<Movie>> movies;
-    map<int, Customer> customers;
+    //map<int, Customer> customers;
+    map<int, string> customers;
     vector<Command> commands;
 };
 
