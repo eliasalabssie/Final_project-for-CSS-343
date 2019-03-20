@@ -17,6 +17,12 @@ Command.h
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Command.h
 Movie.h
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.h
+Classic.h
+/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Classic.h
+Comedy.h
+/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Comedy.h
+Drama.h
+/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Drama.h
 vector
 -
 set
@@ -24,12 +30,6 @@ set
 map
 -
 
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Classic.cpp
-sstream
--
-Classic.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Classic.h
-
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Classic.h
 string
 -
@@ -37,12 +37,6 @@ iostream
 -
 Movie.h
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.h
-
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Comedy.cpp
-sstream
--
-Comedy.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Comedy.h
 
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Comedy.h
 string
@@ -52,28 +46,12 @@ iostream
 Movie.h
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.h
 
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Command.cpp
-sstream
--
-Command.h
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Command.h
-
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Command.h
-
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Customer.cpp
-Customer.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Customer.h
 
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Customer.h
 iostream
 -
 
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Drama.cpp
-sstream
--
-Drama.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Drama.h
-
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Drama.h
 string
 -
@@ -82,33 +60,7 @@ iostream
 Movie.h
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.h
 
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.cpp
-Movie.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.h
-
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.h
 iostream
 -
-
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/MovieDriver.cpp
-iostream
--
-string
--
-Movie.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.h
-Classic.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Classic.h
-Comedy.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Comedy.h
-Drama.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Drama.h
-
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/driver.cpp
-iostream
--
-fstream
--
-Blockbuster.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Blockbuster.h
 

@@ -21,9 +21,9 @@ Date: March 20, 2019
 #include "Customer.h"
 #include "Command.h"
 #include "Movie.h"
-//#include "Classic.h"
-//#include "Comedy.h"
-//#include "Drama.h"
+#include "Classic.h"
+#include "Comedy.h"
+#include "Drama.h"
 
 #include <vector>
 #include <set>
@@ -34,7 +34,7 @@ using namespace std;
 class Blockbuster {
 public:
     Blockbuster();
-    //Blockbuster(const Blockbuster &);
+    Blockbuster(const Blockbuster &);
     ~Blockbuster();
     void printInventory();
     void printHistory(int);

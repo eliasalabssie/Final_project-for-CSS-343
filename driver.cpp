@@ -5,18 +5,20 @@
 using namespace std;
 
 int main(){
-    Blockbuster b();  // TODO(me): add this thing into the data
+    Blockbuster b;
 
-    ifstream commands ("data4commands.txt");
-    string line;
-    if (commands.is_open()){
-        while (getline(commands, line)){
-            cout << line << endl;
-        }
-        commands.close();
-    }
-    else{
-        cout << "File not found." << endl;
-    }
+    ifstream movies ("data4movies.txt");
+    b.BuildMovies(movies);
+    b.printInventory();
+    //string line;
+    //if (commands.is_open()){
+    //    while (getline(commands, line)){
+    //        cout << line << endl;
+    //    }
+    //    commands.close();
+    //}
+    //else{
+    //    cout << "File not found." << endl;
+    //}
     return 0;
 }

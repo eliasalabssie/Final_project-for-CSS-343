@@ -25,13 +25,16 @@ using namespace std;
 
 class Movie{
 	//friend classes
-	friend ostream& operator<<(ostream &outStream, Movie &movie);
-	friend istream& operator>>(istream &iStream, Movie &movie);
+	friend ostream& operator<<(ostream &, Movie &);
+	friend istream& operator>>(istream &, Movie &);
 
 	public:
+		//constructors
 		Movie();
 		Movie(char, int, string);
 		Movie(const Movie &);
+
+		//destructor
 		virtual ~Movie();
 
 		// Getters
@@ -45,6 +48,8 @@ class Movie{
 		virtual void setTitle(string);
 		virtual bool operator ==(const Movie& ) const;
 		virtual bool operator !=(const Movie& ) const;
+		bool operator>(const Movie&) const;
+		bool operator<(const Movie&) const;
 
 	private:
 		char genre;

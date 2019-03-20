@@ -140,6 +140,18 @@ bool Drama::operator<(const Drama &other)const{
 	return !(*this > other | *this == other);
 }
 
+//------------------------------------ operator<<  --------------------------------------------
+ostream& operator<<(ostream &o, Drama &other){
+	o << other.toString();
+	return o;
+}
+
+// -------------------------- operator>> ---------------------------------------
+istream& operator>>(istream &i, Drama &other){
+	//i >> movie.genre >> movie.stock >> movie.title; //TODO
+	return i;
+}
+
 //---------------------------------------- isIncomplete --------------------------
 //Helper method to ensure that a Drama Movie is proper
 //----------------------------------------------------------------------------------------
@@ -160,5 +172,5 @@ string Drama::toString() const{
 	string stockString = static_cast<ostringstream*>( &(ostringstream() << getStock()) )->str();
 	string yearString = static_cast<ostringstream*>( &(ostringstream() << getYear()) )->str();
 
-	return  genreString + "" + stockString + "" + getDirector() + "" + getTitle() + ""  + yearString;
+	return  genreString + " " + stockString + " " + getDirector() + " " + getTitle() + " "  + yearString;
 }

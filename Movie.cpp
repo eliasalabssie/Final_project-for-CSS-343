@@ -110,6 +110,9 @@ bool Movie::operator !=(const Movie& movie) const{
 	return !notEqual;
 }
 
+bool Movie::operator>(const Movie&) const{}
+bool Movie::operator<(const Movie&) const{}
+
 //------------------------------------ operator<<  --------------------------------------------
 ostream& operator<<(ostream &o, Movie &movie){
 	o << movie.genre << " " << movie.stock << " " << movie.title;

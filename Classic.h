@@ -23,6 +23,10 @@ Date: March 20, 2019
 using namespace std;
 
 class Classic:public Movie{
+	//friend classes
+	friend ostream& operator<<(ostream &, Classic &);
+	friend istream& operator>>(istream &, Classic &);
+
 	public:
 		// constructors
 		Classic();

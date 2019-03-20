@@ -131,6 +131,18 @@ bool Comedy::operator<(const Comedy &other)const{
 	return !(*this > other | *this == other);
 }
 
+//------------------------------------ operator<<  --------------------------------------------
+ostream& operator<<(ostream &o, Comedy &other){
+	o << other.toString();
+	return o;
+}
+
+// -------------------------- operator>> ---------------------------------------
+istream& operator>>(istream &i, Comedy &movie){
+	//i >> movie.genre >> movie.stock >> movie.title; //TODO
+	return i;
+}
+
 //---------------------------------------- isIncomplete --------------------------
 //Helper method to ensure that a Comedy Movie is proper
 //----------------------------------------------------------------------------------------
@@ -151,5 +163,5 @@ string Comedy::toString() const{
 	string stockString = static_cast<ostringstream*>( &(ostringstream() << getStock()) )->str();
 	string yearString = static_cast<ostringstream*>( &(ostringstream() << getYear()) )->str();
 
-	return  genreString + "" + stockString + "" + getDirector() + "" + getTitle() + ""  + yearString;
+	return  genreString + " " + stockString + " " + getDirector() + " " + getTitle() + " "  + yearString;
 }

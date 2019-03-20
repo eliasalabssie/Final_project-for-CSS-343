@@ -175,6 +175,18 @@ bool Classic:: operator<(const Classic &other)const{
 	return !(*this > other | *this == other);
 }
 
+//------------------------------------ operator<<  --------------------------------------------
+ostream& operator<<(ostream &o, Classic &other){
+	o << other.toString();
+	return o;
+}
+
+// -------------------------- operator>> ---------------------------------------
+istream& operator>>(istream &i, Classic &other){
+	//i >> movie.genre >> movie.stock >> movie.title; //TODO
+	return i;
+}
+
 //---------------------------------------- isIncomplete --------------------------
 //Helper method to ensure that a Classic Movie is proper
 //----------------------------------------------------------------------------------------
@@ -197,5 +209,5 @@ string Classic::toString() const{
 	string monthString = static_cast<ostringstream*>( &(ostringstream() << getMonth()) )->str();
 	string yearString = static_cast<ostringstream*>( &(ostringstream() << getYear()) )->str();
 
-	return  genreString + "" + stockString + "" + getDirector() + "" + getTitle() + "" + getActor() + "" + monthString + "" + yearString;
+	return  genreString + " " + stockString + " " + getDirector() + " " + getTitle() + " " + getActor() + " " + monthString + " " + yearString;
 }
