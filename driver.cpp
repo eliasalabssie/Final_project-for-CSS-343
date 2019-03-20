@@ -19,6 +19,11 @@ int main(){
     b.BuildCommands(commands);
     b.PrintCommands();
 
+    b.printHistory(9000);
+    //for (auto& it: b.customers) {
+    //    b.printHistory(it.first);
+    //}
+
     //string line;
     //if (commands.is_open()){
     //    while (getline(commands, line)){

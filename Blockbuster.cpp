@@ -57,14 +57,16 @@ void Blockbuster::printInventory() {
     cout << endl;
 }
 
-//void Blockbuster::printHistory(int ID){
-//    for (int command = 0; command < commands.size(); command++){
-//        if (ID = commands[command].getID()){
-//            cout << commands[command].toString();
-//        }
-//    }
-//}
-//
+void Blockbuster::printHistory(int ID){
+    cout << endl;
+    for (Command c : commands){
+        if (c.getID() == ID) {
+            cout << c << endl;
+        }
+    }
+    cout << endl;
+}
+
 //bool Blockbuster::movieborrow(string title){
 //    for (int g = 0; g < movies.size(); g++){ //iterating over three genres in Blockbuster
 //        for (int m = 0; m < movies[g].size(); m++){

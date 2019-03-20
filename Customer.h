@@ -24,7 +24,6 @@ Date: March 20, 2019
 using namespace std;
 
 class Customer {
-
 	friend ostream& operator<<(ostream &, Customer &);
 	friend istream& operator>>(istream &, Customer &);
 	
