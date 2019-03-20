@@ -361,9 +361,3 @@ void Blockbuster::PrintMovies() {
     }
     cout << endl;
 }
-
-ℴℴ𝓀𝒾𝒸Today at 3:53 PM
-iirc c++ does it differently than java
-NEW MESSAGES
-ℴℴ𝓀𝒾𝒸Today at 3:53 PM
-the string == is supposd to work
