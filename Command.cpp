@@ -128,7 +128,34 @@ string Command::toString(){
     return saction + " " + sID + " " + format + " " + genre + " " + director + " " + title + " " + smonth + " " + syear + " " + actor ;
 }
 
-//ID getter
-int Command::getID(){
+//getter
+char Command::getAction() const{
+    return action;
+}
+
+int Command::getID() const{
     return ID;
+}
+
+char Command::getFormat() const{
+    return format;
+}
+
+char Command::getGenre() const{
+    return genre;
+}
+int Command::GetMonth() const{
+    return month;
+}
+int Command::getYear() const{
+    return year;
+}
+string Command::getActor() const{
+    return actor;
+}
+string Command::getDirector() const{
+    return director;
+}
+string Command::title() const{
+    return title;
 }
