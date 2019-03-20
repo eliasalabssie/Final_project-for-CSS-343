@@ -20,19 +20,14 @@ Date: March 20, 2019
 #include "Blockbuster.h"
 
 Blockbuster::Blockbuster(){
-    vector<set<Movie>> movies;
     set<Classic> classics;
     set<Comedy> comedies;
     set<Drama> dramas;
-    //set<Movie> x;
-    //movies.insert(x);
     map<int, string> customers;
-    //map<int, Customer> customers;
     vector<Command> commands;
 }
 
 Blockbuster::Blockbuster(const Blockbuster &other){
-    //this->movies = other.movies;
     this->classics = other.classics;
     this->comedies = other.comedies;
     this->dramas = other.dramas;
@@ -41,18 +36,15 @@ Blockbuster::Blockbuster(const Blockbuster &other){
 }
 
 Blockbuster::~Blockbuster(){
-    vector<set<Movie>> movies;
     set<Classic> classics;
     set<Comedy> comedies;
     set<Drama> dramas;
-    //set<Movie> x;
-    //movies.insert(x);
     map<int, string> customers;
-    //map<int, Customer> customers;
     vector<Command> commands;
 }
 
 void Blockbuster::printInventory() {
+    cout << endl;
     for (Classic c : classics){
         cout << c << ' ' << endl;
     }
@@ -62,20 +54,9 @@ void Blockbuster::printInventory() {
     for (Comedy f : comedies){
         cout << f << ' ' << endl;
     }
+    cout << endl;
 }
 
-//void Blockbuster::printInventory(){
-//    for (int g = 0; g < movies.size(); g++){ //iterating over three genres in Blockbuster
-//        for (Movie elem : movies[g]){
-//            cout << elem;
-//        }
-//
-//        //for (int m = 0; m < movies[g].size(); m++){ //Doesn't work because elements in a set can't be referenced using [].
-//        //    cout << movies[g][m];
-//        //}
-//    }
-//}
-//
 //void Blockbuster::printHistory(int ID){
 //    for (int command = 0; command < commands.size(); command++){
 //        if (ID = commands[command].getID()){
@@ -172,12 +153,12 @@ void Blockbuster::BuildCommands(istream& inFile){
                 commands.push_back(insert);
             }
             else{
-                cout << "Invalid video code." << endl;
+                cout << "Invalid video code within data4commands.txt." << endl;
                 getline(inFile, flush, '\n');//no nonsense
             }
         }
         else {
-            cout << "Invalid action code." << endl;
+            cout << "Invalid action code within data4commands.txt." << endl;
             getline(inFile, flush, '\n');//no nonsense
         }
 
@@ -188,24 +169,23 @@ void Blockbuster::BuildCommands(istream& inFile){
 }
 
 void Blockbuster::PrintCommands() {
+    cout << endl;
     for (Command c : commands){
         cout << c << endl;
     }
+    cout << endl;
 }
 
 void Blockbuster::BuildCustomers(istream& inFile){
     int ID;
     string lastName, firstName, name;
+
     for(;;){
         inFile >> ID >> lastName >> firstName;
         name = firstName + " " + lastName;
-        //Customer* temp = new Customer(ID, name);
-        //customers.insert(pair<int, Customer>(ID, temp);
         Customer insert(ID, name);
-        //customers.insert(pair<int, Customer>(ID, insert));
-        //customers[ID] = insert;
         customers[ID] = name;
-        //temp = nullptr;
+
         if(inFile.eof()){
             break;
         }
@@ -213,9 +193,11 @@ void Blockbuster::BuildCustomers(istream& inFile){
 }
 
 void Blockbuster::PrintCustomers(){
+    cout << endl;
     for(auto it = customers.cbegin(); it != customers.cend(); ++it) {
         cout << it->first << " " << it->second << endl;
     }
+    cout << endl;
 }
 
 void Blockbuster::BuildMovies(istream& inFile){
@@ -223,6 +205,7 @@ void Blockbuster::BuildMovies(istream& inFile){
     int stock, releaseMonth, releaseYear;
     string director, title, actor;
     string temp;
+
     for(;;){
         genre = inFile.get();
         if(genre == 'C'){
@@ -254,14 +237,6 @@ void Blockbuster::BuildMovies(istream& inFile){
             Classic input(stock, director, title, actor, releaseMonth, releaseYear); //create classic object
             actor = ""; //clear buffer
             classics.insert(input); //insert classic object into data structure
-
-            //cout << input << endl; //WORKS!!
-
-            //set<Classic> testing;//WORKS!!!
-            //testing.insert(input);
-            //for (auto m : testing){
-            //    cout << m << endl;
-            //}
         }
         else if (genre == 'D'){
             getline(inFile, temp, ','); //flush the first comma
@@ -287,15 +262,15 @@ void Blockbuster::BuildMovies(istream& inFile){
             title = temp;
             getline(inFile, temp);
             releaseYear = atoi(temp.c_str());
-            //getline(inFile, temp, '\n');//flush return key
 
             Comedy input(stock, director, title, releaseYear); //create classic object
             comedies.insert(input); //insert classic object into data structure
         }
         else{
+            cout << "Invalid video code within data4movies.txt." << endl;
             getline(inFile, temp, '\n');//flush return key
-            //continue;
         }
+
         if(inFile.eof()){
             break;
         }

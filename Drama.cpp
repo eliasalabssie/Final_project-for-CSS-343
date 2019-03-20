@@ -156,8 +156,6 @@ istream& operator>>(istream &i, Drama &other){
 //Helper method to ensure that a Drama Movie is proper
 //----------------------------------------------------------------------------------------
 bool Drama::isIncomplete() const{
-	bool returnvalue = (getGenre() != 'd') || (getStock() < 0) || (getDirector().compare("") == 0) ||
-					   (getTitle().compare("") == 0);
 	return (getGenre() != 'd') || (getStock() < 0) || (getDirector().compare("") == 0) ||
 		   (getTitle().compare("") == 0);
 }

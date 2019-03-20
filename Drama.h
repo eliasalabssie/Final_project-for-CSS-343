@@ -55,7 +55,6 @@ class Drama:public Movie{
 		string toString() const;
 
 	private:
-		//const char genre = 'd';
 		string director;
 		int year;
 };
