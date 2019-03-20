@@ -21,6 +21,9 @@ Date: March 20, 2019
 
 Blockbuster::Blockbuster(){
     vector<set<Movie>> movies;
+    set<Classic> classics;
+    set<Comedy> comedies;
+    set<Drama> dramas;
     //set<Movie> x;
     //movies.insert(x);
     map<int, string> customers;
@@ -29,68 +32,89 @@ Blockbuster::Blockbuster(){
 }
 
 Blockbuster::Blockbuster(const Blockbuster &other){
-    this->movies = other.movies;
+    //this->movies = other.movies;
+    this->classics = other.classics;
+    this->comedies = other.comedies;
+    this->dramas = other.dramas;
     this->customers = other.customers;
     this->commands = other.commands;
 }
 
 Blockbuster::~Blockbuster(){
     vector<set<Movie>> movies;
-    map<int, Customer> customers;
+    set<Classic> classics;
+    set<Comedy> comedies;
+    set<Drama> dramas;
+    //set<Movie> x;
+    //movies.insert(x);
+    map<int, string> customers;
+    //map<int, Customer> customers;
     vector<Command> commands;
 }
 
-void Blockbuster::printInventory(){
-    for (int g = 0; g < movies.size(); g++){ //iterating over three genres in Blockbuster
-        for (Movie elem : movies[g]){
-            cout << elem;
-        }
-
-        //for (int m = 0; m < movies[g].size(); m++){ //Doesn't work because elements in a set can't be referenced using [].
-        //    cout << movies[g][m];
-        //}
+void Blockbuster::printInventory() {
+    for (Classic c : classics){
+        cout << c << ' ' << endl;
+    }
+    for (Drama d : dramas){
+        cout << d << ' ' << endl;
+    }
+    for (Comedy f : comedies){
+        cout << f << ' ' << endl;
     }
 }
 
-void Blockbuster::printHistory(int ID){
-    for (int command = 0; command < commands.size(); command++){
-        if (ID = commands[command].getID()){
-            cout << commands[command].toString();
-        }
-    }
-}
-
-bool Blockbuster::movieborrow(string title){
-    for (int g = 0; g < movies.size(); g++){ //iterating over three genres in Blockbuster
-        for (int m = 0; m < movies[g].size(); m++){
-            for (Movie elem : movies[g]){
-                if (elem.getTitle() == title){
-                    elem.setStock(elem.getStock() - 1);
-                }
-                cout << elem;
-            }
-            //if (movies[g][m].getTitle() == title){
-            //    movies[g][m].setStock(movies[g][m].getStock() - 1);
-            //}
-        }
-    }
-}
-
-bool Blockbuster::moviereturn(string title){
-    for (int g = 0; g < movies.size(); g++){ //iterating over three genres in Blockbuster
-        for (int m = 0; m < movies[g].size(); m++){
-            for (Movie elem : movies[g]){
-                if (elem.getTitle() == title){
-                    elem.setStock(elem.getStock() + 1);
-                }
-                cout << elem;
-            }
-            //if (movies[g][m].getTitle() == title){
-            //    movies[g][m].setStock(movies[g][m].getStock() + 1);
-            //}
-        }
-    }
-}
+//void Blockbuster::printInventory(){
+//    for (int g = 0; g < movies.size(); g++){ //iterating over three genres in Blockbuster
+//        for (Movie elem : movies[g]){
+//            cout << elem;
+//        }
+//
+//        //for (int m = 0; m < movies[g].size(); m++){ //Doesn't work because elements in a set can't be referenced using [].
+//        //    cout << movies[g][m];
+//        //}
+//    }
+//}
+//
+//void Blockbuster::printHistory(int ID){
+//    for (int command = 0; command < commands.size(); command++){
+//        if (ID = commands[command].getID()){
+//            cout << commands[command].toString();
+//        }
+//    }
+//}
+//
+//bool Blockbuster::movieborrow(string title){
+//    for (int g = 0; g < movies.size(); g++){ //iterating over three genres in Blockbuster
+//        for (int m = 0; m < movies[g].size(); m++){
+//            for (Movie elem : movies[g]){
+//                if (elem.getTitle() == title){
+//                    elem.setStock(elem.getStock() - 1);
+//                }
+//                cout << elem;
+//            }
+//            //if (movies[g][m].getTitle() == title){
+//            //    movies[g][m].setStock(movies[g][m].getStock() - 1);
+//            //}
+//        }
+//    }
+//}
+//
+//bool Blockbuster::moviereturn(string title){
+//    for (int g = 0; g < movies.size(); g++){ //iterating over three genres in Blockbuster
+//        for (int m = 0; m < movies[g].size(); m++){
+//            for (Movie elem : movies[g]){
+//                if (elem.getTitle() == title){
+//                    elem.setStock(elem.getStock() + 1);
+//                }
+//                cout << elem;
+//            }
+//            //if (movies[g][m].getTitle() == title){
+//            //    movies[g][m].setStock(movies[g][m].getStock() + 1);
+//            //}
+//        }
+//    }
+//}
 
 void Blockbuster::BuildCommands(istream& inFile){
     char action;
@@ -224,23 +248,20 @@ void Blockbuster::BuildMovies(istream& inFile){
                     continue;
                 }
             }
-            getline(inFile, temp, '\r');//flush return key
+            getline(inFile, temp, '\n');//flush return key
             releaseYear = atoi(temp.c_str());
-            Classic input(stock, director, title, actor, releaseMonth, releaseYear);
+
+            Classic input(stock, director, title, actor, releaseMonth, releaseYear); //create classic object
+            actor = ""; //clear buffer
+            classics.insert(input); //insert classic object into data structure
 
             //cout << input << endl; //WORKS!!
 
-            set<Classic> testing;//WORKS!!!
-            testing.insert(input);
-            for (auto m : testing){
-                cout << m << endl;
-            }
-
-            //movies[0].insert(input);
-            //for (Movie m : movies[0]){
-            //    cout << m << ' ' << endl;
+            //set<Classic> testing;//WORKS!!!
+            //testing.insert(input);
+            //for (auto m : testing){
+            //    cout << m << endl;
             //}
-
         }
         else if (genre == 'D'){
             getline(inFile, temp, ','); //flush the first comma
@@ -250,10 +271,11 @@ void Blockbuster::BuildMovies(istream& inFile){
             director = temp;
             getline(inFile, temp, ',');
             title = temp;
-            temp = inFile.get();
+            getline(inFile, temp);
             releaseYear = atoi(temp.c_str());
-            Drama input(stock, director, title, releaseYear);
-            getline(inFile, temp, '\r');//flush return key
+
+            Drama input(stock, director, title, releaseYear); //create drama object
+            dramas.insert(input); //insert drama object into data structure
         }
         else if (genre == 'F'){
             getline(inFile, temp, ','); //flush the first comma
@@ -263,14 +285,16 @@ void Blockbuster::BuildMovies(istream& inFile){
             director = temp;
             getline(inFile, temp, ',');
             title = temp;
-            temp = inFile.get();
+            getline(inFile, temp);
             releaseYear = atoi(temp.c_str());
-            Drama input(stock, director, title, releaseYear);
-            getline(inFile, temp, '\r');//flush return key
+            //getline(inFile, temp, '\n');//flush return key
+
+            Comedy input(stock, director, title, releaseYear); //create classic object
+            comedies.insert(input); //insert classic object into data structure
         }
         else{
-            getline(inFile, temp, '\r');//flush return key
-            continue;
+            getline(inFile, temp, '\n');//flush return key
+            //continue;
         }
         if(inFile.eof()){
             break;

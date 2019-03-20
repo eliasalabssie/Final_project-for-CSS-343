@@ -7,9 +7,9 @@ using namespace std;
 int main(){
     Blockbuster b;
 
-    //ifstream movies ("data4movies.txt");
-    //b.BuildMovies(movies);
-    //b.printInventory();
+    ifstream movies ("data4movies.txt");
+    b.BuildMovies(movies);
+    b.printInventory();
 
     ifstream customers ("data4customers.txt");
     b.BuildCustomers(customers);

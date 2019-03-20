@@ -21,7 +21,7 @@ Date: March 20, 2019
 // default constructor
 //-----------------------------------------------------------------------------------------
 Comedy::Comedy(){
-	this->setGenre('c');
+	this->setGenre('f');
 	this->setStock(0);
 	this->setDirector("");
 	this->setTitle("");
@@ -32,7 +32,7 @@ Comedy::Comedy(){
 // constructor with fields
 //-----------------------------------------------------------------------------------------
 Comedy::Comedy(int stock, string director, string title, int year){
-	this->setGenre('c');
+	this->setGenre('f');
 	this->setStock(stock);
 	this->setDirector(director);
 	this->setTitle(title);
@@ -54,7 +54,7 @@ Comedy::Comedy(const Comedy& other){
 //destructor 
 //-----------------------------------------------------------------------------------------
 Comedy::~Comedy(){
-	this->setGenre('c');
+	this->setGenre('f');
 	this->setStock(0);
 	this->setDirector("");
 	this->setTitle("");

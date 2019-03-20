@@ -59,7 +59,7 @@ class Classic:public Movie{
 		string toString() const;
 
 	private:
-		const char genre = 'c';
+		//const char genre = 'c';
 		string director;
 		string actor;
 		int month;

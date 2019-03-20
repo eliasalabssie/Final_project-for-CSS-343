@@ -191,6 +191,9 @@ istream& operator>>(istream &i, Classic &other){
 //Helper method to ensure that a Classic Movie is proper
 //----------------------------------------------------------------------------------------
 bool Classic::isIncomplete() const{
+	bool returnvalue = (getGenre() != 'c') || (getStock() < 0) || (getDirector().compare("") == 0) ||
+											 (getTitle().compare("") == 0) || (getActor().compare("") == 0) ||
+											 (getMonth() < 0) || (getYear() < 0);
 	return (getGenre() != 'c') || (getStock() < 0) || (getDirector().compare("") == 0) ||
 		   (getTitle().compare("") == 0) || (getActor().compare("") == 0) ||
 		   (getMonth() < 0) || (getYear() < 0);

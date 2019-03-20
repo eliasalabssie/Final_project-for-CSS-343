@@ -55,7 +55,7 @@ class Comedy:public Movie{
 		string toString() const;
 
 	private:
-		const char genre = 'f';
+		//const char genre = 'f';
 		string director;
 		int year;
 };

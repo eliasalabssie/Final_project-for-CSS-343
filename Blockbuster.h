@@ -32,25 +32,29 @@ Date: March 20, 2019
 using namespace std;
 
 class Blockbuster {
-public:
-    Blockbuster();
-    Blockbuster(const Blockbuster &);
-    ~Blockbuster();
-    void printInventory();
-    void printHistory(int);
-    bool movieborrow(string);
-    bool moviereturn(string);
-    void BuildCommands(istream&);//puts the commands in the data structure
-    void PrintCommands();
-    void BuildCustomers(istream&);//puts the customers in the data structure
-    void PrintCustomers();
-    void BuildMovies(istream&);//puts the movies in the data structure
+    public:
+        Blockbuster();
+        Blockbuster(const Blockbuster &);
+        ~Blockbuster();
+        void printInventory();
+        void printHistory(int);
+        bool movieborrow(string);
+        bool moviereturn(string);
+        void BuildCommands(istream&);//puts the commands in the data structure
+        void PrintCommands();
+        void BuildCustomers(istream&);//puts the customers in the data structure
+        void PrintCustomers();
+        void BuildMovies(istream&);//puts the movies in the data structure
 
-private:
-    vector<set<Movie>> movies;
-    //map<int, Customer> customers;
-    map<int, string> customers;
-    vector<Command> commands;
+    private:
+        //vector<set<Movie>> movies;
+        set<Classic> classics;
+        set<Comedy> comedies;
+        set<Drama> dramas;
+
+        //map<int, Customer> customers;
+        map<int, string> customers;
+        vector<Command> commands;
 };
 
 #endif //ASSIGNMENT4_BLOCKBUSTER_H
