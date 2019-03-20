@@ -129,6 +129,36 @@ bool Blockbuster::movieBorrow(const Command& borrow){
     return false;
 }
 
+bool Blockbuster::movieBorrow(const Command& back){
+	if (back.getGenre() == 'C'){
+		for(Classic c: classics){
+			if(c.getMonth() == back.getMonth() && c.getYear() == back.getYear() 
+               && c.getActor() == back.getActor()){
+                c.setStock(c.getStock() + 1);
+                return true;
+            }
+        }
+    }
+    else if (back.getGenre() == 'F'){
+        for(Comedy f: comedies){
+            if(f.getTitle() == back.getTitle() && f.getYear() == back.getYear()){
+                f.setStock(f.getStock() + 1);
+                return true;
+            }
+        }
+    }
+    else if (back.getGenre() == 'D'){
+        for(Drama d: dramas){
+            if(d.getDirector() == back.getDirector() && d.getTitle() == back.getTitle()){
+                d.setStock(d.getStock() + 1);
+                return true;
+            }
+        }
+    }
+    cout << "Failed to execute the following command: " << back.toString() << endl;
+    return false;
+}
+
 void Blockbuster::BuildCommands(istream& inFile){
     char action;
     int ID;
