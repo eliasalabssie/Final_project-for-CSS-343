@@ -27,7 +27,7 @@ Date: March 20, 2019
 
 #include <vector>
 #include <set>
-#include <map>
+#include <unordered_map>
 
 using namespace std;
 
@@ -45,15 +45,13 @@ class Blockbuster {
         void BuildCustomers(istream&);//puts the customers in the data structure
         void PrintCustomers();
         void BuildMovies(istream&);//puts the movies in the data structure
+        void PrintMovies();
 
     private:
-        //vector<set<Movie>> movies;
         set<Classic> classics;
         set<Comedy> comedies;
         set<Drama> dramas;
-
-        //map<int, Customer> customers;
-        map<int, string> customers;
+        unordered_map<int, string> customers;
         vector<Command> commands;
 };
 

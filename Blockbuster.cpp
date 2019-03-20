@@ -23,7 +23,7 @@ Blockbuster::Blockbuster(){
     set<Classic> classics;
     set<Comedy> comedies;
     set<Drama> dramas;
-    map<int, string> customers;
+    unordered_map<int, string> customers;
     vector<Command> commands;
 }
 
@@ -39,7 +39,7 @@ Blockbuster::~Blockbuster(){
     set<Classic> classics;
     set<Comedy> comedies;
     set<Drama> dramas;
-    map<int, string> customers;
+    unordered_map<int, string> customers;
     vector<Command> commands;
 }
 
@@ -275,4 +275,18 @@ void Blockbuster::BuildMovies(istream& inFile){
             break;
         }
     }
+}
+
+void Blockbuster::PrintMovies() {
+    cout << endl;
+    for (Classic c : classics){
+        cout << c << ' ' << endl;
+    }
+    for (Drama d : dramas){
+        cout << d << ' ' << endl;
+    }
+    for (Comedy f : comedies){
+        cout << f << ' ' << endl;
+    }
+    cout << endl;
 }

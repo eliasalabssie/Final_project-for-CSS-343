@@ -9,7 +9,7 @@ int main(){
 
     ifstream movies ("data4movies.txt");
     b.BuildMovies(movies);
-    b.printInventory();
+    b.PrintMovies();
 
     ifstream customers ("data4customers.txt");
     b.BuildCustomers(customers);
