@@ -38,8 +38,8 @@ class Blockbuster {
         ~Blockbuster();
         void printInventory();
         void printHistory(int);
-        bool movieborrow(string);
-        bool moviereturn(string);
+        bool movieBorrow(Command&);
+        bool movieReturn(Command&);
         void BuildCommands(istream&);//puts the commands in the data structure
         void PrintCommands();
         void BuildCustomers(istream&);//puts the customers in the data structure
