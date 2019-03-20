@@ -9,7 +9,7 @@ int main(){
 
     ifstream movies ("data4movies.txt");
     b.BuildMovies(movies);
-    b.PrintMovies();
+    b.printInventory();
 
     ifstream customers ("data4customers.txt");
     b.BuildCustomers(customers);
@@ -20,6 +20,10 @@ int main(){
     b.PrintCommands();
 
     b.printHistory(9000);
+
+    b.ActivateCommands();
+
+    b.printInventory();
     //for (auto& it: b.customers) {
     //    b.printHistory(it.first);
     //}

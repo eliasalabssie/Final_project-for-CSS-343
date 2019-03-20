@@ -144,7 +144,7 @@ char Command::getFormat() const{
 char Command::getGenre() const{
     return genre;
 }
-int Command::GetMonth() const{
+int Command::getMonth() const{
     return month;
 }
 int Command::getYear() const{
@@ -156,6 +156,6 @@ string Command::getActor() const{
 string Command::getDirector() const{
     return director;
 }
-string Command::title() const{
+string Command::getTitle() const{
     return title;
 }

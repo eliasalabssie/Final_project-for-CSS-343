@@ -44,17 +44,7 @@ Blockbuster::~Blockbuster(){
 }
 
 void Blockbuster::printInventory() {
-    cout << endl;
-    for (Classic c : classics){
-        cout << c << ' ' << endl;
-    }
-    for (Drama d : dramas){
-        cout << d << ' ' << endl;
-    }
-    for (Comedy f : comedies){
-        cout << f << ' ' << endl;
-    }
-    cout << endl;
+    PrintMovies();
 }
 
 void Blockbuster::printHistory(int ID){
@@ -67,66 +57,92 @@ void Blockbuster::printHistory(int ID){
     cout << endl;
 }
 
-//bool Blockbuster::movieborrow(string title){
-//    for (int g = 0; g < movies.size(); g++){ //iterating over three genres in Blockbuster
-//        for (int m = 0; m < movies[g].size(); m++){
-//            for (Movie elem : movies[g]){
-//                if (elem.getTitle() == title){
-//                    elem.setStock(elem.getStock() - 1);
-//                }
-//                cout << elem;
-//            }
-//            //if (movies[g][m].getTitle() == title){
-//            //    movies[g][m].setStock(movies[g][m].getStock() - 1);
-//            //}
-//        }
-//    }
-//}
-//
-//bool Blockbuster::moviereturn(string title){
-//    for (int g = 0; g < movies.size(); g++){ //iterating over three genres in Blockbuster
-//        for (int m = 0; m < movies[g].size(); m++){
-//            for (Movie elem : movies[g]){
-//                if (elem.getTitle() == title){
-//                    elem.setStock(elem.getStock() + 1);
-//                }
-//                cout << elem;
-//            }
-//            //if (movies[g][m].getTitle() == title){
-//            //    movies[g][m].setStock(movies[g][m].getStock() + 1);
-//            //}
-//        }
-//    }
-//}
-
 bool Blockbuster::movieBorrow(const Command& borrow){
 	if (borrow.getGenre() == 'C'){
-		for(Classic c: classics){
-			if(c.getMonth() == borrow.getMonth() && c.getYear() == borrow.getYear() 
+		for(Classic c : classics){
+			if(c.getMonth() == borrow.getMonth() && c.getYear() == borrow.getYear()
                && c.getActor() == borrow.getActor()){
-                c.setStock(c.getStock() - 1);
-                return true;
+			    // c.setStock(c.getStock() - 1); //Elements of set may not be modified
+                Classic insert = c; //Instead, deep copy
+                classics.erase(c); //Remove original
+                insert.setStock(insert.getStock() - 1); //Modify copy
+                classics.insert(insert); //Insert copy
+                return true; //Return successful.
             }
         }
     }
     else if (borrow.getGenre() == 'F'){
-        for(Comedy f: comedies){
+        for(Comedy f : comedies){
             if(f.getTitle() == borrow.getTitle() && f.getYear() == borrow.getYear()){
-                f.setStock(f.getStock() - 1);
+                Comedy insert = f;
+                comedies.erase(f);
+                insert.setStock(insert.getStock() - 1);
+                comedies.insert(insert);
                 return true;
             }
         }
     }
     else if (borrow.getGenre() == 'D'){
-        for(Drama d: dramas){
+        for(Drama d : dramas){
             if(d.getDirector() == borrow.getDirector() && d.getTitle() == borrow.getTitle()){
                 d.setStock(d.getStock() - 1);
+                Drama insert = d;
+                dramas.erase(d);
+                insert.setStock(insert.getStock() - 1);
+                dramas.insert(insert);
                 return true;
             }
         }
     }
-    cout << "Failed to execute the following command: " << borrow.toString() << endl;
-    return false;
+    else{
+        cout << "incorrect data and/or incorrect command" << endl;
+        //cout << "Failed to execute the following command: " << borrow << endl;
+        return false;
+    }
+}
+
+bool Blockbuster::movieReturn(const Command& other){
+    if (other.getGenre() == 'C'){
+        for(Classic c : classics){
+            if(c.getMonth() == other.getMonth() && c.getYear() == other.getYear()
+               && c.getActor() == other.getActor()){
+                // c.setStock(c.getStock() - 1); //Elements of set may not be modified
+                Classic insert = c; //Instead, deep copy
+                classics.erase(c); //Remove original
+                insert.setStock(insert.getStock() + 1); //Modify copy
+                classics.insert(insert); //Insert copy
+                return true; //Return successful.
+            }
+        }
+    }
+    else if (other.getGenre() == 'F'){
+        for(Comedy f : comedies){
+            if(f.getTitle() == other.getTitle() && f.getYear() == other.getYear()){
+                Comedy insert = f;
+                comedies.erase(f);
+                insert.setStock(insert.getStock() + 1);
+                comedies.insert(insert);
+                return true;
+            }
+        }
+    }
+    else if (other.getGenre() == 'D'){
+        for(Drama d : dramas){
+            if(d.getDirector() == other.getDirector() && d.getTitle() == other.getTitle()){
+                d.setStock(d.getStock() - 1);
+                Drama insert = d;
+                dramas.erase(d);
+                insert.setStock(insert.getStock() + 1);
+                dramas.insert(insert);
+                return true;
+            }
+        }
+    }
+    else{
+        cout << "incorrect data and/or incorrect command" << endl;
+        //cout << "Failed to execute the following command: " << borrow << endl;
+        return false;
+    }
 }
 
 void Blockbuster::BuildCommands(istream& inFile){
@@ -206,6 +222,17 @@ void Blockbuster::PrintCommands() {
         cout << c << endl;
     }
     cout << endl;
+}
+
+void Blockbuster::ActivateCommands() {
+    for (Command c : commands){
+        if (c.getAction() == 'B'){
+            movieBorrow(c);
+        }
+        else{
+            cout << c << endl; //TODO
+        }
+    }
 }
 
 void Blockbuster::BuildCustomers(istream& inFile){

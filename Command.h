@@ -32,7 +32,7 @@ class Command {
         int getID() const;
         char getFormat() const;
         char getGenre() const;
-        int GetMonth() const;
+        int getMonth() const;
         int getYear() const;
         string getActor() const;
         string getDirector() const;

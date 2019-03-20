@@ -38,16 +38,16 @@ class Movie{
 		virtual ~Movie();
 
 		// Getters
-		virtual int getStock() const; 
-		virtual char getGenre() const; 
-		virtual string getTitle() const; 
+		virtual int getStock() const;
+		virtual char getGenre() const;
+		virtual string getTitle() const;
 
 		// Setters
 		virtual void setStock(int);
 		virtual void setGenre(char);
 		virtual void setTitle(string);
-		virtual bool operator ==(const Movie& ) const;
-		virtual bool operator !=(const Movie& ) const;
+		virtual bool operator ==(const Movie &) const;
+		virtual bool operator !=(const Movie &) const;
 		bool operator>(const Movie&) const;
 		bool operator<(const Movie&) const;
 
