@@ -54,7 +54,11 @@ Comedy::Comedy(const Comedy& other){
 //destructor
 //-----------------------------------------------------------------------------------------
 Comedy::~Comedy(){
-
+	this->setGenre('F');
+	this->setStock(0);
+	this->setDirector("");
+	this->setTitle("");
+	this->setYear(-1);
 }
 
 //---------------------------------------- getDirector ------------------------------------

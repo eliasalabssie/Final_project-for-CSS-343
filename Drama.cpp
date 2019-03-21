@@ -54,7 +54,11 @@ Drama::Drama(const Drama& other){
 // Description: destructs the Drama object
 //-------------------------------------------------------------------------------------
 Drama::~Drama(){
-
+	this->setGenre('D');
+	this->setStock(0);
+	this->setDirector("");
+	this->setTitle("");
+	this->setYear(-1);
 }
 
 //---------------------------------------- getDirector -----------------------------

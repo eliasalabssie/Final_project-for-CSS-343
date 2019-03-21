@@ -6,42 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Blockbuster.cpp
-iostream
--
-fstream
--
-Blockbuster.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Blockbuster.h
-
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Blockbuster.h
-Customer.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Customer.h
-Command.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Command.h
-Movie.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.h
-Classic.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Classic.h
-Comedy.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Comedy.h
-Drama.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Drama.h
-vector
--
-set
--
-unordered_map
--
-
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Classic.h
-string
--
-iostream
--
-Movie.h
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.h
-
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Comedy.cpp
 sstream
 -
@@ -55,12 +19,6 @@ iostream
 -
 Movie.h
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Movie.h
-
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Command.h
-
-/cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Customer.h
-iostream
--
 
 /cygdrive/c/Users/lloyd/Documents/GitHub/Final_project-for-CSS-343/Drama.cpp
 sstream

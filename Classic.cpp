@@ -60,7 +60,13 @@ Classic::Classic(const Classic& other) {
 //destructor
 //-----------------------------------------------------------------------------------------
 Classic::~Classic(){
-	
+	this->setGenre('C');
+	this->setStock(0);
+	this->setDirector("");
+	this->setTitle("");
+	this->setActor("");
+	this->setMonth(-1);
+	this->setYear(-1);
 }
 
 //---------------------------------------- getDirector ----------------------------
