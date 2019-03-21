@@ -12,8 +12,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b008c678-c756-4eaa-83e6-852c444bb11a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blockbuster.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Blockbuster.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classic.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Classic.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Comedy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Comedy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Drama.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Drama.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/Blockbuster.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/Blockbuster.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/Classic.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/Classic.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/Comedy.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/Comedy.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/Drama.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/Drama.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/assignment4.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/assignment4.exe" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Blockbuster.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="385" column="5" lean-forward="true" selection-start-line="385" selection-start-column="5" selection-end-line="385" selection-end-column="5" />
+            <state relative-caret-position="3603">
+              <caret line="363" column="13" selection-start-line="363" selection-start-column="13" selection-end-line="363" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -88,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Classic.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-724">
-              <caret line="69" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="-826">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
               <folding>
                 <element signature="e#539#557#0" expanded="true" />
               </folding>
@@ -240,7 +248,7 @@
       <workItem from="1552776025756" duration="5701000" />
       <workItem from="1552847726145" duration="15525000" />
       <workItem from="1552927211101" duration="8203000" />
-      <workItem from="1553030547393" duration="49557000" />
+      <workItem from="1553030547393" duration="49822000" />
     </task>
     <task id="LOCAL-00001" summary="added a TODO to test clion integration with github">
       <created>1552356061828</created>
@@ -253,17 +261,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82247000" />
+    <option name="totallyTimeSpent" value="82512000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1603631" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1603631" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32872504" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30568355" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30568355" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.42396313" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -314,7 +322,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Blockbuster.cpp</url>
-          <line>366</line>
+          <line>359</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
@@ -557,8 +565,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Classic.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-724">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        <state relative-caret-position="-826">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
           <folding>
             <element signature="e#539#557#0" expanded="true" />
           </folding>
@@ -608,8 +616,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Blockbuster.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="385" column="5" lean-forward="true" selection-start-line="385" selection-start-column="5" selection-end-line="385" selection-end-column="5" />
+        <state relative-caret-position="3603">
+          <caret line="363" column="13" selection-start-line="363" selection-start-column="13" selection-end-line="363" selection-end-column="13" />
         </state>
       </provider>
     </entry>
