@@ -200,6 +200,11 @@ void Blockbuster::BuildCommands(istream& inFile){
     for(;;){
         inFile >> action;
 
+        if(inFile.eof()){
+            cout << endl;
+            break;
+        }
+
         if (action == 'I') {
             Command insert(action);
             commands.push_back(insert);
@@ -225,6 +230,7 @@ void Blockbuster::BuildCommands(istream& inFile){
                 getline(inFile, temp);
                 actor = temp;
 
+                stringCleanUp(actor);
                 Command insert(action, ID, media, genre, month, year, actor);
                 commands.push_back(insert);
             }
@@ -234,6 +240,8 @@ void Blockbuster::BuildCommands(istream& inFile){
                 getline(inFile, temp, ',');
                 title = temp;
 
+                stringCleanUp(director);
+                stringCleanUp(title);
                 Command insert(action, ID, media, genre, director, title);
                 commands.push_back(insert);
             }
@@ -242,6 +250,7 @@ void Blockbuster::BuildCommands(istream& inFile){
                 title = temp;
                 inFile >> year;
 
+                stringCleanUp(title);
                 Command insert(action, ID, media, genre, title, year);
                 commands.push_back(insert);
             }
@@ -254,10 +263,6 @@ void Blockbuster::BuildCommands(istream& inFile){
         else {
 	        getline(inFile, temp, '\n');//no nonsense
             cout << "Invalid action code in data4commands.txt at line: " << action << " " << temp << endl;
-        }
-        if(inFile.eof()){
-            cout << endl;
-            break;
         }
     }
 }
@@ -324,10 +329,12 @@ void Blockbuster::BuildMovies(istream& inFile){
 
     for(;;){
         genre = inFile.get();
+
         if(inFile.eof()){
             cout << endl;
             break;
         }
+
         if(genre == 'C'){
             getline(inFile, temp, ','); //flush the first comma
             getline(inFile, temp, ',');
@@ -352,7 +359,11 @@ void Blockbuster::BuildMovies(istream& inFile){
                 }
             }
             getline(inFile, temp, '\n');//flush return key
-            releaseYear = atoi(temp.c_str());
+
+            releaseYear = atoi(temp.c_str()); //cleanup
+            stringCleanUp(director);
+            stringCleanUp(title);
+            stringCleanUp(actor);
 
             Classic input(stock, director, title, actor, releaseMonth, releaseYear); //create classic object
             actor = ""; //clear buffer
@@ -367,7 +378,10 @@ void Blockbuster::BuildMovies(istream& inFile){
             getline(inFile, temp, ',');
             title = temp;
             getline(inFile, temp);
-            releaseYear = atoi(temp.c_str());
+
+            releaseYear = atoi(temp.c_str()); //cleanup
+            stringCleanUp(director);
+            stringCleanUp(title);
 
             Drama input(stock, director, title, releaseYear); //create drama object
             dramas.insert(input); //insert drama object into data structure
@@ -381,7 +395,10 @@ void Blockbuster::BuildMovies(istream& inFile){
             getline(inFile, temp, ',');
             title = temp;
             getline(inFile, temp);
-            releaseYear = atoi(temp.c_str());
+
+            releaseYear = atoi(temp.c_str()); //cleanup
+            stringCleanUp(director);
+            stringCleanUp(title);
 
             Comedy input(stock, director, title, releaseYear); //create comedy object
             comedies.insert(input); //insert comedy object into data structure
@@ -405,4 +422,16 @@ void Blockbuster::PrintMovies() {
         cout << f << ' ' << endl;
     }
     cout << endl;
+}
+
+void Blockbuster::stringCleanUp(string &s) {
+    while (!s.empty() && s[0] == ' ') {
+        s = s.substr(1, s.size()); //remove spaces at beginning of string
+    }
+    while (!s.empty() && (s[s.size() - 1] == '\r' | s[s.size() - 1] == '\n')) {
+        s = s.substr(0, s.size() - 1); //remove return carriage and/or newline character at end of string
+    }
+    while (!s.empty() && s[s.size()] == ' ') {
+        s = s.substr(0, s.size()); //remove spaces at end of string
+    }
 }
