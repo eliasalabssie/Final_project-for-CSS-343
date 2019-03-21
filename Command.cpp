@@ -105,7 +105,7 @@ istream& operator>>(istream &i, Command &movie){
 }
 
 //toString command
-string Command::toString(){
+string Command::toString() const{
     stringstream stream;
     stream << ID;
     string sID = stream.str();

@@ -39,7 +39,7 @@ class Command {
         string getTitle() const;
     
         //miscellaneous
-        string toString();
+        string toString() const;
 
     private:
         char action;
