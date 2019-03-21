@@ -60,7 +60,8 @@ bool Blockbuster::movieBorrow(const Command& borrow){
 			if(c.getMonth() == borrow.getMonth() && c.getYear() == borrow.getYear()
                && c.getActor() == borrow.getActor()){
 			    if (c.getStock() - 1 < 0){ //First, ensure we have stock available.
-			        cout << c.getTitle() << " is out of stock. We won't be able to process your order." << endl;
+			        cout << c.getTitle() << " is out of stock. We won't be able to process " << customers[borrow.getID()] << "'s order." << endl;
+			        return false;
 			    }
 			    else{ //If we do have stock:
                     // c.setStock(c.getStock() - 1); //Elements of set may not be modified
@@ -78,6 +79,7 @@ bool Blockbuster::movieBorrow(const Command& borrow){
             if (f.getTitle() == borrow.getTitle() && f.getYear() == borrow.getYear()) {
                 if (f.getStock() - 1 < 0){ //First, ensure we have stock available.
                     cout << f.getTitle() << " is out of stock. We won't be able to process your order." << endl;
+                    return false;
                 }
                 else {
                     Comedy insert = f;
@@ -94,6 +96,7 @@ bool Blockbuster::movieBorrow(const Command& borrow){
             if (d.getDirector() == borrow.getDirector() && d.getTitle() == borrow.getTitle()) {
                 if (d.getStock() - 1 < 0){ //First, ensure we have stock available.
                     cout << d.getTitle() << " is out of stock. We won't be able to process your order." << endl;
+                    return false;
                 }
                 else {
                     d.setStock(d.getStock() - 1);
@@ -107,7 +110,7 @@ bool Blockbuster::movieBorrow(const Command& borrow){
         }
     }
     else{
-        cout << "incorrect data and/or incorrect command" << endl;
+        cout << "incorrect data and/or incorrect command at line: " << borrow.toString() << endl;
         return false;
     }
 }
@@ -150,7 +153,7 @@ bool Blockbuster::movieReturn(const Command& other){
         }
     }
     else{
-        cout << "incorrect data and/or incorrect command" << endl;
+        cout << "incorrect data and/or incorrect command in data4commands.txt at line: " << other.toString() << endl;
         return false;
     }
 }
@@ -212,13 +215,13 @@ void Blockbuster::BuildCommands(istream& inFile){
                 commands.push_back(insert);
             }
             else{
-                cout << "Invalid video code within data4commands.txt." << endl;
-                getline(inFile, flush, '\n');//no nonsense
+		getline(inFile, temp, '\n');//no nonsense
+                cout << "Invalid video code in data4commands.txt at line: " << action << " " << genre << " " << temp << endl;
             }
         }
         else {
-            cout << "Invalid action code within data4commands.txt." << endl;
-            getline(inFile, flush, '\n');//no nonsense
+	    getline(inFile, temp, '\n');//no nonsense
+            cout << "Invalid action code in data4commands.txt at line:" << action << " " << temp << endl;
         }
 
         if(inFile.eof()){
@@ -359,8 +362,8 @@ void Blockbuster::BuildMovies(istream& inFile){
             comedies.insert(input); //insert classic object into data structure
         }
         else{
-            cout << "Invalid video code within data4movies.txt." << endl;
-            getline(inFile, temp, '\n');//flush return key
+	    getline(inFile, temp, '\n');//flush return key
+            cout << "Invalid video code in data4movies.txt at line: " << genre << " " << temp << endl;
         }
 
         if(inFile.eof()){
