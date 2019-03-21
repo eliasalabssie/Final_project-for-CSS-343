@@ -10,6 +10,9 @@ Date: March 20, 2019
 //-------------------------------------------------------------------------------------
 */
 
+#include <iostream>
+#include <fstream>
+
 #include "Blockbuster.h"
 
 Blockbuster::Blockbuster(){
@@ -18,6 +21,18 @@ Blockbuster::Blockbuster(){
     set<Drama> dramas;
     unordered_map<int, string> customers;
     vector<Command> commands;
+
+    ifstream data4movies ("data4movies.txt");
+    cout << "Building movies database." << endl;
+    BuildMovies(data4movies);
+
+    ifstream data4customers ("data4customers.txt");
+    cout << "Building customers database." << endl;
+    BuildCustomers(data4customers);
+
+    ifstream data4commands("data4commands.txt");
+    cout << "Building commands database." << endl;
+    BuildCommands(data4commands);
 }
 
 Blockbuster::Blockbuster(const Blockbuster &other){
@@ -46,7 +61,7 @@ void Blockbuster::printInventory() {
 }
 
 void Blockbuster::printHistory(int ID){
-    cout << "Calling printHistory" << endl;
+    //cout << "Calling printHistory" << endl;
     for (Command c : commands){
         if (c.getID() == ID) {
             cout << c << endl;
@@ -160,7 +175,6 @@ bool Blockbuster::movieReturn(const Command& other){
 }
 
 void Blockbuster::BuildCommands(istream& inFile){
-    cout << "Building commands database..." << endl;
     char action;
     int ID;
     char media;
@@ -193,7 +207,7 @@ void Blockbuster::BuildCommands(istream& inFile){
             if (customers.count(ID) <= 0){
                 cout << "Customer ID does not exist within database: " << ID << endl;
             }
-            if (media != 'D'){
+            if (media != 'D'){//TODO: REject invalid movie titles
                 cout << "Unsupported Media type: " << media << endl;
             }
             if (genre == 'C'){
@@ -234,13 +248,14 @@ void Blockbuster::BuildCommands(istream& inFile){
         }
 
         if(inFile.eof()){
+            cout << endl;
             break;
         }
     }
 }
 
 void Blockbuster::PrintCommands() {
-    cout << "Calling printCommands" << endl;
+    //cout << "Calling printCommands" << endl;
     for (Command c : commands){
         cout << c << endl;
     }
@@ -248,6 +263,7 @@ void Blockbuster::PrintCommands() {
 }
 
 void Blockbuster::ActivateCommands() {
+    cout << "Blockbuster opening; running commands." << endl;
     for (Command c : commands){
         if (c.getAction() == 'B'){
             movieBorrow(c);
@@ -281,13 +297,14 @@ void Blockbuster::BuildCustomers(istream& inFile){
         customers[ID] = name;
 
         if(inFile.eof()){
+            cout << endl;
             break;
         }
     }
 }
 
 void Blockbuster::PrintCustomers(){
-    cout << endl;
+    //cout << "Calling printCustomers" << endl;
     for(auto it = customers.cbegin(); it != customers.cend(); ++it) {
         cout << it->first << " " << it->second << endl;
     }
@@ -377,13 +394,14 @@ void Blockbuster::BuildMovies(istream& inFile){
         }
 
         if(inFile.eof()){
+            cout << endl;
             break;
         }
     }
 }
 
 void Blockbuster::PrintMovies() {
-    cout << "Calling printMovies" << endl;
+    //cout << "Calling printMovies" << endl;
     printInventory();
 }
 
