@@ -101,23 +101,35 @@ bool Blockbuster::movieBorrow(const Command& borrow){
     else if (borrow.getGenre() == 'F'){
         for(Comedy f : comedies){
             if(f.getTitle() == borrow.getTitle() && f.getYear() == borrow.getYear()){
-                Comedy insert = f;
-                comedies.erase(f);
-                insert.setStock(insert.getStock() - 1);
-                comedies.insert(insert);
-                return true;
+                if (f.getStock() - 1 < 0){ //First, ensure we have stock available.
+                    cout << f.getTitle() << " is out of stock. We won't be able to process " << customers[borrow.getID()] << "'s order." << endl;
+                    return false;
+                }
+                else {
+                    Comedy insert = f;
+                    comedies.erase(f);
+                    insert.setStock(insert.getStock() - 1);
+                    comedies.insert(insert);
+                    return true;
+                }
             }
         }
     }
     else if (borrow.getGenre() == 'D'){
         for(Drama d : dramas){
             if(d.getDirector() == borrow.getDirector() && d.getTitle() == borrow.getTitle()){
-                d.setStock(d.getStock() - 1);
-                Drama insert = d;
-                dramas.erase(d);
-                insert.setStock(insert.getStock() - 1);
-                dramas.insert(insert);
-                return true;
+                if (d.getStock() - 1 < 0){ //First, ensure we have stock available.
+                    cout << d.getTitle() << " is out of stock. We won't be able to process " << customers[borrow.getID()] << "'s order." << endl;
+                    return false;
+                }
+                else {
+                    d.setStock(d.getStock() - 1);
+                    Drama insert = d;
+                    dramas.erase(d);
+                    insert.setStock(insert.getStock() - 1);
+                    dramas.insert(insert);
+                    return true;
+                }
             }
         }
     }
@@ -355,7 +367,6 @@ void Blockbuster::BuildMovies(istream& inFile){
 
             Drama input(stock, director, title, releaseYear); //create drama object
             dramas.insert(input); //insert drama object into data structure
-	        getline(inFile, temp, '\n');//flush return key
         }
         else if (genre == 'F'){
             getline(inFile, temp, ','); //flush the first comma
@@ -368,9 +379,8 @@ void Blockbuster::BuildMovies(istream& inFile){
             getline(inFile, temp);
             releaseYear = atoi(temp.c_str());
 
-            Comedy input(stock, director, title, releaseYear); //create classic object
-            comedies.insert(input); //insert classic object into data structure
-            getline(inFile, temp, '\n');//flush return key
+            Comedy input(stock, director, title, releaseYear); //create comedy object
+            comedies.insert(input); //insert comedy object into data structure
         }
         else{
             cout << "Invalid video code in data4movies.txt at line: " << genre << " " << temp << endl;
