@@ -21,7 +21,7 @@ Date: March 20, 2019
 // Description: empty construct of Drama class
 //-----------------------------------------------------------------------------------
 Drama::Drama(){
-	this->setGenre('d');
+	this->setGenre('D');
 	this->setStock(0);
 	this->setDirector("");
 	this->setTitle("");
@@ -32,7 +32,7 @@ Drama::Drama(){
 // Description: construct Drama class from director and year published
 // -----------------------------------------------------------------------------------------
 Drama::Drama(int stock, string director, string title, int year){
-	this->setGenre('d');
+	this->setGenre('D');
 	this->setStock(stock);
 	this->setDirector(director);
 	this->setTitle(title);
@@ -54,7 +54,7 @@ Drama::Drama(const Drama& other){
 // Description: destructs the Drama object
 //-------------------------------------------------------------------------------------
 Drama::~Drama(){
-	this->setGenre('d');
+	this->setGenre('D');
 	this->setStock(0);
 	this->setDirector("");
 	this->setTitle("");
@@ -156,7 +156,7 @@ istream& operator>>(istream &i, Drama &other){
 //Helper method to ensure that a Drama Movie is proper
 //----------------------------------------------------------------------------------------
 bool Drama::isIncomplete() const{
-	return (getGenre() != 'd') || (getStock() < 0) || (getDirector().compare("") == 0) ||
+	return (getGenre() != 'D') || (getStock() < 0) || (getDirector().compare("") == 0) ||
 		   (getTitle().compare("") == 0);
 }
 

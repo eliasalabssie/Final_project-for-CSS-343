@@ -21,7 +21,7 @@ Date: March 20, 2019
 // default constructor
 //-----------------------------------------------------------------------------------------
 Comedy::Comedy(){
-	this->setGenre('f');
+	this->setGenre('F');
 	this->setStock(0);
 	this->setDirector("");
 	this->setTitle("");
@@ -32,7 +32,7 @@ Comedy::Comedy(){
 // constructor with fields
 //-----------------------------------------------------------------------------------------
 Comedy::Comedy(int stock, string director, string title, int year){
-	this->setGenre('f');
+	this->setGenre('F');
 	this->setStock(stock);
 	this->setDirector(director);
 	this->setTitle(title);
@@ -54,7 +54,7 @@ Comedy::Comedy(const Comedy& other){
 //destructor 
 //-----------------------------------------------------------------------------------------
 Comedy::~Comedy(){
-	this->setGenre('f');
+	this->setGenre('F');
 	this->setStock(0);
 	this->setDirector("");
 	this->setTitle("");
@@ -147,7 +147,7 @@ istream& operator>>(istream &i, Comedy &movie){
 //Helper method to ensure that a Comedy Movie is proper
 //----------------------------------------------------------------------------------------
 bool Comedy::isIncomplete() const{
-	return (getGenre() != 'f') || (getStock() < 0) || (getDirector().compare("") == 0) ||
+	return (getGenre() != 'F') || (getStock() < 0) || (getDirector().compare("") == 0) ||
 		   (getTitle().compare("") == 0);
 }
 
