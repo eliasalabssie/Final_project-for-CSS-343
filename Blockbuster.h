@@ -47,6 +47,7 @@ class Blockbuster {
         void PrintCustomers();
         void BuildMovies(istream&);//puts the movies in the data structure
         void PrintMovies();
+        void stringCleanUp(string &);
 
 private:
         set<Classic> classics;
