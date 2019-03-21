@@ -229,8 +229,17 @@ void Blockbuster::ActivateCommands() {
         if (c.getAction() == 'B'){
             movieBorrow(c);
         }
+        else if (c.getAction() == 'R'){
+            movieReturn(c);
+        }
+        else if (c.getAction() == 'I'){
+            printInventory();
+        }
+        else if (c.getAction() == 'H'){
+            printHistory(c.getID());
+        }
         else{
-            cout << c << endl; //TODO
+            cout << "Invalid action code." << endl;
         }
     }
 }
