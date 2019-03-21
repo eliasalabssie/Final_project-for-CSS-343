@@ -71,7 +71,7 @@ void Blockbuster::printInventory() {
 void Blockbuster::printHistory(int ID){
     //cout << "Calling printHistory" << endl;
     for (Command c : commands){
-        if (c.getID() == ID) {
+        if (c.getID() == ID && c.getAction() != 'H') {
             cout << c << endl;
         }
     }

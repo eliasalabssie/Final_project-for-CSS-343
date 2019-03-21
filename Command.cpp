@@ -109,23 +109,36 @@ string Command::toString() const{
     stringstream stream;
     stream << ID;
     string sID = stream.str();
+    sID.append(" ");
     stream.str(""); //Clear buffer
     stream << month;
     string smonth = stream.str();
+    smonth.append(" ");
     stream.str(""); //Clear buffer
     stream << year;
     string syear = stream.str();
+    syear.append(" ");
+    stream.str("");
     string saction(1, action);
-    if (sID == "-1"){
+    saction.append(" ");
+    string sdirector = director;
+    if (sdirector != ""){
+        sdirector.append(" ");
+    }
+    string stitle = title;
+    if (stitle != "") {
+        stitle.append(" ");
+    }
+    if (sID == "-1 "){
         sID = "";
     }
-    if (smonth == "-1"){
+    if (smonth == "-1 "){
         smonth = "";
     }
-    if (syear == "-1"){
+    if (syear == "-1 "){
         syear = "";
     }
-    return saction + " " + sID + " " + format + " " + genre + " " + director + " " + title + " " + smonth + " " + syear + " " + actor ;
+    return saction + sID + format + " " + genre + " " + sdirector + stitle + smonth + syear + actor;
 }
 
 //getter

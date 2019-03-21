@@ -1,30 +1,235 @@
-a.out
-assignment4design.docx
-assignment4design.pdf
-assignment4diagram.pptm
-assignment4.doc
-assignment4.exe.stackdump
-Blockbuster.cpp
-Blockbuster.h
-Classic.cpp
-Classic.h
-cmake-build-debug
-CMakeLists.txt
-Comedy.cpp
-Comedy.h
-Command.cpp
-Command.h
-Customer.cpp
-Customer.h
-data4commands.txt
-data4customers.txt
-data4movies.txt
-Drama.cpp
-Drama.h
-driver.cpp
-Movie.cpp
-MovieDriver.cpp
-MovieDriverOutput.txt
-Movie.h
-output.txt
-README.md
+C:\Users\lloyd\Documents\GitHub\Final_project-for-CSS-343\cmake-build-debug\assignment4.exe
+Building movies database.
+Invalid video code in data4movies.txt at line: Z 1971
+Invalid video code in data4movies.txt at line: Z 1941
+
+Building customers database.
+
+Building commands database.
+Invalid video code in data4commands.txt at line: B Z  2 1971 Malcolm McDowell
+Invalid action code in data4commands.txt at line: X 
+Invalid action code in data4commands.txt at line: Z  1000 D C 10 1941 Humphrey Bogart
+Customer ID does not exist within database: 1234
+Unsupported Media type: Z
+
+
+C 10 George Cukor Holiday Cary Grant 9 1938 
+C 10 George Cukor Holiday Katherine Hepburn 9 1938 
+C 10 Victor Fleming Gone With the Wind Clark Gable 2 1939 
+C 10 Victor Fleming Gone With the Wind Vivien Leigh 2 1939 
+C 10 Victor Fleming The Wizard of Oz Judy Garland 7 1939 
+C 10 George Cukor The Philadelphia Story Cary Grant 5 1940 
+C 10 George Cukor The Philadelphia Story Katherine Hepburn 5 1940 
+C 10 John Huston The Maltese Falcon Humphrey Bogart 10 1941 
+C 10 Michael Curtiz Casablanca Humphrey Bogart 8 1942 
+C 10 Michael Curtiz Casablanca Ingrid Bergman 8 1942 
+C 10 Frank Capra It's a Wonderful Life Donna Reed 11 1946 
+C 10 Frank Capra It's a Wonderful Life James Steward 11 1946 
+C 10 Stanley Kubrick A Clockwork Orange Malcolm McDowell 2 1971 
+C 10 Hal Ashby Harold and Maude Ruth Gordon 3 1971 
+D 10 Barry Levinson Good Morning Vietnam 1988 
+D 10 Clint Eastwood Unforgiven 1992 
+D 10 Gus Van Sant Good Will Hunting 2000 
+D 10 Jonathan Demme Silence of the Lambs 1991 
+D 10 Nancy Savoca Dogfight 1991 
+D 10 Phillippe De Broca King of Hearts 1967 
+D 10 Steven Spielberg Schindler's List 1993 
+F 10 Woody Allen Annie Hall 1977 
+F 10 Joel Coen Fargo 1996 
+F 10 John Landis National Lampoon's Animal House 1978 
+F 10 Gore Verbinski Pirates of the Caribbean 2003 
+F 10 Nora Ephron Sleepless in Seattle 1993 
+F 10 Rob Reiner When Harry Met Sally 1989 
+F 10 Nora Ephron You've Got Mail 1998 
+
+2000 Donald Duck
+8000 Wally Wacky
+1111 Mickey Mouse
+1000 Minnie Mouse
+8888 Porky Pig
+3333 Wicked Witch
+9000 Larry Lizard
+4444 Bullwinkle Moose
+9999 Daffy Duck
+5000 Freddie Frog
+6666 Darrell Donkey
+7777 Sammy Spider
+
+I     
+H 1000     
+H 5000     
+H 8000     
+B 8000 D F You've Got Mail 1998 
+B 1000 D D Barry Levinson Good Morning Vietnam 
+B 1000 D C 5 1940 Katherine Hepburn
+B 2000 D F Sleepless in Seattle 1993 
+B 4444 D C 2 1971 Malcolm McDowell
+B 5000 D C 3 1971 Ruth Gordon
+R 5000 D C 3 1971 Ruth Gordon
+B 8888 D F Annie Hall 1977 
+B 1111 D C 2 1971 Malcolm McDowell
+B 5000 D C 3 1971 Ruth Gordon
+R 5000 D C 3 1971 Ruth Gordon
+B 1000 D D Gus Van Sant Good Will Hunting 
+B 2000 D D Phillippe De Broca King of Hearts 
+R 4444 D C 2 1971 Malcolm McDowell
+B 1000 D C 5 1940 Cary Grant
+B 1111 D C 3 1971 Ruth Gordon
+B 1000 D C 3 1971 Ruth Gordon
+B 8888 D F When Harry Met Sally 1989 
+B 8888 D D Jonathan Demme Silence of the Lambs 
+R 8000 D F You've Got Mail 1998 
+B 9999 D F You've Got Mail 1998 
+B 8000 D C 3 1971 Ruth Gordon
+B 1111 D C 10 1941 Humphrey Bogart
+B 8000 D C 3 1971 Ruth Gordon
+B 1111 D C 9 1938 Cary Grant
+B 5000 D C 3 1971 Ruth Gordon
+B 8888 D D Nancy Savoca Dogfight 
+B 7777 D D Steven Spielberg Schindler's List 
+R 5000 D C 3 1971 Ruth Gordon
+B 5000 D C 3 1971 Ruth Gordon
+B 8000 D F National Lampoon's Animal House 1978 
+B 8888 D C 3 1971 Ruth Gordon
+B 7777 D C 3 1971 Ruth Gordon
+B 2000 D C 3 1971 Ruth Gordon
+B 2000 D D Nancy Savoca Dogfight 
+B 9000 D D Clint Eastwood Unforgiven 
+B 9000 D F Fargo 1996 
+B 1234 D C 2 1971 Malcolm McDowell
+B 1000 D F Bogus Title 2001 
+B 1000 Z F Fargo 1996 
+B 2000 D C 3 1971 Ruth Gordon
+B 9000 D C 3 1971 Ruth Gordon
+B 9000 D C 3 1971 Ruth Gordon
+B 3333 D C 3 1971 Ruth Gordon
+B 7777 D C 3 1971 Ruth Gordon
+B 1000 D D Steven Spielberg Bogus Title 
+I     
+H 1000     
+H 1111     
+H 5000     
+H 8000     
+H 8888     
+
+Blockbuster opening; running commands.
+C 10 George Cukor Holiday Cary Grant 9 1938 
+C 10 George Cukor Holiday Katherine Hepburn 9 1938 
+C 10 Victor Fleming Gone With the Wind Clark Gable 2 1939 
+C 10 Victor Fleming Gone With the Wind Vivien Leigh 2 1939 
+C 10 Victor Fleming The Wizard of Oz Judy Garland 7 1939 
+C 10 George Cukor The Philadelphia Story Cary Grant 5 1940 
+C 10 George Cukor The Philadelphia Story Katherine Hepburn 5 1940 
+C 10 John Huston The Maltese Falcon Humphrey Bogart 10 1941 
+C 10 Michael Curtiz Casablanca Humphrey Bogart 8 1942 
+C 10 Michael Curtiz Casablanca Ingrid Bergman 8 1942 
+C 10 Frank Capra It's a Wonderful Life Donna Reed 11 1946 
+C 10 Frank Capra It's a Wonderful Life James Steward 11 1946 
+C 10 Stanley Kubrick A Clockwork Orange Malcolm McDowell 2 1971 
+C 10 Hal Ashby Harold and Maude Ruth Gordon 3 1971 
+D 10 Barry Levinson Good Morning Vietnam 1988 
+D 10 Clint Eastwood Unforgiven 1992 
+D 10 Gus Van Sant Good Will Hunting 2000 
+D 10 Jonathan Demme Silence of the Lambs 1991 
+D 10 Nancy Savoca Dogfight 1991 
+D 10 Phillippe De Broca King of Hearts 1967 
+D 10 Steven Spielberg Schindler's List 1993 
+F 10 Woody Allen Annie Hall 1977 
+F 10 Joel Coen Fargo 1996 
+F 10 John Landis National Lampoon's Animal House 1978 
+F 10 Gore Verbinski Pirates of the Caribbean 2003 
+F 10 Nora Ephron Sleepless in Seattle 1993 
+F 10 Rob Reiner When Harry Met Sally 1989 
+F 10 Nora Ephron You've Got Mail 1998 
+
+B 1000 D D Barry Levinson Good Morning Vietnam 
+B 1000 D C 5 1940 Katherine Hepburn
+B 1000 D D Gus Van Sant Good Will Hunting 
+B 1000 D C 5 1940 Cary Grant
+B 1000 D C 3 1971 Ruth Gordon
+B 1000 D F Bogus Title 2001 
+B 1000 Z F Fargo 1996 
+B 1000 D D Steven Spielberg Bogus Title 
+
+B 5000 D C 3 1971 Ruth Gordon
+R 5000 D C 3 1971 Ruth Gordon
+B 5000 D C 3 1971 Ruth Gordon
+R 5000 D C 3 1971 Ruth Gordon
+B 5000 D C 3 1971 Ruth Gordon
+R 5000 D C 3 1971 Ruth Gordon
+B 5000 D C 3 1971 Ruth Gordon
+
+B 8000 D F You've Got Mail 1998 
+R 8000 D F You've Got Mail 1998 
+B 8000 D C 3 1971 Ruth Gordon
+B 8000 D C 3 1971 Ruth Gordon
+B 8000 D F National Lampoon's Animal House 1978 
+
+Harold and Maude is out of stock. We won't be able to process Larry Lizard's order.
+Harold and Maude is out of stock. We won't be able to process Wicked Witch's order.
+Harold and Maude is out of stock. We won't be able to process Sammy Spider's order.
+C 9 George Cukor Holiday Cary Grant 9 1938 
+C 10 George Cukor Holiday Katherine Hepburn 9 1938 
+C 10 Victor Fleming Gone With the Wind Clark Gable 2 1939 
+C 10 Victor Fleming Gone With the Wind Vivien Leigh 2 1939 
+C 10 Victor Fleming The Wizard of Oz Judy Garland 7 1939 
+C 9 George Cukor The Philadelphia Story Cary Grant 5 1940 
+C 9 George Cukor The Philadelphia Story Katherine Hepburn 5 1940 
+C 9 John Huston The Maltese Falcon Humphrey Bogart 10 1941 
+C 10 Michael Curtiz Casablanca Humphrey Bogart 8 1942 
+C 10 Michael Curtiz Casablanca Ingrid Bergman 8 1942 
+C 10 Frank Capra It's a Wonderful Life Donna Reed 11 1946 
+C 10 Frank Capra It's a Wonderful Life James Steward 11 1946 
+C 8 Stanley Kubrick A Clockwork Orange Malcolm McDowell 2 1971 
+C 0 Hal Ashby Harold and Maude Ruth Gordon 3 1971 
+D 8 Barry Levinson Good Morning Vietnam 1988 
+D 8 Clint Eastwood Unforgiven 1992 
+D 8 Gus Van Sant Good Will Hunting 2000 
+D 8 Jonathan Demme Silence of the Lambs 1991 
+D 6 Nancy Savoca Dogfight 1991 
+D 8 Phillippe De Broca King of Hearts 1967 
+D 8 Steven Spielberg Schindler's List 1993 
+F 9 Woody Allen Annie Hall 1977 
+F 8 Joel Coen Fargo 1996 
+F 9 John Landis National Lampoon's Animal House 1978 
+F 10 Gore Verbinski Pirates of the Caribbean 2003 
+F 9 Nora Ephron Sleepless in Seattle 1993 
+F 9 Rob Reiner When Harry Met Sally 1989 
+F 9 Nora Ephron You've Got Mail 1998 
+
+B 1000 D D Barry Levinson Good Morning Vietnam 
+B 1000 D C 5 1940 Katherine Hepburn
+B 1000 D D Gus Van Sant Good Will Hunting 
+B 1000 D C 5 1940 Cary Grant
+B 1000 D C 3 1971 Ruth Gordon
+B 1000 D F Bogus Title 2001 
+B 1000 Z F Fargo 1996 
+B 1000 D D Steven Spielberg Bogus Title 
+
+B 1111 D C 2 1971 Malcolm McDowell
+B 1111 D C 3 1971 Ruth Gordon
+B 1111 D C 10 1941 Humphrey Bogart
+B 1111 D C 9 1938 Cary Grant
+
+B 5000 D C 3 1971 Ruth Gordon
+R 5000 D C 3 1971 Ruth Gordon
+B 5000 D C 3 1971 Ruth Gordon
+R 5000 D C 3 1971 Ruth Gordon
+B 5000 D C 3 1971 Ruth Gordon
+R 5000 D C 3 1971 Ruth Gordon
+B 5000 D C 3 1971 Ruth Gordon
+
+B 8000 D F You've Got Mail 1998 
+R 8000 D F You've Got Mail 1998 
+B 8000 D C 3 1971 Ruth Gordon
+B 8000 D C 3 1971 Ruth Gordon
+B 8000 D F National Lampoon's Animal House 1978 
+
+B 8888 D F Annie Hall 1977 
+B 8888 D F When Harry Met Sally 1989 
+B 8888 D D Jonathan Demme Silence of the Lambs 
+B 8888 D D Nancy Savoca Dogfight 
+B 8888 D C 3 1971 Ruth Gordon
+
+
+Process finished with exit code 0
