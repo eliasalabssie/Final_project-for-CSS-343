@@ -188,6 +188,12 @@ void Blockbuster::BuildCommands(istream& inFile){
         else if (action == 'B' | action == 'R') {
             inFile >> ID >> media >> genre;
 
+            if (customers.count(ID) <= 0){
+                cout << "Customer ID does not exist within database: " << ID << endl;
+            }
+            if (media != 'D'){
+                cout << "Unsupported Media type: " << media << endl;
+            }
             if (genre == 'C'){
                 inFile >> month >> year;
                 getline(inFile, temp);
