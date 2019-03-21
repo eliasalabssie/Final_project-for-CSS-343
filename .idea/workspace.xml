@@ -11,16 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b008c678-c756-4eaa-83e6-852c444bb11a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Blockbuster.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Blockbuster.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Command.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Command.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Command.h" beforeDir="false" afterPath="$PROJECT_DIR$/Command.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/Blockbuster.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/Blockbuster.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/command.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/command.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/driver.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assignment4.dir/driver.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/assignment4.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/assignment4.exe" afterDir="false" />
-    </list>
+    <list default="true" id="b008c678-c756-4eaa-83e6-852c444bb11a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Blockbuster.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4743">
-              <caret line="384" selection-start-line="384" selection-end-line="384" />
+            <state relative-caret-position="119">
+              <caret line="118" column="33" lean-forward="true" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -243,7 +234,7 @@
       <workItem from="1552776025756" duration="5701000" />
       <workItem from="1552847726145" duration="15525000" />
       <workItem from="1552927211101" duration="8203000" />
-      <workItem from="1553030547393" duration="46815000" />
+      <workItem from="1553030547393" duration="47113000" />
     </task>
     <task id="LOCAL-00001" summary="added a TODO to test clion integration with github">
       <created>1552356061828</created>
@@ -256,7 +247,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79505000" />
+    <option name="totallyTimeSpent" value="79803000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -612,8 +603,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Blockbuster.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4743">
-          <caret line="384" selection-start-line="384" selection-end-line="384" />
+        <state relative-caret-position="119">
+          <caret line="118" column="33" lean-forward="true" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
         </state>
       </provider>
     </entry>
