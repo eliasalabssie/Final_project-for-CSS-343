@@ -4,6 +4,8 @@ Lloyd Deng, Antong Cheng, Elias Alabssie
 THIS PROGRAM COMPILES AT uw1-320-07.uwb.edu ON PORT 22,
 WITH THE STATEMENT: g++ -std=c++11 *.cpp
  
+ Expected output can be seen in output.txt.
+ 
  * Assignment 4 initializes the Blockbuster object, which holds three sets, an unordered_map, and a vector. (From STL)
  * These structures control movie stocking, customer accounts, and customer commands.
  *
