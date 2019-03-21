@@ -21,7 +21,7 @@ Date: March 20, 2019
 // default constructor
 //-----------------------------------------------------------------------------------------
 Classic::Classic(){
-	this->setGenre('c');
+	this->setGenre('C');
 	this->setStock(0);
 	this->setDirector("");
 	this->setTitle("");
@@ -34,7 +34,7 @@ Classic::Classic(){
 // constructor with fields
 //-----------------------------------------------------------------------------------------
 Classic::Classic(int stock, string director, string title, string actor, int month, int year){
-	this->setGenre('c');
+	this->setGenre('C');
 	this->setStock(stock);
 	this->setDirector(director);
 	this->setTitle(title);
@@ -60,13 +60,7 @@ Classic::Classic(const Classic& other) {
 //destructor
 //-----------------------------------------------------------------------------------------
 Classic::~Classic(){
-	this->setGenre('c');
-	this->setStock(0);
-	this->setDirector("");
-	this->setTitle("");
-	this->setActor("");
-	this->setMonth(-1);
-	this->setYear(-1);
+	
 }
 
 //---------------------------------------- getDirector ----------------------------
@@ -191,7 +185,7 @@ istream& operator>>(istream &i, Classic &other){
 //Helper method to ensure that a Classic Movie is proper
 //----------------------------------------------------------------------------------------
 bool Classic::isIncomplete() const{
-	return (getGenre() != 'c') || (getStock() < 0) || (getDirector().compare("") == 0) ||
+	return (getGenre() != 'C') || (getStock() < 0) || (getDirector().compare("") == 0) ||
 		   (getTitle().compare("") == 0) || (getActor().compare("") == 0) ||
 		   (getMonth() < 0) || (getYear() < 0);
 }
@@ -209,5 +203,6 @@ string Classic::toString() const{
 	string monthString = static_cast<ostringstream*>( &(ostringstream() << getMonth()) )->str();
 	string yearString = static_cast<ostringstream*>( &(ostringstream() << getYear()) )->str();
 
-	return  genreString + " " + stockString + " " + getDirector() + " " + getTitle() + " " + getActor() + " " + monthString + " " + yearString;
+	return  genreString + " " + stockString + " " + getDirector() + " " + getTitle() + " " 
+		+ getActor() + " " + monthString + " " + yearString;
 }
