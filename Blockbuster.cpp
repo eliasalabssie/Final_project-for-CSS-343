@@ -5,10 +5,6 @@ Group Members: Lloyd Deng, Antong Cheng, Elias Alabssie
 Date: March 20, 2019
 //---------------------------------------------------------------------------------------
 
-//------------------------ Drama.cpp -------------------------------------------------
-//Parent: Movie
-//Child: None
-
 //description: implementation for the Drama class.
 
 //-------------------------------------------------------------------------------------
@@ -33,11 +29,7 @@ Blockbuster::Blockbuster(const Blockbuster &other){
 }
 
 Blockbuster::~Blockbuster(){
-    set<Classic> classics;
-    set<Comedy> comedies;
-    set<Drama> dramas;
-    unordered_map<int, string> customers;
-    vector<Command> commands;
+    
 }
 
 void Blockbuster::printInventory() {
@@ -120,7 +112,7 @@ bool Blockbuster::movieReturn(const Command& other){
         for(Classic c : classics){
             if(c.getMonth() == other.getMonth() && c.getYear() == other.getYear()
                && c.getActor() == other.getActor()){
-                // c.setStock(c.getStock() - 1); //Elements of set may not be modified
+                c.setStock(c.getStock() - 1); //Elements of set may not be modified
                 Classic insert = c; //Instead, deep copy
                 classics.erase(c); //Remove original
                 insert.setStock(insert.getStock() + 1); //Modify copy
@@ -221,12 +213,13 @@ void Blockbuster::BuildCommands(istream& inFile){
                 commands.push_back(insert);
             }
             else{
-		getline(inFile, temp, '\n');//no nonsense
-                cout << "Invalid video code in data4commands.txt at line: " << action << " " << genre << " " << temp << endl;
+		          getline(inFile, temp, '\n');//no nonsense
+                cout << "Invalid video code in data4commands.txt at line: " << action << " " 
+                    << genre << " " << temp << endl;
             }
         }
         else {
-	    getline(inFile, temp, '\n');//no nonsense
+	        getline(inFile, temp, '\n');//no nonsense
             cout << "Invalid action code in data4commands.txt at line:" << action << " " << temp << endl;
         }
 
@@ -381,14 +374,14 @@ void Blockbuster::BuildMovies(istream& inFile){
 
 void Blockbuster::PrintMovies() {
     cout << endl;
-    for (Classic c : classics){
-        cout << c << ' ' << endl;
+    for (Classic C : classics){
+        cout << C << ' ' << endl;
     }
-    for (Drama d : dramas){
-        cout << d << ' ' << endl;
+    for (Drama D : dramas){
+        cout << D << ' ' << endl;
     }
-    for (Comedy f : comedies){
-        cout << f << ' ' << endl;
+    for (Comedy F : comedies){
+        cout << F << ' ' << endl;
     }
     cout << endl;
 }
