@@ -324,6 +324,10 @@ void Blockbuster::BuildMovies(istream& inFile){
 
     for(;;){
         genre = inFile.get();
+        if(inFile.eof()){
+            cout << endl;
+            break;
+        }
         if(genre == 'C'){
             getline(inFile, temp, ','); //flush the first comma
             getline(inFile, temp, ',');
@@ -385,10 +389,6 @@ void Blockbuster::BuildMovies(istream& inFile){
         else{
             cout << "Invalid video code in data4movies.txt at line: " << genre << " " << temp << endl;
             getline(inFile, temp, '\n');//flush return key
-        }
-        if(inFile.eof()){
-            cout << endl;
-            break;
         }
     }
 }
