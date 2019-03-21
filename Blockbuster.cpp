@@ -1,18 +1,19 @@
-/*
-//--------------------------------------------------------------------------------
-Assignment: Lab 4
-Group Members: Lloyd Deng, Antong Cheng, Elias Alabssie
-Date: March 20, 2019
-//---------------------------------------------------------------------------------------
-
-//------------------------ Drama.cpp -------------------------------------------------
-//Parent: Movie
-//Child: None
-
-//description: implementation for the Drama class.
-
-//-------------------------------------------------------------------------------------
-*/
+/** Lloyd Deng, Antong Cheng, Elias Alabssie
+ * Blockbuster structure for Program 4.
+ * Blockbuster holds three sets, an unordered_map, and a vector. (From STL)
+ * These structures control movie stocking, customer accounts, and customer commands.
+ *
+ * Initialization requires three files, which are listed at lines 31, 35, 39.
+ * data4movies.txt should detail the initial stocking of the Blockbuster movie database.
+ * data4customers.txt should detail the initial customer accounts registered with Blockbuster.
+ * data4commands.txt should detail the list of commands to be executed by the Blockbuster automation program.
+ * Detailed syntax for these files can be found in assignment4.doc.
+ *
+ * Blockbuster's constructor automatically initializes the Blockbuster with these files.
+ * activateCommands() will run through the commands database and execute them as specified in assignment4.doc.
+ * Additional commands, printMovies();, printCustomers(); and printCommands(); are provided to read from the database.
+ * All other functions are to aid with the initialization or execution process.
+ */
 
 #include <iostream>
 #include <fstream>
@@ -20,6 +21,8 @@ Date: March 20, 2019
 #include "Blockbuster.h"
 
 Blockbuster::Blockbuster(){
+    cout << "Initializing Blockbuster." << endl << endl;
+
     set<Classic> classics;
     set<Comedy> comedies;
     set<Drama> dramas;
@@ -28,15 +31,15 @@ Blockbuster::Blockbuster(){
 
     ifstream data4movies ("data4movies.txt");
     cout << "Building movies database." << endl;
-    BuildMovies(data4movies);
+    buildMovies(data4movies);
 
     ifstream data4customers ("data4customers.txt");
     cout << "Building customers database." << endl;
-    BuildCustomers(data4customers);
+    buildCustomers(data4customers);
 
     ifstream data4commands("data4commands.txt");
     cout << "Building commands database." << endl;
-    BuildCommands(data4commands);
+    buildCommands(data4commands);
 }
 
 Blockbuster::Blockbuster(const Blockbuster &other){
@@ -84,7 +87,7 @@ bool Blockbuster::movieBorrow(const Command& borrow){
 			if(c.getMonth() == borrow.getMonth() && c.getYear() == borrow.getYear()
                && c.getActor() == borrow.getActor()){
 			    if (c.getStock() - 1 < 0){ //First, ensure we have stock available.
-			        cout << c.getTitle() << " is out of stock. We won't be able to process " << customers[borrow.getID()] << "'s order." << endl;
+			        cout << c.getTitle() << " is out of stock. We won't be able to process " << customers[borrow.getID()] << "'s borrow request." << endl;
 			        return false;
 			    }
 			    else{ //If we do have stock:
@@ -123,7 +126,6 @@ bool Blockbuster::movieBorrow(const Command& borrow){
                     return false;
                 }
                 else {
-                    d.setStock(d.getStock() - 1);
                     Drama insert = d;
                     dramas.erase(d);
                     insert.setStock(insert.getStock() - 1);
@@ -135,7 +137,6 @@ bool Blockbuster::movieBorrow(const Command& borrow){
     }
     else{
         cout << "incorrect data and/or incorrect command at line: " << borrow.toString() << endl;
-        //cout << "Failed to execute the following command: " << borrow << endl;
         return false;
     }
 }
@@ -145,30 +146,49 @@ bool Blockbuster::movieReturn(const Command& other){
         for(Classic c : classics){
             if(c.getMonth() == other.getMonth() && c.getYear() == other.getYear()
                && c.getActor() == other.getActor()){
-                // c.setStock(c.getStock() - 1); //Elements of set may not be modified
-                Classic insert = c; //Instead, deep copy
-                classics.erase(c); //Remove original
-                insert.setStock(insert.getStock() + 1); //Modify copy
-                classics.insert(insert); //Insert copy
-                return true; //Return successful.
+                if (c.getStock() + 1 > 10) { //Ensure nobody is returning more movies than they borrowed.
+                    cout << c.getTitle() << " exceeds the amount of initial stock. We won't be able to process "
+                         << customers[other.getID()] << "'s order." << endl;
+                    return false;
+                }
+                else{
+                    // c.setStock(c.getStock() - 1); //Elements of set may not be modified
+                    Classic insert = c; //Instead, deep copy
+                    classics.erase(c); //Remove original
+                    insert.setStock(insert.getStock() + 1); //Modify copy
+                    classics.insert(insert); //Insert copy
+                    return true; //Return successful.
+                }
             }
         }
     }
     else if (other.getGenre() == 'F'){
         for(Comedy f : comedies){
             if(f.getTitle() == other.getTitle() && f.getYear() == other.getYear()){
-                Comedy insert = f;
-                comedies.erase(f);
-                insert.setStock(insert.getStock() + 1);
-                comedies.insert(insert);
-                return true;
+                if (f.getStock() + 1 > 10) {
+                    cout << f.getTitle() << " exceeds the amount of initial stock. We won't be able to process "
+                         << customers[other.getID()] << "'s order." << endl;
+                    return false;
+                }
+                else{
+                    Comedy insert = f;
+                    comedies.erase(f);
+                    insert.setStock(insert.getStock() + 1);
+                    comedies.insert(insert);
+                    return true;
+                }
             }
         }
     }
-    else if (other.getGenre() == 'D'){
-        for(Drama d : dramas){
-            if(d.getDirector() == other.getDirector() && d.getTitle() == other.getTitle()){
-                d.setStock(d.getStock() - 1);
+    else if (other.getGenre() == 'D') {
+        for (Drama d : dramas) {
+            if (d.getDirector() == other.getDirector() && d.getTitle() == other.getTitle()) {
+                if (d.getStock() + 1 > 10) {
+                    cout << d.getTitle() << " exceeds the amount of initial stock. We won't be able to process "
+                         << customers[other.getID()] << "'s order." << endl;
+                    return false;
+                }
+            } else {
                 Drama insert = d;
                 dramas.erase(d);
                 insert.setStock(insert.getStock() + 1);
@@ -179,12 +199,11 @@ bool Blockbuster::movieReturn(const Command& other){
     }
     else{
         cout << "incorrect data and/or incorrect command in data4commands.txt at line: " << other.toString() << endl;
-        //cout << "Failed to execute the following command: " << borrow << endl;
         return false;
     }
 }
 
-void Blockbuster::BuildCommands(istream& inFile){
+void Blockbuster::buildCommands(istream& inFile){
     char action;
     int ID;
     char media;
@@ -196,6 +215,7 @@ void Blockbuster::BuildCommands(istream& inFile){
     int year;
     string flush;
     string temp;
+    bool movieOwned = false;
 
     for(;;){
         inFile >> action;
@@ -222,7 +242,7 @@ void Blockbuster::BuildCommands(istream& inFile){
             if (customers.count(ID) <= 0){
                 cout << "Customer ID does not exist within database: " << ID << endl;
             }
-            if (media != 'D'){//TODO: REject invalid movie titles
+            if (media != 'D'){
                 cout << "Unsupported Media type: " << media << endl;
             }
             if (genre == 'C'){
@@ -231,8 +251,18 @@ void Blockbuster::BuildCommands(istream& inFile){
                 actor = temp;
 
                 stringCleanUp(actor);
-                Command insert(action, ID, media, genre, month, year, actor);
-                commands.push_back(insert);
+
+                for(Classic c : classics) {
+                    if (c.getMonth() == month && c.getYear() == year && c.getActor() == actor) { //ensure the movie exists within our database.
+                        Command insert(action, ID, media, genre, month, year, actor);
+                        commands.push_back(insert);
+                        movieOwned = true;
+                    }
+                }
+                if (movieOwned == false){
+                    cout << "Blockbuster does not own a movie from " << month << " " << year << " starring " << actor << "." << endl;
+                }
+                movieOwned = false;
             }
             else if (genre == 'D'){
                 getline(inFile, temp, ',');
@@ -242,8 +272,18 @@ void Blockbuster::BuildCommands(istream& inFile){
 
                 stringCleanUp(director);
                 stringCleanUp(title);
-                Command insert(action, ID, media, genre, director, title);
-                commands.push_back(insert);
+
+                for(Drama d : dramas) {
+                    if (d.getDirector() == director && d.getTitle() == title) { //ensure the movie exists within our database.
+                        Command insert(action, ID, media, genre, director, title);
+                        commands.push_back(insert);
+                        movieOwned = true;
+                    }
+                }
+                if (movieOwned == false){
+                    cout << "Blockbuster does not own a movie by " << director << " titled " << title << "." << endl;
+                }
+                movieOwned = false;
             }
             else if (genre == 'F'){
                 getline(inFile, temp, ',');
@@ -251,8 +291,18 @@ void Blockbuster::BuildCommands(istream& inFile){
                 inFile >> year;
 
                 stringCleanUp(title);
-                Command insert(action, ID, media, genre, title, year);
-                commands.push_back(insert);
+
+                for(Comedy f : comedies) {
+                    if (f.getTitle() == title && f.getYear() == year) { //ensure the movie exists within our database.
+                        Command insert(action, ID, media, genre, title, year);
+                        commands.push_back(insert);
+                        movieOwned = true;
+                    }
+                }
+                if (movieOwned == false){
+                    cout << "Blockbuster does not own a movie titled " << title << " from " << year << "." << endl;
+                }
+                movieOwned = false;
             }
             else{
                 getline(inFile, temp, '\n');//no nonsense
@@ -267,7 +317,7 @@ void Blockbuster::BuildCommands(istream& inFile){
     }
 }
 
-void Blockbuster::PrintCommands() {
+void Blockbuster::printCommands() {
     //cout << "Calling printCommands" << endl;
     for (Command c : commands){
         cout << c << endl;
@@ -275,7 +325,7 @@ void Blockbuster::PrintCommands() {
     cout << endl;
 }
 
-void Blockbuster::ActivateCommands() {
+void Blockbuster::activateCommands() {
     cout << "Blockbuster opening; running commands." << endl;
     for (Command c : commands){
         if (c.getAction() == 'B'){
@@ -291,12 +341,12 @@ void Blockbuster::ActivateCommands() {
             printHistory(c.getID());
         }
         else{
-            cout << "Invalid action code." << endl;
+            cout << "Invalid action code: " << c << endl;
         }
     }
 }
 
-void Blockbuster::BuildCustomers(istream& inFile){
+void Blockbuster::buildCustomers(istream& inFile){
     int ID;
     string lastName, firstName, name;
 
@@ -313,7 +363,7 @@ void Blockbuster::BuildCustomers(istream& inFile){
     }
 }
 
-void Blockbuster::PrintCustomers(){
+void Blockbuster::printCustomers(){
     //cout << "Calling printCustomers" << endl;
     for(auto it = customers.cbegin(); it != customers.cend(); ++it) {
         cout << it->first << " " << it->second << endl;
@@ -321,7 +371,7 @@ void Blockbuster::PrintCustomers(){
     cout << endl;
 }
 
-void Blockbuster::BuildMovies(istream& inFile){
+void Blockbuster::buildMovies(istream& inFile){
     char genre;
     int stock, releaseMonth, releaseYear;
     string director, title, actor;
@@ -410,7 +460,7 @@ void Blockbuster::BuildMovies(istream& inFile){
     }
 }
 
-void Blockbuster::PrintMovies() {
+void Blockbuster::printMovies() {
     cout << endl;
     for (Classic c : classics){
         cout << c << ' ' << endl;

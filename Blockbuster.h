@@ -1,20 +1,3 @@
-/*
-//--------------------------------------------------------------------------------
-Assignment: Lab 4
-Group Members: Lloyd Deng, Antong Cheng, Elias Alabssie
-Date: March 20, 2019
-//---------------------------------------------------------------------------------------
-
-//------------------------ Drama.cpp -------------------------------------------------
-//Parent: Movie
-//Child: None
-
-//description: implementation for the Drama class.
-
-//-------------------------------------------------------------------------------------
-*/
-
-
 #ifndef ASSIGNMENT4_BLOCKBUSTER_H
 #define ASSIGNMENT4_BLOCKBUSTER_H
 
@@ -40,13 +23,13 @@ class Blockbuster {
         void printHistory(int);
         bool movieBorrow(const Command&);
         bool movieReturn(const Command&);
-        void BuildCommands(istream&);//puts the commands in the data structure
-        void PrintCommands();
-        void ActivateCommands();//iterates through commands data structure and makes respective calls
-        void BuildCustomers(istream&);//puts the customers in the data structure
-        void PrintCustomers();
-        void BuildMovies(istream&);//puts the movies in the data structure
-        void PrintMovies();
+        void buildCommands(istream&);//puts the commands in the data structure
+        void printCommands();
+        void activateCommands();//iterates through commands data structure and makes respective calls
+        void buildCustomers(istream&);//puts the customers in the data structure
+        void printCustomers();
+        void buildMovies(istream&);//puts the movies in the data structure
+        void printMovies();
         void stringCleanUp(string &);
 
 private:
