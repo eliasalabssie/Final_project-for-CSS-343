@@ -29,15 +29,24 @@ Blockbuster::Blockbuster(const Blockbuster &other){
 }
 
 Blockbuster::~Blockbuster(){
-    
+
 }
 
 void Blockbuster::printInventory() {
-    PrintMovies();
+    for (Classic C : classics){
+        cout << C << ' ' << endl;
+    }
+    for (Drama D : dramas){
+        cout << D << ' ' << endl;
+    }
+    for (Comedy F : comedies){
+        cout << F << ' ' << endl;
+    }
+    cout << endl;
 }
 
 void Blockbuster::printHistory(int ID){
-    cout << endl;
+    cout << "Calling printHistory" << endl;
     for (Command c : commands){
         if (c.getID() == ID) {
             cout << c << endl;
@@ -151,6 +160,7 @@ bool Blockbuster::movieReturn(const Command& other){
 }
 
 void Blockbuster::BuildCommands(istream& inFile){
+    cout << "Building commands database..." << endl;
     char action;
     int ID;
     char media;
@@ -213,14 +223,14 @@ void Blockbuster::BuildCommands(istream& inFile){
                 commands.push_back(insert);
             }
             else{
-		          getline(inFile, temp, '\n');//no nonsense
-                cout << "Invalid video code in data4commands.txt at line: " << action << " " 
+                getline(inFile, temp, '\n');//no nonsense
+                cout << "Invalid video code in data4commands.txt at line: " << action << " "
                     << genre << " " << temp << endl;
             }
         }
         else {
 	        getline(inFile, temp, '\n');//no nonsense
-            cout << "Invalid action code in data4commands.txt at line:" << action << " " << temp << endl;
+            cout << "Invalid action code in data4commands.txt at line: " << action << " " << temp << endl;
         }
 
         if(inFile.eof()){
@@ -230,7 +240,7 @@ void Blockbuster::BuildCommands(istream& inFile){
 }
 
 void Blockbuster::PrintCommands() {
-    cout << endl;
+    cout << "Calling printCommands" << endl;
     for (Command c : commands){
         cout << c << endl;
     }
@@ -373,17 +383,8 @@ void Blockbuster::BuildMovies(istream& inFile){
 }
 
 void Blockbuster::PrintMovies() {
-    cout << endl;
-    for (Classic C : classics){
-        cout << C << ' ' << endl;
-    }
-    for (Drama D : dramas){
-        cout << D << ' ' << endl;
-    }
-    for (Comedy F : comedies){
-        cout << F << ' ' << endl;
-    }
-    cout << endl;
+    cout << "Calling printMovies" << endl;
+    printInventory();
 }
 
 void Blockbuster::stringCleanUp(string &s) {
