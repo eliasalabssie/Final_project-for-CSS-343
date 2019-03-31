@@ -21,11 +21,18 @@ WITH THE STATEMENT: g++ -std=c++11 *.cpp
  * All other functions are to aid with the initialization or execution process.
  
 Group members:
+
 	Elias Alabssie
+	
 	-Wrote Customer.cpp
 	-Wrote Customer.h
 	-Wrote header for Customer.cpp
 	-Implemented destructor for Blockbuster.cpp
+	-Wrote Movie.cpp
+	-Wrote Classic.cpp
+	-Wrote Comedy.cpp
+	-Wrote Drama.cpp
+	Debug Blockbuster.cpp
 	
 	Antong Cheng:
 	-Wrote Class Descriptions for assignment4design.pdf
