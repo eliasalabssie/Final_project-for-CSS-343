@@ -27,19 +27,4 @@ Group members:
 	-Wrote header for Customer.cpp
 	-Implemented destructor for Blockbuster.cpp
 	
-	Antong Cheng:
-	-Wrote Class Descriptions for assignment4design.pdf
-	-Wrote MovieDriver.cpp
-	-Wrote Movie.cpp
-	-Wrote Classic.cpp
-	-Wrote Comedy.cpp
-	-Wrote Drama.cpp
-	-Implemented command execution in Blockbuster.cpp
-	-Implemented edge cases in Blockbuster.cpp
 	
-	Lloyd Deng:
-	-Wrote Overview for assignment4design.pdf
-	-Drew UML diagram in assignment4design.pdf
-	-Wrote Command.cpp
-	-Implemented database read and write in Blockbuster.cpp
-	-Debugged Blockbuster.cpp
