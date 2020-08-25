@@ -2,7 +2,7 @@ Lloyd Deng, Antong Cheng, Elias Alabssie
 2019 March 20.
 
 THIS PROGRAM COMPILES AT uw1-320-07.uwb.edu ON PORT 22,
-WITH THE STATEMENT: g++ -std=c++11 *.cpp
+WITH THE command: g++ -std=c++11 *.cpp
  
  Expected output can be seen in output.txt.
  
@@ -20,11 +20,5 @@ WITH THE STATEMENT: g++ -std=c++11 *.cpp
  * Additional commands, printMovies();, printCustomers(); and printCommands(); are provided to read from the database.
  * All other functions are to aid with the initialization or execution process.
  
-Group members:
-	Elias Alabssie
-	-Wrote Customer.cpp
-	-Wrote Customer.h
-	-Wrote header for Customer.cpp
-	-Implemented destructor for Blockbuster.cpp
-	
+
 	
